@@ -21,7 +21,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@600&display=swap" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <script type="text/javascript" src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
@@ -38,6 +37,10 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <link href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.google.com/cse/static/element/323d4b81541ddb5b/default+en.css">
+    <link type="text/css" rel="stylesheet" href="https://www.google.com/cse/static/style/look/v4/default.css">
 </head>
 <body>
     <div id="MathJax_Message" style="display: none;"></div>
@@ -102,32 +105,48 @@
         </div>
     </div>
 
-  <div id="flexdashboard-source-code">
-    <p>Placeholder for source code </p>
-  </div>
 
 
-  <form id="dload" method="POST" onsubmit="return ajaxgo()">
-    <div class="dropdown">
-      <button  class="dropbtn">Proxy Location</button>
-      <div id="location" class="dropdown-content">
-        <input type="text" placeholder="Search Locations.." id="myInput" onkeyup="filterFunction()">
-      </div>
+    <div id="flexdashboard-source-code">
+        <p>Placeholder for source code </p>
     </div>
-    <br>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            FlexDashboard.init({
+                theme: "bootstrap",
+                fillPage: false,
+                orientation: "rows",
+                storyboard: false,
+                defaultFigWidth: 576,
+                defaultFigHeight: 460,
+                defaultFigWidthMobile: 360,
+                defaultFigHeightMobile: 460
+            });
+        });
+    </script>
+
+
+    <form id="dload" method="POST" onsubmit="return ajaxgo()">
+        <div class="dropdown">
+            <button  class="dropbtn">Proxy Location</button>
+            <div id="location" class="dropdown-content">
+                <input type="text" placeholder="Search Locations.." id="myInput" onkeyup="filterFunction()">
+            </div>
+        </div>
+        <br>
 
     <!--  PROXY LOCATION FILTER  -->
-    <div class="multipleSelection">
-      <div class="selectBox" onclick="showCheckboxes('l')">
-        <select>
-          <option>Proxy Location</option>
-        </select>
-        <div class="overSelect"></div>
-      </div>
-      <div id="checkBoxesLoc"> </div>
-    </div>
-
-    <br>
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes('l')">
+                <select>
+                    <option>Proxy Location</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkBoxesLoc"> </div>
+        </div>
+        <br>
 
     <!--  SEASONALITY FILTER  -->
     <div class="multipleSelection">

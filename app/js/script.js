@@ -1,18 +1,6 @@
 const testString = 'This is a test!';
 console.log(testString);
-window.FlexDashboardComponents = [];
-$(document).ready(function () {
-  FlexDashboard.init({
-    theme: "bootstrap",
-    fillPage: false,
-    orientation: "rows",
-    storyboard: false,
-    defaultFigWidth: 576,
-    defaultFigHeight: 460,
-    defaultFigWidthMobile: 360,
-    defaultFigHeightMobile: 460
-  });
-});
+
 
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
 //0, 0 is lat long coord for center of the world
