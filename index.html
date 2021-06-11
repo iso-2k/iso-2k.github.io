@@ -128,6 +128,7 @@
 
 
     <form id="dload" method="POST" onsubmit="return ajaxgo()">
+        <!--
         <div class="dropdown">
             <button  class="dropbtn">Proxy Location</button>
             <div id="location" class="dropdown-content">
@@ -135,6 +136,7 @@
             </div>
         </div>
         <br>
+    -->
 
     <!--  PROXY LOCATION FILTER  -->
         <div class="multipleSelection">
@@ -149,87 +151,84 @@
         <br>
 
     <!--  SEASONALITY FILTER  -->
-    <div class="multipleSelection">
-      <div class="selectBox" 
-          onclick="showCheckboxes('1')">
-          <select>
-              <option>Seasonality</option>
-          </select>
-          <div class="overSelect"></div>
-      </div>
-      <div id="checkBoxes">
-        <label for="first">
-            <input type="checkbox" class="seasonCheck" id="first" value="January-December"/>
-            January-December
-        </label>
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes('1')">
+                <select>
+                    <option>Seasonality</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkBoxes">
+                <label for="first">
+                    <input type="checkbox" class="seasonCheck" id="first" value="January-December"/>
+                    January-December
+                </label>
 
-        <label for="second">
-            <input type="checkbox" class="seasonCheck" id="second" value="April-September"/>
-            April-September
-        </label>
-        <label for="third">
-            <input type="checkbox" class="seasonCheck" id="third" value="October-March"/>
-            October-March
-        </label>
-        <label for="fourth">
-            <input type="checkbox" class="seasonCheck" id="fourth" value="December-February"/>
-            December-February
-        </label>
-        <label for="fifth">
-          <input type="checkbox" class="seasonCheck" id="fifth" value="September-November"/>
-          September-November
-        </label>
-        <label for="sixth">
-          <input type="checkbox" class="seasonCheck" id="sixth" value="July-August"/>
-          July-August
-        </label>
-        <label for="seventh">
-          <input type="checkbox" class="seasonCheck" id="seventh" value="March-May"/>
-          March-May
-        </label>
-      </div>
-    </div>
-    <br>
+                <label for="second">
+                    <input type="checkbox" class="seasonCheck" id="second" value="April-September"/>
+                    April-September
+                </label>
+                <label for="third">
+                    <input type="checkbox" class="seasonCheck" id="third" value="October-March"/>
+                    October-March
+                </label>
+                <label for="fourth">
+                    <input type="checkbox" class="seasonCheck" id="fourth" value="December-February"/>
+                    December-February
+                </label>
+                <label for="fifth">
+                    <input type="checkbox" class="seasonCheck" id="fifth" value="September-November"/>
+                    September-November
+                </label>
+                <label for="sixth">
+                    <input type="checkbox" class="seasonCheck" id="sixth" value="July-August"/>
+                    July-August
+                </label>
+                <label for="seventh">
+                    <input type="checkbox" class="seasonCheck" id="seventh" value="March-May"/>
+                    March-May
+                </label>
+            </div>
+        </div>
+        <br>
 
         <!--  TIMESCALE FILTER  -->
-    <div class="multipleSelection">
-      <div class="selectBox" 
-          onclick="showCheckboxes('2')">
-          <select>
-              <option>Timescale</option>
-          </select>
-          <div class="overSelect"></div>
-      </div>
-      <div id="checkBoxes2">
-        <label for="first">
-            <input type="checkbox" value="5 years" class="timeCheck" id="first" />
-            5 years
-        </label>
-          
-        <label for="second">
-            <input type="checkbox" value="10 years" class="timeCheck" id="second" />
-            10 years
-        </label>
-        <label for="third">
-            <input type="checkbox" value="20 years" class="timeCheck" id="third" />
-            20 years
-        </label>
-        <label for="fourth">
-            <input type="checkbox" value="50 years" class="timeCheck" id="fourth" />
-            50 years
-        </label>
-      </div>
-  <br>
-      <input type="submit" value="Download">
-  </form>
-  <script src="/dist/script.js"></script>
-  </div>
-  <div>
-    <p>Each proxy location has a maxiumum of 28 different
-      figures available to download, dependent on the 
-      season and timescale selected. <br> <br> <br> <br>
-    </p>
-  </div>
+        <div class="multipleSelection">
+            <div class="selectBox" onclick="showCheckboxes('2')">
+                <select>
+                    <option>Timescale</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <div id="checkBoxes2">
+                <label for="first">
+                    <input type="checkbox" value="5 years" class="timeCheck" id="first" />
+                    5 years
+                </label>
+                <label for="second">
+                    <input type="checkbox" value="10 years" class="timeCheck" id="second" />
+                    10 years
+                </label>
+                <label for="third">
+                    <input type="checkbox" value="20 years" class="timeCheck" id="third" />
+                    20 years
+                </label>
+                <label for="fourth">
+                    <input type="checkbox" value="50 years" class="timeCheck" id="fourth" />
+                    50 years
+                </label>
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Download">
+    </form>
+    <script src="/dist/script.js"></script>
+    <div>
+        <p>Each proxy location has a maxiumum of 28 different
+        figures available to download, dependent on the 
+        season and timescale selected. <br> <br> <br> <br>
+        </p>
+    </div>
 
     <!-- FOR FEATHERLIGHT -->
     <script src="//code.jquery.com/jquery-latest.js"></script>
