@@ -33,3 +33,6 @@
 #checkBoxes label:hover, #checkBoxes2 label:hover, #checkBoxesLoc label:hover {
     background-color: #4f615e;
 }
+#mapid {
+    height: 450px;
+}

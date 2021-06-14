@@ -227,8 +227,6 @@ function ajaxgo() {
   }
 
   console.log(locations);
-  //console.log(seasons);
-  //console.log(times);
 
   //AJAX
   var xhr = new XMLHttpRequest();
@@ -248,6 +246,7 @@ function ajaxgo() {
   //prevent html form submit
   return false;
 }
+
 function formDownload() {
   //use siteid1 to navigate folder structure
   var http = new XMLHttpRequest();
