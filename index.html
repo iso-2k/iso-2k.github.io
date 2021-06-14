@@ -107,20 +107,18 @@
         <div class="sidebar">
           <div class="chart-wrapper">
             <div class="chart-title">
-              Sidebar
+                Filters
             </div>
             <div class="chart-stage">
-                <form id="dload" method="POST" onsubmit="return ajaxgo()">
-                    <!--
-                    <div class="dropdown">
+                <form id="dload" method="POST" onsubmit="return ajaxgo()"> 
+  <!--                  <div class="dropdown">
                         <button  class="dropbtn">Proxy Location</button>
                         <div id="location" class="dropdown-content">
                             <input type="text" placeholder="Search Locations.." id="myInput" onkeyup="filterFunction()">
                         </div>
-                    </div>
+                    </div> -->
                     <br>
-                -->
-            
+      
                 <!--  PROXY LOCATION FILTER  -->
                     <div class="multipleSelection">
                         <div class="selectBox" onclick="showCheckboxes('l')">
@@ -207,7 +205,7 @@
                 </form>
             </div>
             <div class="chart-notes">
-              Notes about sidebar
+                Notes about sidebar
             </div>
           </div>
         </div>
@@ -224,32 +222,34 @@
                 </div>
             </div>
             <div class="chart-notes">
-              Notes about the map container
+                Each proxy location has a maxiumum of 28 different
+                figures available to download, dependent on the 
+                season and timescale selected.
             </div>
           </div>
         </div>
     </div>
   
-    <!--  MAIN DASHBOARD HTML  -->
+    <!--  MAIN DASHBOARD HTML  
     <div class="dashboard-page-wrapper">
         <p>Iso2k</p>
-        <div id="dashboard-container">
-            <!--  THIS GOES INSIDE DIV ABOVE, HIDING TO SEE FLEXDASHBOARD FUNCTIONALITY class="mobile-layout vertical-layout-scroll dashboard-column-orientation"-->
+        <div id="dashboard-container"> -->
+            <!--  THIS GOES INSIDE DIV ABOVE, HIDING TO SEE FLEXDASHBOARD FUNCTIONALITY class="mobile-layout vertical-layout-scroll dashboard-column-orientation"
             <div >
-                <div class="chart-wrapper"><!-- id="sitemap" class="section level3 chart-wrapper chart-wrapper-flex" style="height:492px; flex: 492 492 492px;"-->
+                <div class="chart-wrapper"> id="sitemap" class="section level3 chart-wrapper chart-wrapper-flex" style="height:492px; flex: 492 492 492px;"
                     <div class="chart-title">Proxy Locations</div>
                     <div class="chart-stage">
                         <div class="chart-shim">
-                            <div class="knitr-options" data-fig-width="576" data-fig-height="460"> </div><!--data-fig-width="576" data-fig-height="460"-->
-                            <div id="mapid"  tabindex="0"></div>
-                <!--style="width: 576px; height: 460.8px; position: relative;" this goes in mapid div tag-->
+                            <div class="knitr-options" data-fig-width="576" data-fig-height="460"> </div> data-fig-width="576" data-fig-height="460"-->
+                            <!-- <div id="mapid"  tabindex="0"></div> -->
+                <!--style="width: 576px; height: 460.8px; position: relative;" this goes in mapid div tag
                         </div>
                     </div>
-                </div><!-- class="section level2 dashboard-column" style="flex: 576 576 0px;"-->
-                <div class="chart-wrapper chart-wrapper-flex"><!--class="section level3 chart-wrapper"-->
+                </div>--><!-- class="section level2 dashboard-column" style="flex: 576 576 0px;"
+                <div class="chart-wrapper chart-wrapper-flex"><!--class="section level3 chart-wrapper"
                     <div class="chart-title">Filters</div>
                     <div class="chart-stage chart-stage-flex">
-                        <form id="dload" method="POST" onsubmit="return ajaxgo()">
+                        <form id="dload" method="POST" onsubmit="return ajaxgo()">-->
                             <!--
                             <div class="dropdown">
                                 <button  class="dropbtn">Proxy Location</button>
@@ -260,7 +260,7 @@
                             <br>
                         -->
                     
-                        <!--  PROXY LOCATION FILTER  -->
+                        <!--  PROXY LOCATION FILTER  
                             <div class="multipleSelection">
                                 <div class="selectBox" onclick="showCheckboxes('l')">
                                     <select>
@@ -271,8 +271,8 @@
                                 <div id="checkBoxesLoc"> </div>
                             </div>
                             <br>
-                    
-                        <!--  SEASONALITY FILTER  -->
+                    -->
+                        <!--  SEASONALITY FILTER  
                             <div class="multipleSelection">
                                 <div class="selectBox" onclick="showCheckboxes('1')">
                                     <select>
@@ -313,8 +313,8 @@
                                 </div>
                             </div>
                             <br>
-                    
-                            <!--  TIMESCALE FILTER  -->
+                        -->
+                            <!--  TIMESCALE FILTER  
                             <div class="multipleSelection">
                                 <div class="selectBox" onclick="showCheckboxes('2')">
                                     <select>
@@ -350,7 +350,7 @@
         </div>
     </div>
 
-
+-->
 
     <div id="flexdashboard-source-code">
         <p>Placeholder for source code </p>
@@ -374,12 +374,7 @@
 
     
     <script src="/app/js/script.js"></script>
-    <div>
-        <p>Each proxy location has a maxiumum of 28 different
-        figures available to download, dependent on the 
-        season and timescale selected. <br> <br> <br> <br>
-        </p>
-    </div>
+
 
     <!-- FOR FEATHERLIGHT -->
     <script src="//code.jquery.com/jquery-latest.js"></script>
