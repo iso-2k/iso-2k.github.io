@@ -55,7 +55,7 @@ body hr {
 
 
 
-
+/*
 .navbar-inverse .navbar-nav > li > a, .navbar .navbar-brand {
     text-decoration: none;
 }
@@ -77,6 +77,7 @@ body hr {
     max-height: 500px;
     overflow: auto;
 }
+*/
 .chart-wrapper, .nav-tabs-custom, .sbframe-commentary {
     background: #fff;
     border: 1px solid #e2e2e2;
@@ -618,6 +619,7 @@ table.dataTable thead th {
 .mobile-figure {
     display: none;
 }
+/*
 .navbar-inverse {
     background-color: #f8f8f8;
     border-color: #e7e7e7;
@@ -692,6 +694,7 @@ table.dataTable thead th {
 .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
     color: #333;
 }
+*/
 .navbar-inverse .btn-link[disabled]:hover, fieldset[disabled] .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:focus {
     color: #ccc;
 }
@@ -959,6 +962,7 @@ div {
 .chart-stage .knitr-options {
     display: none;
 }
+/*
 .navbar-inverse {
     background-color: #f8f8f8;
     border-color: #e7e7e7;
@@ -979,6 +983,7 @@ div {
     margin-bottom: 20px;
     border: 1px solid transparent;
 }
+*/
 .btn-group-vertical > .btn-group:after, .btn-group-vertical > .btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
     display: table;
     content: " ";
@@ -1000,6 +1005,7 @@ div {
     margin-right: -15px;
     margin-left: -15px;
 }
+/*
 .navbar-inverse .navbar-toggle {
     border-color: #ddd;
 }
@@ -1015,6 +1021,7 @@ div {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+*/
 button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
@@ -1035,6 +1042,7 @@ button, input, optgroup, select, textarea {
     font: inherit;
     color: inherit;
 }
+/*
 .navbar-inverse .navbar-toggle .icon-bar {
     background-color: #888;
 }
@@ -1100,6 +1108,7 @@ button, input, optgroup, select, textarea {
     margin-bottom: 0;
     list-style: none;
 }
+*/
 ol, ul {
     margin-top: 0;
     margin-bottom: 10px;
