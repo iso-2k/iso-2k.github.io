@@ -40,3 +40,40 @@ body {
 #button-link a {
     color: #f2f2f2;
 }
+
+
+/*filters*/
+.show {
+    display: block;
+}
+.multipleSelection {
+    width: 300px;
+    background-color: white;
+}
+.selectBox {
+    position: relative;
+    display: inline;
+}
+.selectBox select {
+    width: 100%;
+    font-weight: bold;
+}
+.overSelect {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#checkBoxes, #checkBoxes2, #checkBoxesLoc {
+    display: none;
+    border: 1px #8df5e4 solid;
+    max-height: 400px;
+    overflow: scroll;
+}
+#checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
+    display: block;
+}
+#checkBoxes label:hover, #checkBoxes2 label:hover, #checkBoxesLoc label:hover {
+    background-color: #4f615e;
+}
