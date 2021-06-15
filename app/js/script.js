@@ -265,13 +265,23 @@ function formDownload() {
 
 function downloadSubmit() {
   //get checked values
-//  locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
-  locationParams = document.querySelectorAll('#checkBoxesLoc:checked');
+  //locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
+  locationParams = document.querySelectorAll('#checkBoxesLoc:checked'); //nodelist
   seasonParams = document.querySelectorAll('#checkBoxes:checked');
   timescaleParams = document.querySelectorAll('#checkBoxes2:checked').value;
+  if (locationParams == null || seasonParams == null || timescaleParams == null) {
+    //missing a filter
+    alert('Please select at least one checkbox for each filter.');
+    return true;
+  }
   console.log(locationParams);
   console.log(seasonParams);
   console.log(timescaleParams);
+  for (var i = 0; i < locationParams.length; i++) {
+    //do this for each location
+    var locationFileArray = [];
+
+  }
 
   //test download
   link = document.createElement("a"); //create 'a' element
