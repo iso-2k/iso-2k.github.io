@@ -1,10 +1,9 @@
 const testString = 'This is a test!';
 console.log(testString);
 
-
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
 //0, 0 is lat long coord for center of the world
-var myBounds = new L.LatLngBounds(new L.LatLng(-120,-200), new L.LatLng(120,200));
+//var myBounds = new L.LatLngBounds(new L.LatLng(-120,-200), new L.LatLng(120,200));
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
@@ -35,10 +34,8 @@ function checkMarker(e) {
     var temp2 = tempSplit[1].split('<');
     var clickID = temp2[0];
     //get element with id that is same as clickID
-    //this is the problem since now there are (+)1 elements w/ an ID=clickID (value and input tags)
     //we want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
     var mapElem = document.querySelectorAll('[id=' + clickID + ']')[1];
-    //console.log("Testing output of checkMarker() function: " + mapElem);
     //check and uncheck on click
     mapElem.checked = !mapElem.checked;
 }
@@ -147,35 +144,34 @@ function updateBoxes(markers) {
   for (var i=0; i < markers.length; i++) {
     //console.log(markers[i]);
     //if (markers[i] = a marker) DO THIS
-    //if (markers[i] instanceof L.marker) {
-      var popup = markers[i].getPopup();
-      if (popup != null) {
+    var popup = markers[i].getPopup();
+    if (popup != null) {
+      var content = popup.getContent();
+      var tempSplit = content.split('Site ID: ');
+      var temp2 = tempSplit[1].split('<');
+      var clickID = temp2[0];
+      //elemens is an array (querySelectorAll returns multiple if present)
+      var elemens = document.querySelectorAll('[id=' + clickID + ']');
+      for (var j = 0; j < elemens.length; j++) {
+        elemens[j].style.display = 'block';
+      }
+    }
+    else { //markers[i] is a cluster  
+      var childMarkers = markers[i].getAllChildMarkers();
+      for (var l=0; l < childMarkers.length; l++) {
+        var popup = childMarkers[l].getPopup();
         var content = popup.getContent();
         var tempSplit = content.split('Site ID: ');
         var temp2 = tempSplit[1].split('<');
         var clickID = temp2[0];
         //elemens is an array (querySelectorAll returns multiple if present)
         var elemens = document.querySelectorAll('[id=' + clickID + ']');
-        for (var j = 0; j < elemens.length; j++) {
-          elemens[j].style.display = 'block';
+        for (var k = 0; k < elemens.length; k++) {
+          elemens[k].style.display = 'block';
         }
       }
-      else { //markers[i] is a cluster  
-        var childMarkers = markers[i].getAllChildMarkers();
-        for (var l=0; l < childMarkers.length; l++) {
-          var popup = childMarkers[l].getPopup();
-          var content = popup.getContent();
-          var tempSplit = content.split('Site ID: ');
-          var temp2 = tempSplit[1].split('<');
-          var clickID = temp2[0];
-          //elemens is an array (querySelectorAll returns multiple if present)
-          var elemens = document.querySelectorAll('[id=' + clickID + ']');
-          for (var k = 0; k < elemens.length; k++) {
-            elemens[k].style.display = 'block';
-          }
-        }
 
-      }
+    }
   }
 } 
 
@@ -198,6 +194,7 @@ function logVisibleClusters() {
   //clustArray holds the right number of elements on the screen (ie, 3 markers and a cluster of 5 reads as 4 )
   updateBoxes(clustArray);
 }
+
 mymap.on('moveend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
