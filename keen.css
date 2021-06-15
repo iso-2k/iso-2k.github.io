@@ -16,18 +16,14 @@
   
     .grid-hero-sidebar {
       grid-template-columns: repeat(4, 1fr);
-      /*grid-template-rows: repeat(3, auto);*/
       grid-template-rows: repeat(1, auto);
     }
       
     .grid-hero-sidebar .hero {
       grid-column: 1 / 4;
-      /*grid-row: 1 / span 1;*/
     }
-  /* .grid-hero-sidebar .sidebar grid-column value was 1, other was -1*/
     .grid-hero-sidebar .sidebar {
       grid-column: 4 / span 1;
-      /*grid-row: 1 / -1;*/
     }
   }
   
@@ -78,7 +74,7 @@
   .chart-wrapper {
     background: #fff;
     border: 1px solid #e2e2e2;
-    border-radius: 3px;
+    border-radius: 2px;
     margin-bottom: 10px;
   }
   
