@@ -267,12 +267,11 @@ function downloadSubmit() {
   //get checked values
 //  locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
   locationParams = document.querySelectorAll('#checkBoxesLoc:checked');
-  seasonParams = document.querySelectorAll('#checkBoxes:checked').value;
+  seasonParams = document.querySelectorAll('#checkBoxes:checked');
   timescaleParams = document.querySelectorAll('#checkBoxes2:checked').value;
   console.log(locationParams);
   console.log(seasonParams);
   console.log(timescaleParams);
-  console.log("is this triggered");
   
   //reset form values
   document.getElementById('dload').reset();
