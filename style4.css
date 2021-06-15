@@ -24,8 +24,12 @@
 #checkBoxes, #checkBoxes2, #checkBoxesLoc {
     display: none;
     border: 1px black solid;
-    max-height: 400px;
+    max-height: 350px;
     overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    background-color: #f1f1f1;
+    position: absolute;
 }
 #checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
     display: block;
@@ -40,13 +44,4 @@
 h4 { /* for marker popups*/
     text-align: center;
 }
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
+#checkBoxes 
