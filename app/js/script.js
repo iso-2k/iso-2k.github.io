@@ -3,7 +3,7 @@ console.log(testString);
 
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
 //0, 0 is lat long coord for center of the world
-var myBounds = new L.LatLngBounds(new L.LatLng(-89.98155760646617, -180), new L.LatLng(89.99346179538875, 180));
+var myBounds = new L.LatLngBounds(new L.LatLng(-90, -200), new L.LatLng(90, 200));
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
