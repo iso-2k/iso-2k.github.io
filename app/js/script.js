@@ -256,7 +256,6 @@ function formDownload() {
   http.open("POST", "formHandler.py", true);
   http.setRequestHeader("Content-type", "application");
   var params = "search=" + document.querySelectorAll('#checkBoxes:checked').value;
-  console.log(params);
   http.send(params);
   http.onload = function() {
     alert(http.responseText);
@@ -268,7 +267,7 @@ function downloadSubmit() {
   //locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
   locationParams = document.querySelectorAll('#checkBoxesLoc:checked'); //nodelist
   seasonParams = document.querySelectorAll('#checkBoxes:checked');
-  timescaleParams = document.querySelectorAll('#checkBoxes2:checked').value;
+  timescaleParams = document.querySelectorAll('#checkBoxes2:checked');
   if (locationParams == null || seasonParams == null || timescaleParams == null) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
