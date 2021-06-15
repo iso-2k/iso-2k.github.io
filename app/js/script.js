@@ -272,7 +272,7 @@ function downloadSubmit() {
   if (locationParams == null || seasonParams == null || timescaleParams == null) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
-    return true;
+    return false;
   }
   console.log(locationParams);
   console.log(seasonParams);
@@ -280,7 +280,12 @@ function downloadSubmit() {
   for (var i = 0; i < locationParams.length; i++) {
     //do this for each location
     var locationFileArray = [];
+    for (var j = 0; j < seasonParams.length; j++) {
+      //do this for each season
+      for (var k = 0; k < timescaleParams.length; k++) {
 
+      }
+    }
   }
 
   //test download
@@ -291,7 +296,7 @@ function downloadSubmit() {
   
   //reset form values
   document.getElementById('dload').reset();
-  return false;
+  return true;
 }
 
 $(document).ready(function () {
