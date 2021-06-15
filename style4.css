@@ -5,8 +5,8 @@
 .multipleSelection {
     width: 300px;
     background-color: white;
-    /*position: relative;
-    display: inline-block;*/
+    position: relative;
+    display: inline-block;
 }
 .selectBox {
     position: relative;
@@ -41,8 +41,8 @@
 }
 #mapid {
     height: 460px;
-    /*width: 576px;*/
 }
-/*h4 { /* for marker popups
+h4 { /* for marker popups*/
     text-align: center;
-}*/
+    font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
