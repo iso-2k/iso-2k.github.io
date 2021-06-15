@@ -263,6 +263,13 @@ function formDownload() {
   }
 }
 
+function downloadSubmit() {
+  //get checked values
+  
+  //reset form values
+  document.getElementById('dload').reset();
+}
+
 $(document).ready(function () {
   // add bootstrap table styles to pandoc tables
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
