@@ -25,7 +25,7 @@
     display: none;
     border: 1px #8df5e4 solid;
     max-height: 400px;
-    overflow: scroll;
+    overflow: auto;
 }
 #checkBoxes, #checkBoxes2 {
     overflow-x: hidden;
