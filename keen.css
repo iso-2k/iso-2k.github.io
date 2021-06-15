@@ -17,7 +17,7 @@
     .grid-hero-sidebar {
       grid-template-columns: repeat(4, 1fr);
       /*grid-template-rows: repeat(3, auto);*/
-      grid-template-rows: repeat(2, auto);
+      grid-template-rows: repeat(1, auto);
     }
   /* .grid-hero-sidebar .sidebar grid-column value was 1, other was -1*/
     .grid-hero-sidebar .sidebar {
@@ -26,7 +26,7 @@
     }
   
     .grid-hero-sidebar .hero {
-      grid-column: 1 / -1;
+      grid-column: 1 / 3;
       grid-row: 1 / span 1;
     }
   }
