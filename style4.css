@@ -27,9 +27,6 @@
     max-height: 400px;
     overflow: auto;
 }
-#checkBoxes, #checkBoxes2 {
-    overflow-x: hidden;
-}
 #checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
     display: block;
 }
