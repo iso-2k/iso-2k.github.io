@@ -265,7 +265,8 @@ function formDownload() {
 
 function downloadSubmit() {
   //get checked values
-  locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
+//  locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
+  locationParams = document.querySelectorAll('#checkBoxesLoc:checked');
   seasonParams = document.querySelectorAll('#checkBoxes:checked').value;
   timescaleParams = document.querySelectorAll('#checkBoxes2:checked').value;
   console.log(locationParams);
