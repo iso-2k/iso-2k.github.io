@@ -272,6 +272,12 @@ function downloadSubmit() {
   console.log(locationParams);
   console.log(seasonParams);
   console.log(timescaleParams);
+
+  //test download
+  link = document.createElement("a"); //create 'a' element
+  link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
+  link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
+  link.click();
   
   //reset form values
   document.getElementById('dload').reset();
