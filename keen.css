@@ -111,8 +111,8 @@
   }
   
   .chart-container .chart {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     flex: 1;
     min-width: 0;
   }
@@ -146,8 +146,8 @@
   }
   
   .container {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-left: auto;
     margin-right: auto;
   }
