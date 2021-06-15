@@ -5,8 +5,8 @@
 .multipleSelection {
     width: 300px;
     background-color: white;
-    position: relative;
-    display: inline-block;
+    /*position: relative;
+    display: inline-block;*/
 }
 .selectBox {
     position: relative;
