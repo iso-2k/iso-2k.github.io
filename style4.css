@@ -37,3 +37,6 @@
     height: 460px;
     /*width: 576px;*/
 }
+h4 { /* for marker popups*/
+    text-align: center;
+}
