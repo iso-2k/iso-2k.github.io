@@ -27,6 +27,9 @@
     max-height: 400px;
     overflow: scroll;
 }
+#checkBoxes, #checkBoxes2 {
+    overflow-x: hidden;
+}
 #checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
     display: block;
 }
@@ -37,6 +40,6 @@
     height: 460px;
     /*width: 576px;*/
 }
-a.navbar-brand {
+a .navbar-brand {
     color: white;
 }
