@@ -60,7 +60,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       }
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
-      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);
+      }).bindPopup("<h4 \"style=text-align:center;font:inherit;\"><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
       //marker.addTo(mymap); use this for map w/o clusters
