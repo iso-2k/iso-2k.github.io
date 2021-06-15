@@ -33,10 +33,10 @@
 #checkBoxes label:hover, #checkBoxes2 label:hover, #checkBoxesLoc label:hover {
     background-color: #4f615e;
 }
-#mapid {
+/*#mapid {
     height: 460px;
-    /*width: 576px;*/
-}
+    /*width: 576px;
+}*/
 a .navbar-brand {
     color: white;
 }
