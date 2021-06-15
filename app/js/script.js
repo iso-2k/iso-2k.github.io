@@ -7,8 +7,7 @@ const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.T
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
-var select1 = document.getElementById("checkBoxesLoc");
-
+//initialize map
 var mymap = new L.map('mapid', {
   center: [30,0],
   zoom: 1.4,
@@ -16,6 +15,7 @@ var mymap = new L.map('mapid', {
   //maxBounds: myBounds
 });
 
+//add mapbox layer
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
@@ -25,6 +25,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: apiKey
 }).addTo(mymap);
 
+//onclick function for marker, ticks off checkbox
 function checkMarker(e) {
     //get popup and its content
     var popup = e.target.getPopup();
@@ -39,6 +40,8 @@ function checkMarker(e) {
     //check and uncheck on click
     mapElem.checked = !mapElem.checked;
 }
+
+var select1 = document.getElementById("checkBoxesLoc");
 
 //path to csv of iso2k sites
 $.get('../.././iso2kp2.csv', function(csvString) {
@@ -88,6 +91,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
   //  document.getElementById("location").classList.toggle("show");
 //}
 
+//can be used to implement a search feature on a dropdown 
 function filterFunction() {
   var input, filter, ul, li, a, i;
   input = document.getElementById("myInput");
@@ -135,6 +139,7 @@ function showCheckboxes(num) {
     show = true;
   }
 }
+
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
   //display hides and collapses (visibility just hides)
