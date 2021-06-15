@@ -83,12 +83,12 @@
     color: #666;
     font-size: 14px;
     font-weight: 200;
-    padding: 7px 10px 4px;
+    padding: 5px 8px 3px;
   }
   
   .chart-wrapper .chart-stage {
     overflow: hidden;
-    padding: 5px 10px;
+    padding: 3px 7px;
     position: relative;
   }
   
@@ -97,7 +97,7 @@
     border-top: 1px solid #e2e2e2;
     color: #808080;
     font-size: 12px;
-    padding: 8px 10px 5px;
+    padding: 6px 8px 3px;
   }
   
   .keen-dashboard .chart-wrapper .keen-dataviz,
@@ -111,8 +111,8 @@
   }
   
   .chart-container .chart {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
     flex: 1;
     min-width: 0;
   }
@@ -146,8 +146,8 @@
   }
   
   .container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
     margin-left: auto;
     margin-right: auto;
   }
