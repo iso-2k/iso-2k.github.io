@@ -11,8 +11,8 @@ var clusterOff = new L.featureGroup();
 var mymap = new L.map('mapid', {
   center: [30,0],
   zoom: 1.4,
-  zoomSnap: 0.1,
-  maxBoundsViscosity: 0.8
+  zoomSnap: 0.1
+//  maxBoundsViscosity: 0.8
   //maxBounds: myBounds
 });
 
