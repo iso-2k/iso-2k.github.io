@@ -276,6 +276,7 @@ function downloadSubmit() {
   
   //reset form values
   document.getElementById('dload').reset();
+  return false;
 }
 
 $(document).ready(function () {
