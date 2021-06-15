@@ -270,6 +270,9 @@ function downloadSubmit() {
   seasonParams = document.querySelectorAll('#checkBoxes:checked').value;
   timescaleParams = document.querySelectorAll('#checkBoxes2:checked').value;
   console.log(locationParams);
+  console.log(seasonParams);
+  console.log(timescaleParams);
+  console.log("is this triggered");
   
   //reset form values
   document.getElementById('dload').reset();
