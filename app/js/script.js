@@ -3,7 +3,7 @@ console.log(testString);
 
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
 //0, 0 is lat long coord for center of the world
-//var myBounds = new L.LatLngBounds(new L.LatLng(-120,-200), new L.LatLng(120,200));
+var myBounds = new L.LatLngBounds(new L.LatLng(-89.98155760646617, -180), new L.LatLng(89.99346179538875, 180));
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
@@ -11,9 +11,9 @@ var clusterOff = new L.featureGroup();
 var mymap = new L.map('mapid', {
   center: [30,0],
   zoom: 1.4,
-  zoomSnap: 0.1
-//  maxBoundsViscosity: 0.8
-  //maxBounds: myBounds
+  zoomSnap: 0.1,
+  maxBoundsViscosity: 0.8,
+  maxBounds: myBounds
 });
 
 //add mapbox layer
