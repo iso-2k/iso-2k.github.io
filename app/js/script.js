@@ -9,7 +9,7 @@ var clusterOff = new L.featureGroup();
 
 //initialize map
 var mymap = new L.map('mapid', {
-  //center: [30,0],
+  center: [30,0],
   zoom: 1.4,
   zoomSnap: 0.1,
   maxBoundsViscosity: 0.8,
