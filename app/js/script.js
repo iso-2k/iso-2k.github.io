@@ -111,6 +111,7 @@ function filterFunction() {
 
 //js for all 3 dropdowns
 var show = true;
+/*
 function showCheckboxes(num) {
   var checkboxes = document.getElementById("checkBoxes");
   var checkboxes2 = document.getElementById("checkBoxes2");
@@ -146,6 +147,43 @@ function showCheckboxes(num) {
     }
     show = true;
   }
+}
+*/
+function showCheckboxes(num) {
+  var checkboxes = document.getElementById("checkBoxes");
+  var checkboxes2 = document.getElementById("checkBoxes2");
+  var checkboxesLoc = document.getElementById("checkBoxesLoc");
+
+  if (num == 1){
+    if (checkboxes.style.display == "block") { //if showing, change to not showing
+      checkboxes.style.display = "none";
+    }
+    else {
+      checkboxes.style.display = "block";
+    }
+    checkboxes2.style.display = "none";
+    checkboxesLoc.style.display = "none";
+  }
+  else if (num == 'l') {
+    if (checkboxesLoc.style.display == "block") { //if showing, change to not showing
+      checkboxesLoc.style.display = "none";
+    }
+    else {
+      checkboxesLoc.style.display = "block";
+    }
+    checkboxes2.style.display = "none";
+    checkboxes.style.display = "none";
+  }
+  else {
+    if (checkboxes2.style.display == "block") { //if showing, change to not showing
+      checkboxes2.style.display = "none";
+    }
+    else {
+      checkboxes2.style.display = "block";
+    }
+    checkboxes.style.display = "none";
+    checkboxesLoc.style.display = "none";
+  } 
 }
 
 //responsive clusters w/ zoom and move events
