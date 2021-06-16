@@ -274,11 +274,12 @@ function downloadSubmit() {
     return false;
   }
   else {
-    console.log(locationParams);
-    console.log(seasonParams);
-    console.log(timescaleParams);
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
+      var path = ""
+      var siteID = locationParams[i];
+      path = path.concat(siteID + "/");
+      console.log(path);
       var locationFileArray = [];
       for (var j = 0; j < seasonParams.length; j++) {
         //do this for each season
