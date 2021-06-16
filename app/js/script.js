@@ -281,10 +281,11 @@ function downloadSubmit() {
     return true;
   }
   else {
+    console.log("else condition triggered");
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       var path = ""
-      var siteID = locationParams[i];
+      var siteID = locationParams[i].value; //this might need to be textContent or something else
       path = path.concat(siteID + "/");
       console.log(path);
       var locationFileArray = [];
