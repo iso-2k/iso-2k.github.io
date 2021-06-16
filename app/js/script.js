@@ -240,7 +240,7 @@ function downloadSubmit() {
     //now, loop through all locations and get all files with string concat combos in filename
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
-      var path = ""
+      var path = "figures/"
       var siteID = locationParams[i].value;
       path = path.concat(siteID + "/");
       console.log(path);
