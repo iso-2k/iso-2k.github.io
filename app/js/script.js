@@ -9,7 +9,7 @@ var clusterOff = new L.featureGroup();
 
 //initialize map
 var mymap = new L.map('mapid', {
-  center: [30,0],
+  //center: [30,0],
   zoom: 1.4,
   zoomSnap: 0.1,
   maxBoundsViscosity: 0.8,
@@ -110,45 +110,6 @@ function filterFunction() {
 }
 
 //js for all 3 dropdowns
-var show = true;
-/*
-function showCheckboxes(num) {
-  var checkboxes = document.getElementById("checkBoxes");
-  var checkboxes2 = document.getElementById("checkBoxes2");
-  var checkboxesLoc = document.getElementById("checkBoxesLoc");
-
-  if (show) {
-    if (num == 1){
-      checkboxes.style.display = "block";
-      checkboxes2.style.display = "none";
-      checkboxesLoc.style.display = "none";
-    }
-    else if (num == 'l') {
-      checkboxesLoc.style.display = "block";
-      checkboxes2.style.display = "none";
-      checkboxes.style.display = "none";
-
-    }
-    else {
-      checkboxes2.style.display = "block";
-      checkboxes.style.display = "none";
-      checkboxesLoc.style.display = "none";
-    } 
-    show = false;
-  } else {
-    if (num == 1) {
-      checkboxes.style.display = "none";
-    }
-    else if (num == 'l') {
-      checkboxesLoc.style.display = "none";
-    }
-    else {
-      checkboxes2.style.display = "none";
-    }
-    show = true;
-  }
-}
-*/
 function showCheckboxes(num) {
   var checkboxes = document.getElementById("checkBoxes");
   var checkboxes2 = document.getElementById("checkBoxes2");
@@ -254,59 +215,6 @@ mymap.on('zoomend', function(e) {
 });
 
 //JS FOR FORM SUBMISSION
-
-function ajaxgo() {
-  var data = new FormData();
-  //data.append("locations", document.getElementById().value);
-  //data.append("seasons", document.getElementById().value);
-  //data.append("times", document.getElementById('checkBoxes2').getElementsByTagName('input'));
-  var checkedTimes = document.querySelectorAll('.timeCheck:checked');
-  var checkedSeasons = document.querySelectorAll('.seasonCheck:checked');
-  var checkedLocations = document.querySelectorAll('.locCheck:checked');
-  var locations, seasons, times = [];
-  for (var i = 0; i < checkedLocations.length; i++) {
-    locations.append(checkedLocations[i].value);
-  }
-  for (var j = 0; j < checkedSeasons.length; j++) {
-    seasons.append(checkedSeasons[j].value);
-  }
-  for (var k = 0; k < checkedTimes.length; k++) {
-    times.append(checkedTimes[k].value);
-  }
-
-  console.log(locations);
-
-  //AJAX
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "../.././dummy.php");
-  xhr.onload = function() {
-    console.log("This.response: " + this.response);
-    if (this.response == "OK") {
-      document.getElementById('dload').reset();
-      alert("ok");
-    }
-    else {
-      //document.getElementById('dload').reset();
-      alert('something happened here');
-    }
-  }
-  xhr.send(data);
-  //prevent html form submit
-  return false;
-}
-
-function formDownload() {
-  //use siteid1 to navigate folder structure
-  var http = new XMLHttpRequest();
-  http.open("POST", "formHandler.py", true);
-  http.setRequestHeader("Content-type", "application");
-  var params = "search=" + document.querySelectorAll('#checkBoxes:checked').value;
-  http.send(params);
-  http.onload = function() {
-    alert(http.responseText);
-  }
-}
-
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
@@ -321,22 +229,18 @@ function downloadSubmit() {
   }
   else {
     console.log("else condition triggered");
-    console.log(locationParams);
-    console.log(seasonParams);
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       var path = ""
-      var siteID = locationParams[i].value; //this might need to be textContent or something else
+      var siteID = locationParams[i].value;
       path = path.concat(siteID + "/");
       console.log(path);
       var locationFileArray = [];
       for (var j = 0; j < seasonParams.length; j++) {
         //do this for each season
         var seasonality = seasonParams[j].value;
-        console.log(seasonality);
         for (var k = 0; k < timescaleParams.length; k++) {
           var timeScale = timescaleParams[k].value;
-          console.log(timeScale);
           var searchSubString = seasonality.concat(timeScale);
           console.log("value for search substring: " + searchSubString);
         }
