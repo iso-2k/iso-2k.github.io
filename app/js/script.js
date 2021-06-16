@@ -231,22 +231,24 @@ function downloadSubmit() {
     console.log("else condition triggered");
     //first, get array of all season + time combos
     var concatCombos = [];
+    var seasonality, searchSubString, timeScale;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
-      var seasonality = seasonParams[j].value;
+      seasonality = seasonParams[j].value;
       for (var k = 0; k < timescaleParams.length; k++) {
-        var timeScale = timescaleParams[k].value;
-        var searchSubString = seasonality.concat(timeScale);
+        timeScale = timescaleParams[k].value;
+        searchSubString = seasonality.concat(timeScale);
         concatCombos.push(searchSubString);
       }
     }
     console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
-    var markerLat, markerLng;
+    var markerLat, markerLng, path, siteID;
+    var locationFilepathArray = [];
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
-      var path = "/figures/"
-      var siteID = locationParams[i].value;
+      path = "/figures/"
+      siteID = locationParams[i].value;
       path = path.concat(siteID + "/site_dynamics_");
       //console.log(siteFiles);
 
@@ -254,10 +256,8 @@ function downloadSubmit() {
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
       console.log("Latitude: " + lat);
-      var locationFilepathArray = [];
       for (var b = 0; b < concatCombos.length; b++) {
-        locationFilepathArray.push(path.concat(concatCombos[b]));
-        
+        locationFilepathArray.push(path.concat(concatCombos[b]));  
       }
       console.log(locationFilepathArray);
     }
@@ -269,7 +269,7 @@ function downloadSubmit() {
     link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
     link.click();
     */
-    alert('this would normally be a download, just testing');
+    alert('2nd alert');
     
     //reset form values
     document.getElementById('dload').reset();
