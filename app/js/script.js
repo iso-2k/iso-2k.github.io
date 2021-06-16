@@ -165,7 +165,7 @@ function showCheckboxes(num) {
     checkboxesLoc.style.display = "none";
   }
   else if (num == 'l') {
-    if (checkboxesLoc.style.display == "block") { //if showing, change to not showing
+    if (checkboxesLoc.style.display == "block") { 
       checkboxesLoc.style.display = "none";
     }
     else {
@@ -175,7 +175,7 @@ function showCheckboxes(num) {
     checkboxes.style.display = "none";
   }
   else {
-    if (checkboxes2.style.display == "block") { //if showing, change to not showing
+    if (checkboxes2.style.display == "block") { 
       checkboxes2.style.display = "none";
     }
     else {
@@ -316,7 +316,7 @@ function downloadSubmit() {
   if (locationParams == null || seasonParams == null || timescaleParams == null) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
-    return true;
+    return false;
   }
   else {
     console.log("else condition triggered");
@@ -343,7 +343,7 @@ function downloadSubmit() {
     
     //reset form values
     document.getElementById('dload').reset();
-    return true;
+    return false;
   }
 
 }
