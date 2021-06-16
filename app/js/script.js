@@ -211,6 +211,7 @@ mymap.on('zoomend', function(e) {
 });
 
 //JS FOR FORM SUBMISSION
+var fs = require('fs');
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
@@ -240,11 +241,15 @@ function downloadSubmit() {
     //now, loop through all locations and get all files with string concat combos in filename
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
-      var path = "figures/"
+      var path = "/figures/"
       var siteID = locationParams[i].value;
       path = path.concat(siteID + "/");
-      console.log(path);
+      var siteFiles = fs.readdirSync(path);
+      console.log(siteFiles);
       var locationFileArray = [];
+      for (var b = 0; b < concatCombos.length; b++) {
+
+      }
     }
   
     //test download
