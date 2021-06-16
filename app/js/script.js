@@ -69,12 +69,12 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       var aLabel = document.createElement("label");
       var el1 = document.createElement("input");
       el1.type = "checkbox";
-      aLabel.htmlFor = row.SiteID1;
+      //aLabel.htmlFor = row.SiteID1;
       aLabel.className = 'locCheck';
       el1.className = 'locCheck';
-      aLabel.id = row.SiteID1;
-      el1.id = row.SiteID1;
-      el1.value = row.SiteID1;
+      [aLabel.id, el1.id, el1.value, aLabel.htmlFor] = [row.SiteID1, row.SiteID1, row.SiteID1, row.SiteID1];
+      //el1.id = row.SiteID1;
+      //el1.value = row.SiteID1;
       aLabel.appendChild(el1);
       select1.appendChild(aLabel);
       aLabel.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
@@ -154,8 +154,6 @@ function updateBoxes(markers) {
 
   //add some sort of if statement in for loop to check whether current index is a markerCluster or marker
   for (var i=0; i < markers.length; i++) {
-    //console.log(markers[i]);
-    //if (markers[i] = a marker) DO THIS
     var popup = markers[i].getPopup();
     if (popup != null) {
       var content = popup.getContent();
@@ -229,6 +227,19 @@ function downloadSubmit() {
   }
   else {
     console.log("else condition triggered");
+    //first, get array of all season + time combos
+    var concatCombos = [];
+    for (var j = 0; j < seasonParams.length; j++) {
+      //do this for each season
+      var seasonality = seasonParams[j].value;
+      for (var k = 0; k < timescaleParams.length; k++) {
+        var timeScale = timescaleParams[k].value;
+        var searchSubString = seasonality.concat(timeScale);
+        concatCombos.push(searchSubString);
+      }
+    }
+    console.log("here are the concatcombos: " + concatCombos);
+    //now, loop through all locations and get all files with string concat combos in filename
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       var path = ""
@@ -236,15 +247,6 @@ function downloadSubmit() {
       path = path.concat(siteID + "/");
       console.log(path);
       var locationFileArray = [];
-      for (var j = 0; j < seasonParams.length; j++) {
-        //do this for each season
-        var seasonality = seasonParams[j].value;
-        for (var k = 0; k < timescaleParams.length; k++) {
-          var timeScale = timescaleParams[k].value;
-          var searchSubString = seasonality.concat(timeScale);
-          console.log("value for search substring: " + searchSubString);
-        }
-      }
     }
   
     //test download
