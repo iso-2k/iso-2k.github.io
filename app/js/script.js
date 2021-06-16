@@ -263,10 +263,10 @@ function downloadSubmit() {
         path = path.concat(concatCombos[b]);
         path = path.concat(markerLat + "_" + markerLng);
         console.log("path inside for loop, 263: " + path);
-        //locationFilepathArray.push(mediumStep);  
+        locationFilepathArray.push(path);  
       }
       
-      //console.log("Location filepath array: " + locationFilepathArray);
+      console.log("Location filepath array: " + locationFilepathArray);
     }
     alert('do we get past the location loop?');
     /*
