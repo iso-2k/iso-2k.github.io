@@ -252,16 +252,18 @@ function downloadSubmit() {
       siteID = locationParams[i].value;
       path = path.concat(siteID + "/site_dynamics_");
       //path = path.concat("/site_dynamics_");
-      //console.log(siteFiles);
+      console.log("Path at line 255: " + path);
 
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
       for (var b = 0; b < concatCombos.length; b++) {
-        var mediumStep = path.concat(concatCombos[b]);
+        path = path.concat(concatCombos[b]);
+        path = path.concat(markerLat + "_" + markerLng);
+        console.log("path inside for loop, 263: " + path);
         locationFilepathArray.push(mediumStep);  
       }
-      console.log(locationFilepathArray);
+      //console.log("Location filepath array: " + locationFilepathArray);
     }
   
     //test download
@@ -271,7 +273,6 @@ function downloadSubmit() {
     link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
     link.click();
     */
-    alert('2nd alert');
     
     //reset form values
     document.getElementById('dload').reset();
