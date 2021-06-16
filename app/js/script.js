@@ -213,6 +213,7 @@ mymap.on('zoomend', function(e) {
 });
 
 //JS FOR FORM SUBMISSION
+var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
@@ -226,6 +227,7 @@ function downloadSubmit() {
     return false;
   }
   else {
+    alert('this would normally be a download, just testing');
     console.log("else condition triggered");
     //first, get array of all season + time combos
     var concatCombos = [];
