@@ -224,7 +224,7 @@ function downloadSubmit() {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
     document.getElementById('dload').reset(); //reset values
-    return false;
+    return true;
   }
   else {
     //alert('this would normally be a download, just testing');
@@ -257,6 +257,7 @@ function downloadSubmit() {
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
+      alert('do we get past the marker latlong assignment?');
       for (var b = 0; b < concatCombos.length; b++) {
         path = path.concat(concatCombos[b]);
         path = path.concat(markerLat + "_" + markerLng);
