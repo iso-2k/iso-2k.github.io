@@ -119,12 +119,19 @@ function showCheckboxes(num) {
   if (show) {
     if (num == 1){
       checkboxes.style.display = "block";
+      checkboxes2.style.display = "none";
+      checkboxesLoc.style.display = "none";
     }
     else if (num == 'l') {
       checkboxesLoc.style.display = "block";
+      checkboxes2.style.display = "none";
+      checkboxes.style.display = "none";
+
     }
     else {
       checkboxes2.style.display = "block";
+      checkboxes.style.display = "none";
+      checkboxesLoc.style.display = "none";
     } 
     show = false;
   } else {
