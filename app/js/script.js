@@ -267,7 +267,6 @@ function downloadSubmit() {
       //console.log("Location filepath array: " + locationFilepathArray);
     }
     alert('do we get past the location loop?');
-    //test download
     /*
     link = document.createElement("a"); //create 'a' element
     link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
