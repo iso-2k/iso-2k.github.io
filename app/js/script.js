@@ -258,14 +258,14 @@ function downloadSubmit() {
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
       //alert('do we get past the marker latlong assignment?');
-      /*
+      
       for (var b = 0; b < concatCombos.length; b++) {
         path = path.concat(concatCombos[b]);
         path = path.concat(markerLat + "_" + markerLng);
         console.log("path inside for loop, 263: " + path);
-        locationFilepathArray.push(mediumStep);  
+        //locationFilepathArray.push(mediumStep);  
       }
-      */
+      
       //console.log("Location filepath array: " + locationFilepathArray);
     }
     alert('do we get past the location loop?');

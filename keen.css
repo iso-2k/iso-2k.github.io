@@ -88,7 +88,7 @@
   .chart-wrapper .chart-stage {
     overflow: hidden;
     padding: 2px 5px;
-    position: relative;
+    /*position: relative;*/
   }
   
   .chart-wrapper .chart-notes {
