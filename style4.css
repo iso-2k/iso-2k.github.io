@@ -5,8 +5,7 @@
 .multipleSelection {
     width: 300px;
     background-color: white;
-    /*position: relative;
-    display: inline-block;*/
+    /*position: relative;*/
 }
 .selectBox {
     position: relative;
@@ -32,6 +31,7 @@
     z-index: 1;
     background-color: #f1f1f1;
     position: absolute;
+    max-width: 90%;
 }
 #checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
     display: block;
