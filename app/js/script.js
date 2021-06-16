@@ -36,7 +36,7 @@ function checkMarker(e) {
     var temp2 = tempSplit[1].split('<');
     var clickID = temp2[0];
     //get element with id that is same as clickID
-    //we want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
+    //want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
     var mapElem = document.querySelectorAll('[id=' + clickID + ']')[1];
     //check and uncheck on click
     mapElem.checked = !mapElem.checked;

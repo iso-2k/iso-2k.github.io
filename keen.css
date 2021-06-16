@@ -74,7 +74,7 @@
   .chart-wrapper {
     background: #fff;
     border: 1px solid #e2e2e2;
-    border-radius: 2px;
+    border-radius: 10px; /*set at 2px */
     margin-bottom: 10px;
   }
   
