@@ -273,29 +273,32 @@ function downloadSubmit() {
     alert('Please select at least one checkbox for each filter.');
     return false;
   }
-  console.log(locationParams);
-  console.log(seasonParams);
-  console.log(timescaleParams);
-  for (var i = 0; i < locationParams.length; i++) {
-    //do this for each location
-    var locationFileArray = [];
-    for (var j = 0; j < seasonParams.length; j++) {
-      //do this for each season
-      for (var k = 0; k < timescaleParams.length; k++) {
-
+  else {
+    console.log(locationParams);
+    console.log(seasonParams);
+    console.log(timescaleParams);
+    for (var i = 0; i < locationParams.length; i++) {
+      //do this for each location
+      var locationFileArray = [];
+      for (var j = 0; j < seasonParams.length; j++) {
+        //do this for each season
+        for (var k = 0; k < timescaleParams.length; k++) {
+  
+        }
       }
     }
+  
+    //test download
+    link = document.createElement("a"); //create 'a' element
+    link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
+    link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
+    link.click();
+    
+    //reset form values
+    document.getElementById('dload').reset();
+    return true;
   }
 
-  //test download
-  link = document.createElement("a"); //create 'a' element
-  link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
-  link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
-  link.click();
-  
-  //reset form values
-  document.getElementById('dload').reset();
-  return true;
 }
 
 $(document).ready(function () {
