@@ -240,7 +240,7 @@ function downloadSubmit() {
     }
     console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
-    var lat, lon;
+    var latitude, longitude;
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       var path = "/figures/"
@@ -249,8 +249,9 @@ function downloadSubmit() {
       //console.log(siteFiles);
 
       //now, need lat+lon of location for end of filepath
-      lat, lon = markerDict[siteID].getLatLng();
-      console.log(lat);
+      latitude = markerDict[siteID].getLatLng().lat;
+      longitude = markerDict[siteID].getLatLng().lng;
+      console.log("Latitude: " + lat);
       console.log(lon);
       var locationFilepathArray = [];
       for (var b = 0; b < concatCombos.length; b++) {
