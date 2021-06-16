@@ -43,6 +43,7 @@ function checkMarker(e) {
 }
 
 var select1 = document.getElementById("checkBoxesLoc");
+var markerDict = {};
 
 //path to csv of iso2k sites
 $.get('../.././iso2kp2.csv', function(csvString) {
@@ -61,6 +62,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);
+      markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
       //marker.addTo(mymap); use this for map w/o clusters
@@ -238,16 +240,22 @@ function downloadSubmit() {
     }
     console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
+    var lat, lon;
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       var path = "/figures/"
       var siteID = locationParams[i].value;
       path = path.concat(siteID + "/site_dynamics_");
       //console.log(siteFiles);
+
+      //now, need lat+lon of location for end of filepath
+      lat, lon = markerDict[siteID].getLatLng();
+      console.log(lat);
+      console.log(lon);
       var locationFilepathArray = [];
       for (var b = 0; b < concatCombos.length; b++) {
         locationFilepathArray.push(path.concat(concatCombos[b]));
-        //now, need lat+lon of location for end of filepath
+        
       }
       console.log(locationFilepathArray);
     }
