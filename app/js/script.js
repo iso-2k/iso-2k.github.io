@@ -273,6 +273,13 @@ function downloadSubmit() {
     link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
     link.click();
     */
+   for (var l = 0; l < locationFilepathArray.length; l++) {
+     currentPath = locationFilepathArray[l];
+     link = document.createElement("a");
+     link.setAttribute("href", currentPath);
+     link.setAttribute("download", currentPath);
+     link.click();
+   }
     
     //reset form values
     document.getElementById('dload').reset();
