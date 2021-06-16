@@ -344,10 +344,13 @@ function downloadSubmit() {
     }
   
     //test download
+    /*
     link = document.createElement("a"); //create 'a' element
     link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
     link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
     link.click();
+    */
+    alert('this would normally be a download, just testing');
     
     //reset form values
     document.getElementById('dload').reset();
