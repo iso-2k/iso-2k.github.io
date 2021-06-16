@@ -271,7 +271,7 @@ function downloadSubmit() {
   if (locationParams == null || seasonParams == null || timescaleParams == null) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
-    return false;
+    return true;
   }
   else {
     for (var i = 0; i < locationParams.length; i++) {
