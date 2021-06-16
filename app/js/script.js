@@ -316,6 +316,7 @@ function downloadSubmit() {
   if (locationParams == null || seasonParams == null || timescaleParams == null) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
+    document.getElementById('dload').reset(); //reset values
     return false;
   }
   else {
