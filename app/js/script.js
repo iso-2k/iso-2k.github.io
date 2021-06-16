@@ -255,8 +255,8 @@ function downloadSubmit() {
       console.log("Path at line 255: " + path);
 
       //now, need lat+lon of location for end of filepath
-      markerLat = markerDict[siteID].getLatLng().lat;
-      markerLng = markerDict[siteID].getLatLng().lng;
+      //markerLat = markerDict[siteID].getLatLng().lat;
+      //markerLng = markerDict[siteID].getLatLng().lng;
       //alert('do we get past the marker latlong assignment?');
       for (var b = 0; b < concatCombos.length; b++) {
         path = path.concat(concatCombos[b]);
