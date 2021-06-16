@@ -332,8 +332,11 @@ function downloadSubmit() {
       var locationFileArray = [];
       for (var j = 0; j < seasonParams.length; j++) {
         //do this for each season
+        var seasonality = seasonParams[j].value;
+        console.log(seasonality);
         for (var k = 0; k < timescaleParams.length; k++) {
-  
+          var timeScale = timescaleParams[k].value;
+          console.log(timeScale);
         }
       }
     }
