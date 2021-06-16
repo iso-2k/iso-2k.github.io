@@ -321,6 +321,9 @@ function downloadSubmit() {
   }
   else {
     console.log("else condition triggered");
+    console.log(locationParams);
+    console.log(seasonParams);
+    console.log(timescaleParams);
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       var path = ""
