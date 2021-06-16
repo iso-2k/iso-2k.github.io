@@ -223,7 +223,7 @@ function downloadSubmit() {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
     document.getElementById('dload').reset(); //reset values
-    return true;
+    return false;
   }
   else {
     console.log("else condition triggered");
