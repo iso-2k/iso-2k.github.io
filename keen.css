@@ -148,7 +148,8 @@
   .container {
     padding-left: 4px;
     padding-right: 4px;
-    margin-left: auto;
+    /*margin-left: auto;*/
+    margin-left: 2%;
     margin-right: auto;
   }
   
