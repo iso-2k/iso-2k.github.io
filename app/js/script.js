@@ -337,6 +337,8 @@ function downloadSubmit() {
         for (var k = 0; k < timescaleParams.length; k++) {
           var timeScale = timescaleParams[k].value;
           console.log(timeScale);
+          var searchSubString = seasonality.concat(timeScale);
+          console.log("value for search substring: " + searchSubString);
         }
       }
     }
