@@ -69,12 +69,10 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       var aLabel = document.createElement("label");
       var el1 = document.createElement("input");
       el1.type = "checkbox";
-      //aLabel.htmlFor = row.SiteID1;
+      //aLabel.htmlFor = row.SiteID1;el1.id = row.SiteID1;el1.value = row.SiteID1;
       aLabel.className = 'locCheck';
       el1.className = 'locCheck';
       [aLabel.id, el1.id, el1.value, aLabel.htmlFor] = [row.SiteID1, row.SiteID1, row.SiteID1, row.SiteID1];
-      //el1.id = row.SiteID1;
-      //el1.value = row.SiteID1;
       aLabel.appendChild(el1);
       select1.appendChild(aLabel);
       aLabel.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
