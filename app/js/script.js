@@ -265,9 +265,9 @@ function formDownload() {
 function downloadSubmit() {
   //get checked values
   //locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
-  locationParams = document.querySelectorAll('#checkBoxesLoc:checked'); //nodelist
-  seasonParams = document.querySelectorAll('#checkBoxes:checked');
-  timescaleParams = document.querySelectorAll('#checkBoxes2:checked');
+  locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
+  seasonParams = document.querySelectorAll('.seasonCheck:checked');
+  timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (locationParams == null || seasonParams == null || timescaleParams == null) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
