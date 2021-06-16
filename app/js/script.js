@@ -227,7 +227,7 @@ function downloadSubmit() {
     return false;
   }
   else {
-    alert('this would normally be a download, just testing');
+    //alert('this would normally be a download, just testing');
     console.log("else condition triggered");
     //first, get array of all season + time combos
     var concatCombos = [];
@@ -241,6 +241,7 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
+    alert('2 alert');
     console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
     var markerLat, markerLng, path, siteID;
@@ -250,14 +251,15 @@ function downloadSubmit() {
       path = "/figures/"
       siteID = locationParams[i].value;
       path = path.concat(siteID + "/site_dynamics_");
+      //path = path.concat("/site_dynamics_");
       //console.log(siteFiles);
 
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
-      console.log("Latitude: " + lat);
       for (var b = 0; b < concatCombos.length; b++) {
-        locationFilepathArray.push(path.concat(concatCombos[b]));  
+        var mediumStep = path.concat(concatCombos[b]);
+        locationFilepathArray.push(mediumStep);  
       }
       console.log(locationFilepathArray);
     }
