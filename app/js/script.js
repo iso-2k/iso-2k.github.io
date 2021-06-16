@@ -309,11 +309,11 @@ function formDownload() {
 
 function downloadSubmit() {
   //get checked values
-  //locationParams = document.querySelectorAll('#checkBoxesLoc:checked').value;
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
-  if (locationParams == null || seasonParams == null || timescaleParams == null) {
+  if (locationParams == null || seasonParams == null || timescaleParams == null 
+    || locationParams.length == 0 || seasonParams.length == 0 || timescaleParams.length == 0) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
     document.getElementById('dload').reset(); //reset values
