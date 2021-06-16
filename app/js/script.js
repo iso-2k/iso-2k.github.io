@@ -211,7 +211,6 @@ mymap.on('zoomend', function(e) {
 });
 
 //JS FOR FORM SUBMISSION
-var fs = require('fs');
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
@@ -243,13 +242,14 @@ function downloadSubmit() {
       //do this for each location
       var path = "/figures/"
       var siteID = locationParams[i].value;
-      path = path.concat(siteID + "/");
-      var siteFiles = fs.readdirSync(path);
-      console.log(siteFiles);
-      var locationFileArray = [];
+      path = path.concat(siteID + "/site_dynamics_");
+      //console.log(siteFiles);
+      var locationFilepathArray = [];
       for (var b = 0; b < concatCombos.length; b++) {
-
+        locationFilepathArray.push(path.concat(concatCombos[b]));
+        //now, need lat+lon of location for end of filepath
       }
+      console.log(locationFilepathArray);
     }
   
     //test download
