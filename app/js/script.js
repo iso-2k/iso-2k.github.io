@@ -45,6 +45,8 @@ function checkMarker(e) {
     var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
     //check and uncheck on click
     mapElem.selected = !mapElem.selected;
+    $(".js-example-placeholder-single").id(clickID);
+    $(".js-example-placeholder-single").trigger('change');
 }
 
 var select1 = document.getElementById("checkBoxesLoc");
