@@ -1,5 +1,7 @@
 const testString = 'This is a test!';
 console.log(testString);
+import JSZip from 'jszip';
+import FileSaver from 'file-saver';
 
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
 //0, 0 is lat long coord for center of the world
@@ -7,6 +9,7 @@ var myBounds = new L.LatLngBounds(new L.LatLng(-90, -200), new L.LatLng(90, 200)
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
+//for select2 dropdown menu of proxy locations
 $(".js-example-placeholder-single").select2({
   placeholder: "Proxy Location",
   allowClear: true
@@ -49,7 +52,6 @@ function checkMarker(e) {
     $(".js-example-placeholder-single").trigger('change.select2');
 }
 
-var select1 = document.getElementById("checkBoxesLoc");
 var select2 = document.getElementById("dDown");
 var markerDict = {};
 
@@ -228,20 +230,25 @@ mymap.on('zoomend', function(e) {
 
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
+let zip = new JSZip();
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (locationParams == null || seasonParams == null || timescaleParams == null 
-    || locationParams.length == 0 || seasonParams.length == 0 || timescaleParams.length == 0) {
+    || locationParams.length != 1 || seasonParams.length == 0 || timescaleParams.length == 0) {
     //missing a filter
-    alert('Please select at least one checkbox for each filter.');
+    if (locationParams.length > 1) {
+      alert('Please select only 1 proxy location at a time.');
+    }
+    else {
+      alert('Please select at least one checkbox for each filter.');
+    }
     document.getElementById('dload').reset(); //reset values
     return true;
   }
   else {
-    console.log("else condition triggered");
     //first, get array of all season + time combos
     var concatCombos = [];
     var seasonality, searchSubString, timeScale, markerLat, markerLng, path, siteID, tempPath;
@@ -254,7 +261,6 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
-    console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
     var locationFilepathArray = [];
     for (var i = 0; i < locationParams.length; i++) {
@@ -279,7 +285,6 @@ function downloadSubmit() {
       
       console.log("Location filepath array: " + locationFilepathArray);
     }
-    //alert('do we get past the location loop?');
     /*
     link = document.createElement("a"); //create 'a' element
     link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
