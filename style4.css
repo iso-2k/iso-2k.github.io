@@ -2,7 +2,7 @@
 .show {
     display: block;
 }
-.multipleSelection {
+.multipleSelection, .js-example-placeholder-single {
     width: 300px;
     background-color: white;
     /*position: relative;*/
