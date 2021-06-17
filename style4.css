@@ -31,11 +31,11 @@
     z-index: 1;
     background-color: #f1f1f1;
     position: absolute;
+    max-width: 95%;
 }
 #checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
     display: block;
     margin-right: 5px;
-    max-width: 95%;
 }
 #checkBoxes label:hover, #checkBoxes2 label:hover, #checkBoxesLoc label:hover {
     background-color: #4f615e;
