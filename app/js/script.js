@@ -75,45 +75,20 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
-      //marker.addTo(mymap); use this for map w/o clusters
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
       [optionNew.value, optionNew.id] = [row.SiteID1, row.SiteID1];
       optionNew.className = 'locCheck';
-      //optionNew.id = row.SiteID1;
       select2.appendChild(optionNew);
       optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
     }
     mymap.addLayer(markers); //use this for clusters
-    //markers.addTo(mymap)
-
 });
 //attribution for the csv function from HandsOnDataViz
 //mymap.attributionControl.setPrefix(
 //  'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
 //);
-
-//function myFunction() {
-  //  document.getElementById("location").classList.toggle("show");
-//}
-
-//can be used to implement a search feature on a dropdown 
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("location");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
 
 //js for all 3 dropdowns
 function showCheckboxes(num) {
@@ -230,7 +205,6 @@ mymap.on('zoomend', function(e) {
 
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
-//let zip = new JSZip();
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
