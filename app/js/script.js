@@ -281,11 +281,10 @@ function downloadSubmit() {
      link = document.createElement("a");
      console.log(currentPath);
      link.setAttribute("href", currentPath);
-     //link.setAttribute("download", currentPath); commenting this out should fix filenaming conventions
+     link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
      link.click();
    }
    
-    
     //reset form values
     document.getElementById('dload').reset();
     return false;
