@@ -256,12 +256,12 @@ function downloadSubmit() {
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
-      
+      var tempPath;
       for (var b = 0; b < concatCombos.length; b++) {
-        path = path.concat(concatCombos[b]);
-        path = path.concat(markerLat + "_" + markerLng);
-        console.log("path inside for loop, 263: " + path);
-        locationFilepathArray.push(path);  
+        tempPath = path.concat(concatCombos[b]);
+        tempPath = tempPath.concat(markerLat + "_" + markerLng);
+        console.log("path inside for loop, 263: " + tempPath);
+        locationFilepathArray.push(tempPath);  
       }
       
       console.log("Location filepath array: " + locationFilepathArray);
