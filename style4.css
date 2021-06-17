@@ -2,7 +2,7 @@
 .show {
     display: block;
 }
-.multipleSelection, .js-example-basic-single {
+.multipleSelection {
     width: 300px;
     background-color: white;
     /*position: relative;*/
