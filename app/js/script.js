@@ -241,7 +241,7 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
-    alert('2 alert');
+    //alert('2 alert');
     console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
     var markerLat, markerLng, path, siteID;
@@ -260,6 +260,7 @@ function downloadSubmit() {
       for (var b = 0; b < concatCombos.length; b++) {
         tempPath = path.concat(concatCombos[b]);
         tempPath = tempPath.concat(markerLat + "_" + markerLng);
+        tempPath = tempPath.concat(".png");
         console.log("path inside for loop, 263: " + tempPath);
         locationFilepathArray.push(tempPath);  
       }
