@@ -75,7 +75,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
-      [optionNew.value, optionNew.id] = row.SiteID1;
+      [optionNew.value, optionNew.id] = [row.SiteID1, row.SiteID1];
       optionNew.className = 'locCheck';
       //optionNew.id = row.SiteID1;
       select2.appendChild(optionNew);
