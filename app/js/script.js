@@ -276,16 +276,15 @@ function downloadSubmit() {
     link.click();
     */
    //this for loop works, but for now we don't want downloads enabled
-   /*
    for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
      link = document.createElement("a");
      console.log(currentPath);
      link.setAttribute("href", currentPath);
-     link.setAttribute("download", currentPath);
+     //link.setAttribute("download", currentPath); commenting this out should fix filenaming conventions
      link.click();
    }
-   */
+   
     
     //reset form values
     document.getElementById('dload').reset();
