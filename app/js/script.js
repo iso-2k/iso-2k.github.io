@@ -1,7 +1,7 @@
 const testString = 'This is a test!';
 console.log(testString);
-import JSZip from 'jszip';
-import FileSaver from 'file-saver';
+//import JSZip from 'jszip';
+//import FileSaver from 'file-saver';
 
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
 //0, 0 is lat long coord for center of the world
@@ -230,7 +230,7 @@ mymap.on('zoomend', function(e) {
 
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
-let zip = new JSZip();
+//let zip = new JSZip();
 function downloadSubmit() {
   //get checked values
   locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
