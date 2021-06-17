@@ -42,9 +42,9 @@ function checkMarker(e) {
     var clickID = temp2[0];
     //get element with id that is same as clickID
     //want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
-    var mapElem = document.querySelectorAll('[id=' + clickID + ']')[1];
+    var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
     //check and uncheck on click
-    mapElem.checked = !mapElem.checked;
+    mapElem.selected = !mapElem.selected;
 }
 
 var select1 = document.getElementById("checkBoxesLoc");
@@ -74,24 +74,12 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       //marker.addTo(mymap); use this for map w/o clusters
 
       //FILTER SECTION
-      //select2 section
       var optionNew = document.createElement("option");
-      optionNew.value = row.SiteID1;
+      [optionNew.value, optionNew.id] = row.SiteID1;
+      optionNew.className = 'locCheck';
+      //optionNew.id = row.SiteID1;
       select2.appendChild(optionNew);
       optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
-
-      /*
-      var aLabel = document.createElement("label");
-      var el1 = document.createElement("input");
-      el1.type = "checkbox";
-      //aLabel.htmlFor = row.SiteID1;el1.id = row.SiteID1;el1.value = row.SiteID1;
-      aLabel.className = 'locCheck';
-      el1.className = 'locCheck';
-      [aLabel.id, el1.id, el1.value, aLabel.htmlFor] = [row.SiteID1, row.SiteID1, row.SiteID1, row.SiteID1];
-      aLabel.appendChild(el1);
-      select1.appendChild(aLabel);
-      aLabel.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
-      */
     }
     mymap.addLayer(markers); //use this for clusters
     //markers.addTo(mymap)
