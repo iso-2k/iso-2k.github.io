@@ -43,6 +43,7 @@ function checkMarker(e) {
 }
 
 var select1 = document.getElementById("checkBoxesLoc");
+var select2 = document.getElementById("dDown");
 var markerDict = {};
 
 //path to csv of iso2k sites
@@ -68,6 +69,12 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       //marker.addTo(mymap); use this for map w/o clusters
 
       //FILTER SECTION
+      //select2 section
+      var optionNew = document.createElement("option");
+      optionNew.value = row.SiteID1;
+      select2.appendChild(optionNew);
+      optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
+
       var aLabel = document.createElement("label");
       var el1 = document.createElement("input");
       el1.type = "checkbox";
