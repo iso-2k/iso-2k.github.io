@@ -251,7 +251,6 @@ function downloadSubmit() {
       path = "/figures/"
       siteID = locationParams[i].value;
       path = path.concat(siteID + "/site_dynamics_");
-      console.log("Path at line 255: " + path);
 
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
