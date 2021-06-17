@@ -35,6 +35,7 @@
 }
 #checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
     display: block;
+    margin-right: 3px;
 }
 #checkBoxes label:hover, #checkBoxes2 label:hover, #checkBoxesLoc label:hover {
     background-color: #4f615e;
