@@ -131,7 +131,7 @@ function showCheckboxes(num) {
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
   //display hides and collapses (visibility just hides)
-  for (let el of document.querySelectorAll('.locCheck')) el.style.display = 'none';
+  for (let el of document.querySelectorAll('.locCheck')) el.disabled = 'disabled';
 
   //add some sort of if statement in for loop to check whether current index is a markerCluster or marker
   for (var i=0; i < markers.length; i++) {
