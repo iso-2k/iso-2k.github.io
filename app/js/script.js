@@ -80,6 +80,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       select2.appendChild(optionNew);
       optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
 
+      /*
       var aLabel = document.createElement("label");
       var el1 = document.createElement("input");
       el1.type = "checkbox";
@@ -90,6 +91,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       aLabel.appendChild(el1);
       select1.appendChild(aLabel);
       aLabel.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
+      */
     }
     mymap.addLayer(markers); //use this for clusters
     //markers.addTo(mymap)
