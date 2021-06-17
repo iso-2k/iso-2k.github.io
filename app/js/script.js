@@ -276,6 +276,7 @@ function downloadSubmit() {
    for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
      link = document.createElement("a");
+     console.log(currentPath);
      link.setAttribute("href", currentPath);
      link.setAttribute("download", currentPath);
      link.click();
