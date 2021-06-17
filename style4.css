@@ -33,7 +33,7 @@
     position: absolute;
     max-width: 95%;
 }
-#checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label {
+#checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label, .js-example-basic-single option {
     display: block;
     margin-right: 5px;
 }
