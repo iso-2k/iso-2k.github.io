@@ -7,6 +7,11 @@ var myBounds = new L.LatLngBounds(new L.LatLng(-90, -200), new L.LatLng(90, 200)
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
+$(".js-example-placeholder-single").select2({
+  placeholder: "Proxy Location",
+  allowClear: true
+});
+
 //initialize map
 var mymap = new L.map('mapid', {
   center: [30,0],
