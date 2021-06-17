@@ -86,7 +86,7 @@
   }
   
   .chart-wrapper .chart-stage {
-    overflow: hidden;
+    overflow: visible;
     padding: 2px 5px;
     /*position: relative;*/
   }
