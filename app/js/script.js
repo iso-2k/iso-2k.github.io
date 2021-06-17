@@ -256,24 +256,28 @@ function downloadSubmit() {
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
+      if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
+        markerLng = markerLng + 360;
+      }
       var tempPath;
       for (var b = 0; b < concatCombos.length; b++) {
         tempPath = path.concat(concatCombos[b]);
         tempPath = tempPath.concat(markerLat + "_" + markerLng);
         tempPath = tempPath.concat(".png");
-        console.log("path inside for loop, 263: " + tempPath);
         locationFilepathArray.push(tempPath);  
       }
       
       console.log("Location filepath array: " + locationFilepathArray);
     }
-    alert('do we get past the location loop?');
+    //alert('do we get past the location loop?');
     /*
     link = document.createElement("a"); //create 'a' element
     link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
     link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
     link.click();
     */
+   //this for loop works, but for now we don't want downloads enabled
+   /*
    for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
      link = document.createElement("a");
@@ -282,6 +286,7 @@ function downloadSubmit() {
      link.setAttribute("download", currentPath);
      link.click();
    }
+   */
     
     //reset form values
     document.getElementById('dload').reset();
