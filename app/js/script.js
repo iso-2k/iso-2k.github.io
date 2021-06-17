@@ -162,8 +162,13 @@ function updateBoxes(markers) {
       var clickID = temp2[0];
       //elemens is an array (querySelectorAll returns multiple if present)
       var elemens = document.querySelectorAll('[id=' + clickID + ']');
-      for (var j = 0; j < elemens.length; j++) {
-        elemens[j].style.display = 'inline-block';
+      for (var k = 0; k < elemens.length; k++) {
+        if (elemens[k].tagName == 'label') {
+          elemens[k].style.display = 'block';
+        }
+        else {
+          elemens[k].style.display = 'inline-block';
+        }
       }
     }
     else { //markers[i] is a cluster  
@@ -185,7 +190,6 @@ function updateBoxes(markers) {
           }
         }
       }
-
     }
   }
 } 
@@ -231,7 +235,6 @@ function downloadSubmit() {
     return true;
   }
   else {
-    //alert('this would normally be a download, just testing');
     console.log("else condition triggered");
     //first, get array of all season + time combos
     var concatCombos = [];
