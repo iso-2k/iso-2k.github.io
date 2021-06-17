@@ -163,7 +163,7 @@ function updateBoxes(markers) {
       //elemens is an array (querySelectorAll returns multiple if present)
       var elemens = document.querySelectorAll('[id=' + clickID + ']');
       for (var j = 0; j < elemens.length; j++) {
-        elemens[j].style.display = 'block';
+        elemens[j].style.display = 'inline-block';
       }
     }
     else { //markers[i] is a cluster  
@@ -177,7 +177,7 @@ function updateBoxes(markers) {
         //elemens is an array (querySelectorAll returns multiple if present)
         var elemens = document.querySelectorAll('[id=' + clickID + ']');
         for (var k = 0; k < elemens.length; k++) {
-          elemens[k].style.display = 'block';
+          elemens[k].style.display = 'inline-block';
         }
       }
 
@@ -201,7 +201,6 @@ function logVisibleClusters() {
       clustArray.push(clusterMarker);
     }
   });
-  //clustArray holds the right number of elements on the screen (ie, 3 markers and a cluster of 5 reads as 4 )
   updateBoxes(clustArray);
 }
 
@@ -231,7 +230,7 @@ function downloadSubmit() {
     console.log("else condition triggered");
     //first, get array of all season + time combos
     var concatCombos = [];
-    var seasonality, searchSubString, timeScale;
+    var seasonality, searchSubString, timeScale, markerLat, markerLng, path, siteID, tempPath;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
       seasonality = seasonParams[j].value;
@@ -241,10 +240,8 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
-    //alert('2 alert');
     console.log("here are the concatcombos: " + concatCombos);
     //now, loop through all locations and get all files with string concat combos in filename
-    var markerLat, markerLng, path, siteID;
     var locationFilepathArray = [];
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
@@ -258,7 +255,7 @@ function downloadSubmit() {
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
         markerLng = markerLng + 360;
       }
-      var tempPath;
+
       for (var b = 0; b < concatCombos.length; b++) {
         tempPath = path.concat(concatCombos[b]);
         tempPath = tempPath.concat(markerLat + "_" + markerLng);
@@ -285,7 +282,7 @@ function downloadSubmit() {
      link.click();
    }
    
-    //reset form values
+    //reset form values after downloading figures for user
     document.getElementById('dload').reset();
     return false;
   }
