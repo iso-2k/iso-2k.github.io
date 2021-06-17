@@ -177,7 +177,12 @@ function updateBoxes(markers) {
         //elemens is an array (querySelectorAll returns multiple if present)
         var elemens = document.querySelectorAll('[id=' + clickID + ']');
         for (var k = 0; k < elemens.length; k++) {
-          elemens[k].style.display = 'inline-block';
+          if (elemens[k].tagName == 'label') {
+            elemens[k].style.display = 'block';
+          }
+          else {
+            elemens[k].style.display = 'inline-block';
+          }
         }
       }
 
