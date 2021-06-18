@@ -217,13 +217,11 @@ function downloadSubmit() {
   //get checked values
   siteID = $("#dDown").find(':selected')[0].value;
   console.log(siteID);
-  seasonTest = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
+  seasonParams = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
   console.log(seasonTest);
-  timeTest = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
+  timescaleParams = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
   console.log(timeTest);
-  /*
-  seasonParams = document.querySelectorAll('.seasonCheck:checked');
-  timescaleParams = document.querySelectorAll('.timeCheck:checked');
+  
   if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
     //missing a filter
@@ -289,7 +287,7 @@ function downloadSubmit() {
     //reset form values after downloading figures for user
     document.getElementById('dload').reset();
     return false;
-  //}
+  }
 
 }
 
