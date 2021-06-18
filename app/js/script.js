@@ -1,10 +1,7 @@
 const testString = 'This is a test!';
 console.log(testString);
-//import JSZip from 'jszip';
-//import FileSaver from 'file-saver';
 
 const apiKey = 'pk.eyJ1IjoiYm1kMyIsImEiOiJja3BnNXl1encwMTBqMm9xZ3VsbHBsM203In0.Tk6ziR8JwEDSoF7savjM3A'
-//0, 0 is lat long coord for center of the world
 var myBounds = new L.LatLngBounds(new L.LatLng(-90, -200), new L.LatLng(90, 200));
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
@@ -20,7 +17,7 @@ var mymap = new L.map('mapid', {
   center: [30,0],
   zoom: 1.3,
   zoomSnap: 0.1,
-  maxBoundsViscosity: 0.8,
+  maxBoundsViscosity: 0.85,
   maxBounds: myBounds
 });
 
@@ -127,6 +124,11 @@ function showCheckboxes(num) {
     $(".js-example-placeholder-single").select2('close');
   } 
 }
+
+$('#dDown').on('zoomend', function (e) {
+  var data = e.params.data;
+  console.log(data);
+})
 
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
