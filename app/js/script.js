@@ -129,6 +129,7 @@ function showCheckboxes(num) {
 function updateBoxes(markers) {
   //display hides and collapses (visibility just hides)
   for (let el of document.querySelectorAll('.locCheck')) el.disabled = 'disabled';
+  $(".js-example-placeholder-single").trigger('change');
 
   //add some sort of if statement in for loop to check whether current index is a markerCluster or marker
   for (var i=0; i < markers.length; i++) {
