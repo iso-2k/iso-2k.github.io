@@ -143,15 +143,18 @@ function updateBoxes(markers) {
       var clickID = temp2[0];
       //elemens is an array (querySelectorAll returns multiple if present)
       var elemens = document.querySelectorAll('[id=' + clickID + ']');
-      for (var k = 0; k < elemens.length; k++) {
-        /*if (elemens[k].tagName == 'label') {
+      $('#' + clickID).select2().prop("disabled", false);
+      /*for (var k = 0; k < elemens.length; k++) {
+        if (elemens[k].tagName == 'label') {
           elemens[k].style.display = 'block';
         }
         else {
           elemens[k].style.display = 'inline-block';
-        }*/
-        elemens[k].style.display = 'inline-block';
-      }
+        }
+        //elemens[k].style.display = 'inline-block';
+        
+        
+      }end of for loop */
     }
     else { //markers[i] is a cluster  
       var childMarkers = markers[i].getAllChildMarkers();
@@ -207,7 +210,7 @@ mymap.on('zoomend', function(e) {
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
-  locationParams = document.querySelectorAll('.locCheck:checked'); //nodelist
+  locationParams = document.querySelectorAll('.locCheck:selected'); //nodelist
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (locationParams == null || seasonParams == null || timescaleParams == null 
