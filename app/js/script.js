@@ -193,7 +193,7 @@ function downloadSubmit() {
   }
   else {
     //first, get array of all season + time combos
-    /*
+    
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
     //var markerLat, markerLng, path, siteID, tempPath;
