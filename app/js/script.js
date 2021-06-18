@@ -214,11 +214,9 @@ mymap.on('zoomend', function(e) {
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
-  testVar = $("#dDown").find(':selected');
+  locationParams = $("#dDown").find(':selected')[0];
   console.log(testVar);
   //locationParams = document.querySelectorAll('.locCheck:selected'); //nodelist
-  locationParams = [];
-  locationParams.push('abc');
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (locationParams == null || seasonParams == null || timescaleParams == null 
