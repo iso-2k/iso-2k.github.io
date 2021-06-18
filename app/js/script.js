@@ -192,12 +192,14 @@ function logVisibleClusters() {
   updateBoxes(clustArray);
 }
 
+/*
 mymap.on('moveend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
 mymap.on('zoomend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
+*/
 
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
