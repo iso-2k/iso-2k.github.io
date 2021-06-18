@@ -218,7 +218,7 @@ function downloadSubmit() {
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (locationParams == null || seasonParams == null || timescaleParams == null 
-    || locationParams.length != 1 || seasonParams.length == 0 || timescaleParams.length == 0) {
+    || seasonParams.length == 0 || timescaleParams.length == 0) {
     //missing a filter
     if (locationParams.length > 1) {
       alert('Please select only 1 proxy location at a time.');
