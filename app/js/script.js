@@ -212,6 +212,8 @@ mymap.on('zoomend', function(e) {
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
+  testVar = $("#dDown").select2('val');
+  console.log(testVar);
   locationParams = document.querySelectorAll('.locCheck:selected'); //nodelist
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
@@ -269,7 +271,7 @@ function downloadSubmit() {
     link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
     link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
     link.click();
-    */
+    
    //this for loop works, but for now we don't want downloads enabled
    for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
@@ -279,6 +281,7 @@ function downloadSubmit() {
      link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
      link.click();
    }
+   */
    
     //reset form values after downloading figures for user
     document.getElementById('dload').reset();
