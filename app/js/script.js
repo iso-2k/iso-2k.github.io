@@ -125,11 +125,6 @@ function showCheckboxes(num) {
   } 
 }
 
-$('#dDown').on('zoomend', function (e) {
-  var data = e.params.data;
-  console.log(data);
-})
-
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
   //display hides and collapses (visibility just hides)

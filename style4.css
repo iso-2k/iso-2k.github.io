@@ -28,7 +28,7 @@
     top: 0;
     bottom: 0;
 }
-#checkBoxes, #checkBoxes2, #checkBoxesLoc {
+#checkBoxes, #checkBoxes2 {
     display: none;
     border: 1px black solid;
     max-height: 350px;
@@ -39,11 +39,11 @@
     position: absolute;
     max-width: 95%;
 }
-#checkBoxes label, #checkBoxes2 label, #checkBoxesLoc label, .js-example-basic-single option {
+#checkBoxes label, #checkBoxes2 label, .js-example-basic-single option {
     display: block;
     margin-right: 5px;
 }
-#checkBoxes label:hover, #checkBoxes2 label:hover, #checkBoxesLoc label:hover {
+#checkBoxes label:hover, #checkBoxes2 label:hover {
     background-color: #4f615e;
 }
 .seasonCheck, .timeCheck, .locCheck {
@@ -58,4 +58,4 @@ h4 { /* for marker popups*/
 }
 .select2-container--default .select2-results__option[aria-disabled=true] {
     display: none;
-}/*rule for hiding
+}/*rule for hiding disabled locations rather than graying them out
