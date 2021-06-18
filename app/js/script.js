@@ -244,6 +244,7 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
+    /*
     var locationFilepathArray = [];
     
     //for (var i = 0; i < locationParams.length; i++) {
