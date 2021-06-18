@@ -11,6 +11,10 @@ $(document).ready(function() { //initialize select2 on dropdown
     placeholder: "Proxy Location",
     allowClear: true
   });
+  $('.js-example-basic-multiple[name=timescales]').select2({
+    placeholder: "Timescale",
+    allowClear: true
+  });
 });
 
 //for select2 dropdown menu of proxy locations
