@@ -145,6 +145,7 @@ function updateBoxes(markers) {
       //$("#dDown").find('id:' + clickID)[0].prop('disabled', false);
       console.log($("#dDown").find('id:' + clickID));
       $("#dDown").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+      $('#dDown').trigger('change');
       //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
         //elemens[k].style.display = 'inline-block';        
@@ -160,6 +161,7 @@ function updateBoxes(markers) {
         var clickID = temp2[0];
         console.log($("#dDown").find('id:' + clickID));
         $("#dDown").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+        $('#dDown').trigger('change');
         //elemens is an array (querySelectorAll returns multiple if present)
         //var elemens = document.querySelectorAll('[id=' + clickID + ']');
         //for (var k = 0; k < elemens.length; k++) {
