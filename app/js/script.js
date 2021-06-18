@@ -223,7 +223,7 @@ function downloadSubmit() {
       alert('Please select at least one checkbox for each filter.');
     }
     document.getElementById('dload').reset(); //reset values
-    return true;
+    return false;
   }
   else {
     //first, get array of all season + time combos
