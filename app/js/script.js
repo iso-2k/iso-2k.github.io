@@ -180,9 +180,9 @@ function downloadSubmit() {
   siteID = $("#dDown").find(':selected')[0].value;
   console.log(siteID);
   seasonParams = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
-  console.log(seasonTest);
+  console.log(seasonParams);
   timescaleParams = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
-  console.log(timeTest);
+  console.log(timescaleParams);
   
   if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
