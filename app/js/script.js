@@ -144,7 +144,9 @@ function updateBoxes(markers) {
       //elemens is an array (querySelectorAll returns multiple if present)
       //var elemens = document.querySelectorAll('[id=' + clickID + ']');
       //document.querySelector('[id=' + clickID + ']').disabled = 'enabled';
-      $('select id:' + clickID).prop('disabled', false);
+      //$('select id:' + clickID).prop('disabled', false);
+      $("#dDown").find('id:')[0].prop('disabled', false);
+      console.log($("#dDown").find('id:')[0]);
       //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
         if (elemens[k].tagName == 'label') {
@@ -217,7 +219,7 @@ function downloadSubmit() {
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (siteID == null || seasonParams == null || timescaleParams == null 
-    || seasonParams.length == 0 || timescaleParams.length == 0) {
+    || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
     document.getElementById('dload').reset(); //reset values
