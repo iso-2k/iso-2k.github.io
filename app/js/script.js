@@ -11,7 +11,7 @@ $(document).ready(function() { //initialize select2 on dropdown
     placeholder: "Proxy Location",
     allowClear: true
   });
-  $('.js-example-basic-multiple[name=timescales]').select2({
+  $('.js-example-basic-multiple[name="timescales"]').select2({
     placeholder: "Timescale",
     allowClear: true
   });
