@@ -214,18 +214,13 @@ mymap.on('zoomend', function(e) {
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
-  locationParams = $("#dDown").find(':selected')[0].value;
+  siteID = $("#dDown").find(':selected')[0].value;
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
-  if (locationParams == null || seasonParams == null || timescaleParams == null 
+  if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0) {
     //missing a filter
-    if (locationParams.length > 1) {
-      alert('Please select only 1 proxy location at a time.');
-    }
-    else {
       alert('Please select at least one checkbox for each filter.');
-    }
     document.getElementById('dload').reset(); //reset values
     return false;
   }
@@ -248,7 +243,6 @@ function downloadSubmit() {
     //for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       path = "/figures/"
-      siteID = locationParams[i].value;
       path = path.concat(siteID + "/site_dynamics_");
 
       //now, need lat+lon of location for end of filepath
