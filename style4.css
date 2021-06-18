@@ -50,3 +50,6 @@ h4 { /* for marker popups*/
     text-align: center;
     font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    display: none;
+}/*rule for hiding disabled locations*/
