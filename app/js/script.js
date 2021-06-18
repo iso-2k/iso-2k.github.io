@@ -188,7 +188,10 @@ function downloadSubmit() {
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
-    document.getElementById('dload').reset(); //reset values
+    //document.getElementById('dload').reset(); //reset values
+    $(function() {
+      $('#dload').select2('data', null)
+    });
     return false;
   }
   else {
@@ -247,7 +250,9 @@ function downloadSubmit() {
    */
    
     //reset form values after downloading figures for user
-    document.getElementById('dload').reset();
+    $(function() {
+      $('#dload').select2('data', null)
+    });
     return false;
   }
 
