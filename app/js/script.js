@@ -67,8 +67,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
-    // For each row in data, create a marker and add it to the map
-    // For each row, columns `Latitude`, `Longitude`, and `Title` are required
+    // For each row in data, create a marker and add it to the map; columns `Latitude`, `Longitude`, and `Title` are required
     for (var i in data) {
       var row = data[i];
       //MARKERS SECTION
@@ -76,9 +75,12 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       if (row.SiteID1 == null) {
         continue;
       }
+      /*var marker =  new L.marker([row.SiteLat, row.SiteLon], {
+        opacity: 1
+      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);*/
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
-      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);
+      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker);
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
