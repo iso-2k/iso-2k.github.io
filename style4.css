@@ -6,6 +6,9 @@
     width: 300px;
     background-color: white;
     /*position: relative;*/
+} 
+.js-example-placeholder-single {
+    margin-top: 3px;
 }
 .selectBox {
     position: relative;
@@ -52,4 +55,4 @@ h4 { /* for marker popups*/
 }
 .select2-container--default .select2-results__option[aria-disabled=true] {
     display: none;
-}/*rule for hiding disabled locations*/
+}/*rule for hiding
