@@ -15,13 +15,11 @@ $(document).ready(function() { //initialize select2 on dropdown
     placeholder: "Timescale",
     allowClear: true
   });
+  $('.js-example-basic-multiple[name="seasonality"]').select2({
+    placeholder: "Seasonality",
+    allowClear: true
+  });
 });
-
-//for select2 dropdown menu of proxy locations
-/*$(".js-example-placeholder-single").select2({
-  placeholder: "Proxy Location",
-  allowClear: true
-});*/
 
 //initialize map
 var mymap = new L.map('mapid', {
