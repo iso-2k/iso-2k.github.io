@@ -13,13 +13,13 @@
 .selectBox {
     position: relative;
     display: inline;
-    height: 28px;
-    border-radius: 4px;
-    border: 1px solid #aaa;
 }
 .selectBox select {
     width: 100%;
     font-weight: bold;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
 }
 .overSelect {
     position: absolute;
