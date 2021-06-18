@@ -213,6 +213,7 @@ var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
   siteID = $("#dDown").find(':selected')[0].value;
+  console.log(siteID);
   seasonParams = document.querySelectorAll('.seasonCheck:checked');
   timescaleParams = document.querySelectorAll('.timeCheck:checked');
   if (siteID == null || seasonParams == null || timescaleParams == null 
@@ -224,6 +225,7 @@ function downloadSubmit() {
   }
   else {
     //first, get array of all season + time combos
+    /*
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
     //var markerLat, markerLng, path, siteID, tempPath;
