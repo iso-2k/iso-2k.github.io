@@ -5,8 +5,10 @@
 .multipleSelection, .js-example-placeholder-single, .js-example-basic-multiple {
     width: 300px;
     background-color: white;
+    margin: 10px;
     /*position: relative;*/
 } 
+/*
 .selectBox {
     position: relative;
     display: inline;
@@ -30,7 +32,6 @@
     display: none;
     border: 1px black solid;
     max-height: 350px;
-    /*overflow-x: hidden;*/
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     background-color: #f1f1f1;
@@ -44,6 +45,7 @@
 #checkBoxes label:hover, #checkBoxes2 label:hover {
     background-color: #4f615e;
 }
+*/
 .seasonCheck, .timeCheck, .locCheck {
     margin: 3px;
 }
