@@ -52,12 +52,13 @@ function checkMarker(e) {
     var clickID = temp2[0];
     //get element with id that is same as clickID
     //want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
-    var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
+    //var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
     $('.js-example-placeholder-single').val(null).trigger('change');//get rid of existing selection
     //check and uncheck on click
     if (e.type == 'popupopen') {
       //trigger selection of proxy location of popup
       console.log('this was a popup');
+      $(".js-example-placeholder-single").val(clickID).trigger('change');//this should select the opened popup
     }
     mapElem.selected = !mapElem.selected;
     //$(".js-example-placeholder-single").val(clickID);
@@ -80,9 +81,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       if (row.SiteID1 == null) {
         continue;
       }
-      /*var marker =  new L.marker([row.SiteLat, row.SiteLon], {
-        opacity: 1
-      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);*/
+
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
@@ -196,9 +195,8 @@ function downloadSubmit() {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
     //document.getElementById('dload').reset(); //reset values
-    $(function() {
-      $('#dload').select2('data', null)
-    });
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
   else {
@@ -257,9 +255,8 @@ function downloadSubmit() {
    */
    
     //reset form values after downloading figures for user
-    $(function() {
-      $('#dload').select2('data', null)
-    });
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
 
