@@ -231,15 +231,15 @@ function downloadSubmit() {
   }
   else {
     //first, get array of all season + time combos
-    /*
+    
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
     //var markerLat, markerLng, path, siteID, tempPath;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
-      seasonality = seasonParams[j].value;
+      seasonality = seasonParams[j].id;
       for (var k = 0; k < timescaleParams.length; k++) {
-        timeScale = timescaleParams[k].value;
+        timeScale = timescaleParams[k].id;
         searchSubString = seasonality.concat(timeScale);
         concatCombos.push(searchSubString);
       }
