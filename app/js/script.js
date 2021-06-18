@@ -94,7 +94,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 function showCheckboxes(num) {
   var checkboxes = document.getElementById("checkBoxes");
   var checkboxes2 = document.getElementById("checkBoxes2");
-  var checkboxesLoc = document.getElementById("checkBoxesLoc");
+  //var checkboxesLoc = document.getElementById("checkBoxesLoc");
 
   if (num == 1){
     if (checkboxes.style.display == "block") { //if showing, change to not showing
@@ -104,8 +104,9 @@ function showCheckboxes(num) {
       checkboxes.style.display = "block";
     }
     checkboxes2.style.display = "none";
-    checkboxesLoc.style.display = "none";
+    //checkboxesLoc.style.display = "none";
   }
+  /*
   else if (num == 'l') {
     if (checkboxesLoc.style.display == "block") { 
       checkboxesLoc.style.display = "none";
@@ -116,6 +117,7 @@ function showCheckboxes(num) {
     checkboxes2.style.display = "none";
     checkboxes.style.display = "none";
   }
+  */
   else {
     if (checkboxes2.style.display == "block") { 
       checkboxes2.style.display = "none";
@@ -124,7 +126,7 @@ function showCheckboxes(num) {
       checkboxes2.style.display = "block";
     }
     checkboxes.style.display = "none";
-    checkboxesLoc.style.display = "none";
+    //checkboxesLoc.style.display = "none";
   } 
 }
 
