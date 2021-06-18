@@ -236,7 +236,8 @@ function downloadSubmit() {
   else {
     //first, get array of all season + time combos
     var concatCombos = [];
-    var seasonality, searchSubString, timeScale, markerLat, markerLng, path, siteID, tempPath;
+    var seasonality, searchSubString, timeScale;
+    //var markerLat, markerLng, path, siteID, tempPath;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
       seasonality = seasonParams[j].value;
@@ -247,7 +248,7 @@ function downloadSubmit() {
       }
     }
     //now, loop through all locations and get all files with string concat combos in filename
-    var locationFilepathArray = [];
+    //var locationFilepathArray = [];
     /*
     for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
