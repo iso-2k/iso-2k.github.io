@@ -49,7 +49,7 @@ function checkMarker(e) {
     $(".js-example-placeholder-single").trigger('change.select2');
 }
 
-var select2 = document.getElementById("dDown");
+var select3 = document.getElementById("dDown");
 var markerDict = {};
 
 //path to csv of iso2k sites
@@ -77,7 +77,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       var optionNew = document.createElement("option");
       [optionNew.value, optionNew.id] = [row.SiteID1, row.SiteID1];
       optionNew.className = 'locCheck';
-      select2.appendChild(optionNew);
+      select3.appendChild(optionNew);
       optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
     }
     mymap.addLayer(markers); //use this for clusters
