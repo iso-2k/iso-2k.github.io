@@ -43,6 +43,7 @@ function checkMarker(e) {
     //get element with id that is same as clickID
     //want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
     var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
+    $('.js-example-placeholder-single').val(null).trigger('change');//get rid of existing selection
     //check and uncheck on click
     mapElem.selected = !mapElem.selected;
     $(".js-example-placeholder-single").val(clickID);
