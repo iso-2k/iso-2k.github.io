@@ -6,6 +6,10 @@ var myBounds = new L.LatLngBounds(new L.LatLng(-90, -200), new L.LatLng(90, 200)
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
+$(document).ready(function() {
+  $('.js-example-placeholder-single').select2();
+});
+
 //for select2 dropdown menu of proxy locations
 $(".js-example-placeholder-single").select2({
   placeholder: "Proxy Location",
@@ -46,8 +50,8 @@ function checkMarker(e) {
     $('.js-example-placeholder-single').val(null).trigger('change');//get rid of existing selection
     //check and uncheck on click
     mapElem.selected = !mapElem.selected;
-    $(".js-example-placeholder-single").val(clickID);
-    $(".js-example-placeholder-single").trigger('change.select2');
+    //$(".js-example-placeholder-single").val(clickID);
+    //$(".js-example-placeholder-single").trigger('change.select2');
 }
 
 var select3 = document.getElementById("dDown");
