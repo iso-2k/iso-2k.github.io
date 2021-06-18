@@ -55,6 +55,10 @@ function checkMarker(e) {
     var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
     $('.js-example-placeholder-single').val(null).trigger('change');//get rid of existing selection
     //check and uncheck on click
+    if (e.type == 'popupopen') {
+      //trigger selection of proxy location of popup
+      console.log('this was a popup');
+    }
     mapElem.selected = !mapElem.selected;
     //$(".js-example-placeholder-single").val(clickID);
     //$(".js-example-placeholder-single").trigger('change.select2');
