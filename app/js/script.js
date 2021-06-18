@@ -43,7 +43,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 //onclick function for marker, ticks off checkbox
 function checkMarker(e) {
     //get popup and its content
-    console.log(e);
     var popup = e.target.getPopup();
     var content = popup.getContent();
     //extract SiteID from the popup contrent
@@ -141,7 +140,6 @@ function updateBoxes(markers) {
         console.log($("#dDown").find('id:' + clickID));
         $("#dDown").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
         $('#dDown').trigger('change');
-        //elemens is an array (querySelectorAll returns multiple if present)
         //var elemens = document.querySelectorAll('[id=' + clickID + ']');
         //for (var k = 0; k < elemens.length; k++) {
           //elemens[k].style.display = 'inline-block';
