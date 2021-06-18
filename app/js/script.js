@@ -243,10 +243,9 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
-    //now, loop through all locations and get all files with string concat combos in filename
-    //var locationFilepathArray = [];
-    /*
-    for (var i = 0; i < locationParams.length; i++) {
+    var locationFilepathArray = [];
+    
+    //for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       path = "/figures/"
       siteID = locationParams[i].value;
@@ -267,7 +266,7 @@ function downloadSubmit() {
       }
       
       console.log("Location filepath array: " + locationFilepathArray);
-    } */
+    //} 
     /*
     link = document.createElement("a"); //create 'a' element
     link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
