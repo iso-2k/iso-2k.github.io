@@ -104,7 +104,7 @@ function showCheckboxes(num) {
       checkboxes.style.display = "block";
     }
     checkboxes2.style.display = "none";
-    //checkboxesLoc.style.display = "none";
+    $(".js-example-placeholder-single").select2('close');
   }
   /*
   else if (num == 'l') {
@@ -126,7 +126,7 @@ function showCheckboxes(num) {
       checkboxes2.style.display = "block";
     }
     checkboxes.style.display = "none";
-    //checkboxesLoc.style.display = "none";
+    $(".js-example-placeholder-single").select2('close');
   } 
 }
 
@@ -220,7 +220,7 @@ function downloadSubmit() {
   if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0) {
     //missing a filter
-      alert('Please select at least one checkbox for each filter.');
+    alert('Please select at least one checkbox for each filter.');
     document.getElementById('dload').reset(); //reset values
     return false;
   }
