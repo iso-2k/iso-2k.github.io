@@ -6,15 +6,18 @@ var myBounds = new L.LatLngBounds(new L.LatLng(-90, -200), new L.LatLng(90, 200)
 var markers =  new L.markerClusterGroup();
 var clusterOff = new L.featureGroup();
 
-$(document).ready(function() {
-  $('.js-example-placeholder-single').select2();
+$(document).ready(function() { //initialize select2 on dropdown
+  $('.js-example-placeholder-single').select2({
+    placeholder: "Proxy Location",
+    allowClear: true
+  });
 });
 
 //for select2 dropdown menu of proxy locations
-$(".js-example-placeholder-single").select2({
+/*$(".js-example-placeholder-single").select2({
   placeholder: "Proxy Location",
   allowClear: true
-});
+});*/
 
 //initialize map
 var mymap = new L.map('mapid', {
