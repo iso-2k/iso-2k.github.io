@@ -106,18 +106,16 @@ function showCheckboxes(num) {
     checkboxes2.style.display = "none";
     $(".js-example-placeholder-single").select2('close');
   }
-  /*
   else if (num == 'l') {
-    if (checkboxesLoc.style.display == "block") { 
+    /*if (checkboxesLoc.style.display == "block") { 
       checkboxesLoc.style.display = "none";
     }
     else {
       checkboxesLoc.style.display = "block";
-    }
+    }*/
     checkboxes2.style.display = "none";
     checkboxes.style.display = "none";
   }
-  */
   else {
     if (checkboxes2.style.display == "block") { 
       checkboxes2.style.display = "none";
