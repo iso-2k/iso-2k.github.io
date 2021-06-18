@@ -97,44 +97,6 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 //  'View <a href="https://github.com/HandsOnDataViz/leaflet-map-csv" target="_blank">code on GitHub</a>'
 //);
 
-//js for all 3 dropdowns
-function showCheckboxes(num) {
-  var checkboxes = document.getElementById("checkBoxes");
-  var checkboxes2 = document.getElementById("checkBoxes2");
-  //var checkboxesLoc = document.getElementById("checkBoxesLoc");
-
-  if (num == 1){
-    if (checkboxes.style.display == "block") { //if showing, change to not showing
-      checkboxes.style.display = "none";
-    }
-    else {
-      checkboxes.style.display = "block";
-    }
-    checkboxes2.style.display = "none";
-    $(".js-example-placeholder-single").select2('close');
-  }
-  else if (num == 'l') {
-    /*if (checkboxesLoc.style.display == "block") { 
-      checkboxesLoc.style.display = "none";
-    }
-    else {
-      checkboxesLoc.style.display = "block";
-    }*/
-    checkboxes2.style.display = "none";
-    checkboxes.style.display = "none";
-  }
-  else {
-    if (checkboxes2.style.display == "block") { 
-      checkboxes2.style.display = "none";
-    }
-    else {
-      checkboxes2.style.display = "block";
-    }
-    checkboxes.style.display = "none";
-    $(".js-example-placeholder-single").select2('close');
-  } 
-}
-
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
   //display hides and collapses (visibility just hides)
@@ -246,7 +208,6 @@ function downloadSubmit() {
     }
     
     var locationFilepathArray = [];
-    
     //for (var i = 0; i < locationParams.length; i++) {
       //do this for each location
       path = "/figures/"

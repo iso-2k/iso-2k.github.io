@@ -30,13 +30,12 @@ h4 { /* for marker popups*/
 .select2-container--default .select2-selection--multiple:before { /*try diff style for arrow on multiple selection*/
     content: ' ';
     display: block;
-    position: absolute;
+    position: relative;
     border-color: #888 transparent transparent transparent;
     border-style: solid;
     border-width: 5px 4px 0 4px;
     height: 0;
     right: 6px;
-    float: right;
     margin-left: -4px;
     margin-top: -2px;top: 50%;
     width: 0;cursor: pointer
@@ -44,22 +43,12 @@ h4 { /* for marker popups*/
 .select2-container--open .select2-selection--multiple:before {
   content: ' ';
   display: block;
-  position: absolute;
+  position: relative;
   border-color: transparent transparent #888 transparent;
       border-width: 0 4px 5px 4px;
   height: 0;
   right: 6px;
-  float: right;
   margin-left: -4px;
   margin-top: -2px;top: 50%;
   width: 0;cursor: pointer
 }
-.select2-selection__clear{
-    position: relative;
-    top: 0;
-    right: -33px;
-    border: 1px solid #ccc;
-    border-left: 0;
-    height: 100%;
-    padding: 0 12px;
- }
