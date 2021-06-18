@@ -145,8 +145,8 @@ function updateBoxes(markers) {
       //var elemens = document.querySelectorAll('[id=' + clickID + ']');
       //document.querySelector('[id=' + clickID + ']').disabled = 'enabled';
       //$('select id:' + clickID).prop('disabled', false);
-      $("#dDown").find('id:')[0].prop('disabled', false);
-      console.log($("#dDown").find('id:')[0]);
+      $("#dDown").find('id:' + clickID)[0].prop('disabled', false);
+      console.log($("#dDown").find('id:' + clickID)[0]);
       //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
         if (elemens[k].tagName == 'label') {
