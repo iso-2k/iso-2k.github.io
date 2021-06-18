@@ -212,8 +212,8 @@ mymap.on('zoomend', function(e) {
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
-  testVar = $("#dDown").select2('val');
-  console.log(testVar);
+  //testVar = $("#dDown").select2('val');
+  //console.log(testVar);
   //locationParams = document.querySelectorAll('.locCheck:selected'); //nodelist
   locationParams = [];
   locationParams.push('abc');
