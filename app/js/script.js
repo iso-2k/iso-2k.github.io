@@ -142,8 +142,9 @@ function updateBoxes(markers) {
       var temp2 = tempSplit[1].split('<');
       var clickID = temp2[0];
       //elemens is an array (querySelectorAll returns multiple if present)
-      var elemens = document.querySelectorAll('[id=' + clickID + ']');
-      $('#' + clickID).select2().prop("disabled", false);
+      //var elemens = document.querySelectorAll('[id=' + clickID + ']');
+      document.querySelector('[id=' + clickID + ']').disabled = 'enabled';
+      //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
         if (elemens[k].tagName == 'label') {
           elemens[k].style.display = 'block';
