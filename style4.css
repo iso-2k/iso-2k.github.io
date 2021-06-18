@@ -2,14 +2,11 @@
 .show {
     display: block;
 }
-.multipleSelection, .js-example-placeholder-single {
+.multipleSelection, .js-example-placeholder-single, .js-example-basic-multiple {
     width: 300px;
     background-color: white;
     /*position: relative;*/
 } 
-.js-example-placeholder-single {
-    margin-top: 20px;
-}
 .selectBox {
     position: relative;
     display: inline;
