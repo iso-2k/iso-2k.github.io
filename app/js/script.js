@@ -50,24 +50,13 @@ function checkMarker(e) {
     var tempSplit = content.split('Site ID: ');
     var temp2 = tempSplit[1].split('<');
     var clickID = temp2[0];
-    //get element with id that is same as clickID
-    //want the 2nd indexed element (1st is the label, checkbox is contained in the input tag though)
-    //var mapElem = document.querySelectorAll('[id=' + clickID + ']')[0];
     $('.js-example-placeholder-single').val(null).trigger('change');//get rid of existing selection
     //check and uncheck on click
     if (e.type == 'popupopen') {
       //trigger selection of proxy location of popup
-      //document.getElementById('popup-status').innerHTML = marker.isPopupOpen()
-      //this.openPopup();
       console.log('this was a popup');
       $(".js-example-placeholder-single").val(clickID).trigger('change');//this should select the opened popup
     }
-    else {
-      //this.closePopup();
-    }
-    //mapElem.selected = !mapElem.selected;
-    //$(".js-example-placeholder-single").val(clickID);
-    //$(".js-example-placeholder-single").trigger('change.select2');
 }
 
 var select3 = document.getElementById("dDown");
@@ -86,12 +75,9 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       if (row.SiteID1 == null) {
         continue;
       }
-
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
-      marker.on('popupopen', checkMarker);
-      marker.on('popupclose', checkMarker);
 
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
@@ -131,7 +117,7 @@ function updateBoxes(markers) {
       //$('select id:' + clickID).prop('disabled', false);
       //$("#dDown").find('id:' + clickID)[0].prop('disabled', false);
       console.log($("#dDown").find('id:' + clickID));
-      $("#dDown").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+      $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
       $('#dDown').trigger('change');
       //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
@@ -147,7 +133,7 @@ function updateBoxes(markers) {
         var temp2 = tempSplit[1].split('<');
         var clickID = temp2[0];
         console.log($("#dDown").find('id:' + clickID));
-        $("#dDown").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+        $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
         $('#dDown').trigger('change');
         //var elemens = document.querySelectorAll('[id=' + clickID + ']');
         //for (var k = 0; k < elemens.length; k++) {
@@ -177,14 +163,14 @@ function logVisibleClusters() {
   updateBoxes(clustArray);
 }
 
-/*
+
 mymap.on('moveend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
 mymap.on('zoomend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
-*/
+
 
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
@@ -200,7 +186,7 @@ function downloadSubmit() {
   if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
     //missing a filter
-    alert('Please select at least one checkbox for each filter.');
+    alert('Please select at least one option for each filter before hitting download.');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
