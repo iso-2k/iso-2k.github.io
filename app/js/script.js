@@ -43,7 +43,6 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 //onclick function for marker, ticks off checkbox
 function checkMarker(e) {
     //get popup and its content
-    console.log(e);
     var popup = e.target.getPopup();
     var content = popup.getContent();
     //extract SiteID from the popup contrent
@@ -118,7 +117,7 @@ function updateBoxes(markers) {
       //$("#dDown").find('id:' + clickID)[0].prop('disabled', false);
       console.log($("#dDown").find('id:' + clickID));
       $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
-      $('#dDown').trigger('change');
+      $(".js-example-placeholder-single").trigger('change');
       //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
         //elemens[k].style.display = 'inline-block';        
@@ -132,9 +131,9 @@ function updateBoxes(markers) {
         var tempSplit = content.split('Site ID: ');
         var temp2 = tempSplit[1].split('<');
         var clickID = temp2[0];
-        console.log($("#dDown").find('id:' + clickID));
+        //console.log($("#dDown").find('id:' + clickID));
         $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
-        $('#dDown').trigger('change');
+        $(".js-example-placeholder-single").trigger('change');
         //var elemens = document.querySelectorAll('[id=' + clickID + ']');
         //for (var k = 0; k < elemens.length; k++) {
           //elemens[k].style.display = 'inline-block';
