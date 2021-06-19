@@ -53,7 +53,6 @@ function checkMarker(e) {
     //check and uncheck on click
     if (e.type == 'popupopen') {
       //trigger selection of proxy location of popup
-      console.log('this was a popup');
       $(".js-example-placeholder-single").val(clickID).trigger('change');//this should select the opened popup
     }
 }
@@ -98,8 +97,6 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
-  //display hides and collapses (visibility just hides)
-  //for (let el of document.querySelectorAll('.locCheck')) el.disabled = 'disabled';
   $('.js-example-placeholder-single option').prop('disabled', true);
   $(".js-example-placeholder-single").trigger('change');
 
@@ -111,19 +108,8 @@ function updateBoxes(markers) {
       var tempSplit = content.split('Site ID: ');
       var temp2 = tempSplit[1].split('<');
       var clickID = temp2[0];
-      //elemens is an array (querySelectorAll returns multiple if present)
-      //var elemens = document.querySelectorAll('[id=' + clickID + ']');
-      //document.querySelector('[id=' + clickID + ']').disabled = 'enabled';
-      //$('select id:' + clickID).prop('disabled', false);
-      //$("#dDown").find('id:' + clickID)[0].prop('disabled', false);
-      //console.log($(".js-example-placeholder-single").find('id:' + clickID));
-      //$(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
       $('.js-example-placeholder-single option[value="' + clickID + '"]').prop('disabled',false);
       $(".js-example-placeholder-single").trigger('change');
-      //$('#' + clickID).select2().prop("disabled", false);
-      /*for (var k = 0; k < elemens.length; k++) {
-        //elemens[k].style.display = 'inline-block';        
-      }end of for loop */
     }
     else { //markers[i] is a cluster  
       var childMarkers = markers[i].getAllChildMarkers();
@@ -133,13 +119,8 @@ function updateBoxes(markers) {
         var tempSplit = content.split('Site ID: ');
         var temp2 = tempSplit[1].split('<');
         var clickID = temp2[0];
-        //console.log($("#dDown").find('id:' + clickID));
         $('.js-example-placeholder-single option[value="' + clickID + '"]').prop('disabled',false);
         $(".js-example-placeholder-single").trigger('change');
-        //var elemens = document.querySelectorAll('[id=' + clickID + ']');
-        //for (var k = 0; k < elemens.length; k++) {
-          //elemens[k].style.display = 'inline-block';
-        //}
       }
     }
   }
@@ -164,7 +145,6 @@ function logVisibleClusters() {
   updateBoxes(clustArray);
 }
 
-
 mymap.on('moveend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
@@ -178,11 +158,8 @@ var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
   //get checked values
   siteID = $("#dDown").find(':selected')[0].value;
-  console.log(siteID);
   seasonParams = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
-  console.log(seasonParams);
   timescaleParams = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
-  console.log(timescaleParams);
   
   if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
