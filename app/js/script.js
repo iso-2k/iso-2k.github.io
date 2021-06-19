@@ -43,6 +43,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 //onclick function for marker, ticks off checkbox
 function checkMarker(e) {
     //get popup and its content
+    console.log(e);
     var popup = e.target.getPopup();
     var content = popup.getContent();
     //extract SiteID from the popup contrent
@@ -81,9 +82,12 @@ $.get('../.././iso2kp2.csv', function(csvString) {
         continue;
       }
 
+      /*var marker =  new L.marker([row.SiteLat, row.SiteLon], {
+        opacity: 1
+      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker).on('click', checkMarker);*/
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
-      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker).on('click', checkMarker);
+      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('click', checkMarker);
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
