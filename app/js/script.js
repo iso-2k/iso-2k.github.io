@@ -99,7 +99,8 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 //responsive clusters w/ zoom and move events
 function updateBoxes(markers) {
   //display hides and collapses (visibility just hides)
-  for (let el of document.querySelectorAll('.locCheck')) el.disabled = 'disabled';
+  //for (let el of document.querySelectorAll('.locCheck')) el.disabled = 'disabled';
+  $('.js-example-placeholder-single option').prop('disabled', true);
   $(".js-example-placeholder-single").trigger('change');
 
   //add some sort of if statement in for loop to check whether current index is a markerCluster or marker
@@ -115,7 +116,7 @@ function updateBoxes(markers) {
       //document.querySelector('[id=' + clickID + ']').disabled = 'enabled';
       //$('select id:' + clickID).prop('disabled', false);
       //$("#dDown").find('id:' + clickID)[0].prop('disabled', false);
-      console.log($("#dDown").find('id:' + clickID));
+      console.log($(".js-example-placeholder-single").find('id:' + clickID));
       $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
       $(".js-example-placeholder-single").trigger('change');
       //$('#' + clickID).select2().prop("disabled", false);
