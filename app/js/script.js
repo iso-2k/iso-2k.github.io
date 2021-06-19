@@ -57,11 +57,15 @@ function checkMarker(e) {
     //check and uncheck on click
     if (e.type == 'popupopen') {
       //trigger selection of proxy location of popup
-      this.openPopup();
+      //document.getElementById('popup-status').innerHTML = marker.isPopupOpen()
+      //this.openPopup();
       console.log('this was a popup');
       $(".js-example-placeholder-single").val(clickID).trigger('change');//this should select the opened popup
     }
-    mapElem.selected = !mapElem.selected;
+    else {
+      //this.closePopup();
+    }
+    //mapElem.selected = !mapElem.selected;
     //$(".js-example-placeholder-single").val(clickID);
     //$(".js-example-placeholder-single").trigger('change.select2');
 }
@@ -86,6 +90,8 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
+      marker.on('popupopen', checkMarker);
+      marker.on('popupclose', checkMarker);
 
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
