@@ -116,8 +116,9 @@ function updateBoxes(markers) {
       //document.querySelector('[id=' + clickID + ']').disabled = 'enabled';
       //$('select id:' + clickID).prop('disabled', false);
       //$("#dDown").find('id:' + clickID)[0].prop('disabled', false);
-      console.log($(".js-example-placeholder-single").find('id:' + clickID));
-      $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+      //console.log($(".js-example-placeholder-single").find('id:' + clickID));
+      //$(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+      $('.js-example-placeholder-single option[value="' + clickID + '"]').prop('disabled',false);
       $(".js-example-placeholder-single").trigger('change');
       //$('#' + clickID).select2().prop("disabled", false);
       /*for (var k = 0; k < elemens.length; k++) {
@@ -133,7 +134,7 @@ function updateBoxes(markers) {
         var temp2 = tempSplit[1].split('<');
         var clickID = temp2[0];
         //console.log($("#dDown").find('id:' + clickID));
-        $(".js-example-placeholder-single").find('id:' + clickID).prop('disabled', false);//maybe this will enable the options
+        $('.js-example-placeholder-single option[value="' + clickID + '"]').prop('disabled',false);
         $(".js-example-placeholder-single").trigger('change');
         //var elemens = document.querySelectorAll('[id=' + clickID + ']');
         //for (var k = 0; k < elemens.length; k++) {
