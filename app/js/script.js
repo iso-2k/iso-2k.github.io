@@ -83,7 +83,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
 
       var marker =  new L.marker([row.SiteLat, row.SiteLon], {
         opacity: 1
-      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
+      }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker).on('click', checkMarker);
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
@@ -192,7 +192,6 @@ function downloadSubmit() {
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
     //missing a filter
     alert('Please select at least one checkbox for each filter.');
-    //document.getElementById('dload').reset(); //reset values
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
