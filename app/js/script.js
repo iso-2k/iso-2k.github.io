@@ -196,6 +196,8 @@ function downloadSubmit() {
 
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
+      dLat = decimal.Decimal(markerLat);
+      console.log("decimal places: " + dLat.as_tuple().exponent);
       markerLng = markerDict[siteID].getLatLng().lng;
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
         markerLng = markerLng + 360.0;
