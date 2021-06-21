@@ -162,6 +162,14 @@ function generateZip(links, siteID) {
     var filename = links[i];
     filename = filename.split("/")[3];
     console.log("filename in generateZip function: " + filename);
+    zip.file(filename, data, { binary: true });
+    count++;
+    if (count == links.length) {
+      //we have reached the last file to download
+      zip.generateAsync({ type: 'blob' }).then( function (content) {
+        saveAs(content, zipFilename);
+      });
+    }
     /*
     JSZipUtils.getBinaryContent(url, function (error, data) {
       if (err) {
