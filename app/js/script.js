@@ -238,6 +238,7 @@ function downloadSubmit() {
         markerLat = markerLat.toFixed(4);
       }
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
+        console.log(typeof markerLng);
         markerLng = markerLng + 360.0;
       }
       console.log("after .toFixed(): " + markerLat);
