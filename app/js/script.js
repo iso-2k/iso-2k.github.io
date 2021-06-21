@@ -228,9 +228,19 @@ function downloadSubmit() {
       var dLat = countDecimals(markerLat);
       console.log("decimal places: " + dLat);
       markerLng = markerDict[siteID].getLatLng().lng;
+      var dLng = countDecimals(markerLng);
+      if (dLng > 4) {
+        //truncate markerLng
+        markerLng = markerLng.toFixed(4);
+      }
+      if (dLat > 4) {
+        //truncate markerLat
+        markerLat = markerLng.toFixed(4);
+      }
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
         markerLng = markerLng + 360.0;
       }
+      console.log("after .toFixed(): " + markerLat);
 
       for (var b = 0; b < concatCombos.length; b++) {
         tempPath = path.concat(concatCombos[b]);
