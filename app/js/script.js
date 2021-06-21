@@ -225,15 +225,15 @@ function downloadSubmit() {
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       console.log("stored latitude: " + markerLat);
-      var dLat = countDecimals(markerLat);
       console.log("decimal places: " + dLat);
       markerLng = markerDict[siteID].getLatLng().lng;
-      var dLng = countDecimals(markerLng);
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
         console.log(typeof markerLng);
-        markerLng = markerLng + 360.0; //treated as string
+        markerLng = markerLng + 360.0; 
       }
-      
+      var dLng = countDecimals(markerLng);
+      var dLat = countDecimals(markerLat);
+
       if (dLng > 4) {
         //truncate markerLng
         markerLng = markerLng.toFixed(4);
