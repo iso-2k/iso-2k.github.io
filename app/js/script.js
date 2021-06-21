@@ -206,6 +206,7 @@ function downloadSubmit() {
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
     var markerLat, markerLng, path, siteID, tempPath;
+    var tempLat, tempLng;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
       seasonality = seasonParams[j].id;
@@ -225,23 +226,26 @@ function downloadSubmit() {
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
       console.log("stored latitude: " + markerLat);
-      console.log("decimal places: " + dLat);
       markerLng = markerDict[siteID].getLatLng().lng;
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
-        console.log(typeof markerLng);
         markerLng = markerLng + 360.0; 
       }
       var dLng = countDecimals(markerLng);
       var dLat = countDecimals(markerLat);
+      console.log("decimal places: " + dLat);
+      console.log("var type at 236: " + typeof markerLat);
 
       if (dLng > 4) {
         //truncate markerLng
-        markerLng = markerLng.toFixed(4);
+        tempLng = markerLng.toFixed(4);
+        console.log(typeof tempLng);
       }
       if (dLat > 4) {
         //truncate markerLat
-        markerLat = markerLat.toFixed(4);
+        tempLat = markerLat.toFixed(4);
+        console.log(typeof tempLat);
       }
+      //console.log(typeof )
       markerLat = parseFloat(markerLat);
       markerLng = parseFloat(markerLng);
 
