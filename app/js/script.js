@@ -159,16 +159,19 @@ function generateZip(links, siteID) {
   var count = 0;  
   var zipFilename = siteID + '.zip';
   links.forEach(function (url, i) {
-    var filename = links[i];
-    filename = filename.split("/")[3];
+    var filePath = links[i];
+    filename = filePath.split("/")[3];
     console.log("filename in generateZip function: " + filename);
-    zip.file(filename, data, { binary: true });
+    console.log("whole path: " + filePath);
+    //zip.file(filename, data, { binary: true });
+    zip.file(filename, filePath);
     count++;
 /*
     if (count == links.length) {
       //we have reached the last file to download
-      zip.generateAsync({ type: 'blob' }).then( function (content) {
-        saveAs(content, zipFilename);
+      zip.generateAsync({type:"blob"})
+      .then(function (blob) {
+        saveAs(blob, zipFilename);
       });
     }
     
