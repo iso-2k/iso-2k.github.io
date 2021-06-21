@@ -15,11 +15,11 @@ $(document).ready(function() { //initialize select2 on dropdown
   });
   $('.js-example-basic-multiple[name="timescales[]"]').select2({
     placeholder: "Timescale",
-    allowClear: true
+    allowClear: false
   });
   $('.js-example-basic-multiple[name="seasonality[]"]').select2({
     placeholder: "Seasonality",
-    allowClear: true
+    allowClear: false
   });
 });
 
@@ -82,7 +82,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
-      console.log(row.SiteLon);
+      //console.log(row.SiteLon);
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
@@ -196,7 +196,7 @@ function downloadSubmit() {
 
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
-      dLat = decimal.Decimal(markerLat);
+      var dLat = decimal.Decimal(markerLat);
       console.log("decimal places: " + dLat.as_tuple().exponent);
       markerLng = markerDict[siteID].getLatLng().lng;
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
