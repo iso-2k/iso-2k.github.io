@@ -198,7 +198,7 @@ function downloadSubmit() {
       markerLat = markerDict[siteID].getLatLng().lat;
       markerLng = markerDict[siteID].getLatLng().lng;
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
-        markerLng = markerLng + 360;
+        markerLng = markerLng + 360.0;
       }
 
       for (var b = 0; b < concatCombos.length; b++) {
@@ -209,6 +209,7 @@ function downloadSubmit() {
       }
       
       console.log("Location filepath array: " + locationFilepathArray);
+      generateZip(locationFilepathArray);
     //} 
     /*
     link = document.createElement("a"); //create 'a' element
