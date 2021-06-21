@@ -73,14 +73,14 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       if (row.SiteID1 == null) {
         continue;
       }
-      var marker =  new L.marker([row.SiteLat, row.SiteLon], {
+      var marker =  new L.marker([row.SiteLat, row.SiteLonAdj], {
         opacity: 1
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
 
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
-      console.log(row.SiteLon);
+      console.log(row.SiteLonAdj);
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
