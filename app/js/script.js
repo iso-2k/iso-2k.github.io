@@ -157,7 +157,7 @@ mymap.on('zoomend', function(e) {
 
 function generateZip(links) {
   console.log('test');
-  var zip = new JSZip();
+  //var zip = new JSZip();
   var count = 0;  
   var zipFilename = 'TestName.zip';
   /*
