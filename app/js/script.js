@@ -1,4 +1,3 @@
-//const JSZip = require("jszip");
 
 const testString = 'This is a test!';
 console.log(testString);
@@ -236,7 +235,7 @@ function downloadSubmit() {
       }
       if (dLat > 4) {
         //truncate markerLat
-        markerLat = markerLng.toFixed(4);
+        markerLat = markerLat.toFixed(4);
       }
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
         markerLng = markerLng + 360.0;
