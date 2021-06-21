@@ -154,13 +154,15 @@ mymap.on('zoomend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
 
-function generateZip(links) {
+function generateZip(links, siteID) {
   var zip = new JSZip();
   var count = 0;  
-  var zipFilename = 'TestName.zip';
+  var zipFilename = siteID + '.zip';
   links.forEach(function (url, i) {
     var filename = links[i];
-    filename = filename.split("/")[3]
+    filename = filename.split("/")[3];
+    console.log("filename in generateZip function: " + filename);
+    /*
     JSZipUtils.getBinaryContent(url, function (error, data) {
       if (err) {
         throw err;
@@ -172,7 +174,7 @@ function generateZip(links) {
           saveAs(content, zipFilename);
         });
       }
-    });
+    }); */
   }); 
 }
 
@@ -257,7 +259,7 @@ function downloadSubmit() {
       }
       
       console.log("Location filepath array: " + locationFilepathArray);
-      generateZip(locationFilepathArray);
+      generateZip(locationFilepathArray, siteID);
     //} 
     /*
     link = document.createElement("a"); //create 'a' element
