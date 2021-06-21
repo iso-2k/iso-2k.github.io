@@ -242,6 +242,8 @@ function downloadSubmit() {
         //truncate markerLat
         markerLat = markerLat.toFixed(4);
       }
+      markerLat = parseFloat(markerLat);
+      markerLng = parseFloat(markerLng);
 
       console.log("after .toFixed(): " + markerLat);
 
