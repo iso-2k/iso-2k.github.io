@@ -17,16 +17,7 @@ h4 { /* for marker popups*/
 }
 .select2-container--default .select2-results__option[aria-disabled=true] {
     display: none;
-}/*rule for hiding disabled locations rather than graying them out */
-/*.select2-selection--multiple:before {
-    content: "";
-    position: absolute;
-    right: 7px;
-    top: 42%;
-    border-top: 5px solid #888;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-}*/
+}
 .select2-container--default .select2-selection--multiple:before { /*try diff style for arrow on multiple selection*/
     content: ' ';
     display: block;

@@ -157,9 +157,10 @@ mymap.on('zoomend', function(e) {
 
 function generateZip(links) {
   console.log('test');
-  /*var zip = new JSZip();
+  var zip = new JSZip();
   var count = 0;  
   var zipFilename = 'TestName.zip';
+  /*
   links.forEach(function (url, i) {
     var fileName = links[i];
     filename = filename.replace(/[\/\*\|\:\<\>\?\"\\]/gi, '').replace("httpsi.imgur.com","");
