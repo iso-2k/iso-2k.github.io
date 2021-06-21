@@ -1,3 +1,5 @@
+const JSZip = require("jszip");
+
 const testString = 'This is a test!';
 console.log(testString);
 
@@ -80,7 +82,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
-      console.log(row.SiteLonAdj);
+      console.log(row.SiteLon);
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
@@ -230,6 +232,14 @@ function downloadSubmit() {
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
+
+}
+
+function generateZip() {
+  console.log('test');
+  var zip = new JSZip();
+  var count = 0;
+  var zipFilename = 'Pictures.zip';
 
 }
 
