@@ -1,4 +1,4 @@
-const JSZip = require("jszip");
+//const JSZip = require("jszip");
 
 const testString = 'This is a test!';
 console.log(testString);
@@ -235,12 +235,27 @@ function downloadSubmit() {
 
 }
 
-function generateZip() {
+function generateZip(links) {
   console.log('test');
   var zip = new JSZip();
-  var count = 0;
-  var zipFilename = 'Pictures.zip';
-
+  var count = 0;  
+  var zipFilename = 'TestName.zip';
+  links.forEach(function (url, i) {
+    var fileName = links[i];
+    filename = filename.replace(/[\/\*\|\:\<\>\?\"\\]/gi, '').replace("httpsi.imgur.com","");
+    JSZipUtils.getBinaryContent(url, function (error, data) {
+      if (err) {
+        throw err;
+      }
+      zip.file(filename, data, { binary: true });
+      count++;
+      if (count == links.length) {
+        zip.generateAsync({ type: 'blob' }).then(function (content) {
+          saveAs(content, zipFilename);
+        });
+      }
+    });
+  });
 }
 
 $(document).ready(function () {
