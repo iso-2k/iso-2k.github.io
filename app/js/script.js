@@ -80,6 +80,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       markerDict[row.SiteID1] = marker;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
+      console.log(row.SiteLon);
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
