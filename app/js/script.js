@@ -155,6 +155,34 @@ mymap.on('zoomend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
 
+function generateZip(links) {
+  console.log('test');
+  /*var zip = new JSZip();
+  var count = 0;  
+  var zipFilename = 'TestName.zip';
+  links.forEach(function (url, i) {
+    var fileName = links[i];
+    filename = filename.replace(/[\/\*\|\:\<\>\?\"\\]/gi, '').replace("httpsi.imgur.com","");
+    JSZipUtils.getBinaryContent(url, function (error, data) {
+      if (err) {
+        throw err;
+      }
+      zip.file(filename, data, { binary: true });
+      count++;
+      if (count == links.length) {
+        zip.generateAsync({ type: 'blob' }).then(function (content) {
+          saveAs(content, zipFilename);
+        });
+      }
+    });
+  }); */
+}
+
+
+var countDecimals = function (value) {
+  if(Math.floor(value) === value) return 0;
+  return value.toString().split(".")[1].length || 0; 
+}
 
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
@@ -177,7 +205,7 @@ function downloadSubmit() {
     
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
-    //var markerLat, markerLng, path, siteID, tempPath;
+    var markerLat, markerLng, path, siteID, tempPath;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
       seasonality = seasonParams[j].id;
@@ -196,8 +224,9 @@ function downloadSubmit() {
 
       //now, need lat+lon of location for end of filepath
       markerLat = markerDict[siteID].getLatLng().lat;
-      var dLat = decimal.Decimal(markerLat);
-      console.log("decimal places: " + dLat.as_tuple().exponent);
+      console.log("stored latitude: " + markerLat);
+      var dLat = countDecimals(markerLat);
+      console.log("decimal places: " + dLat);
       markerLng = markerDict[siteID].getLatLng().lng;
       if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
         markerLng = markerLng + 360.0;
@@ -238,28 +267,7 @@ function downloadSubmit() {
 
 }
 
-function generateZip(links) {
-  console.log('test');
-  var zip = new JSZip();
-  var count = 0;  
-  var zipFilename = 'TestName.zip';
-  links.forEach(function (url, i) {
-    var fileName = links[i];
-    filename = filename.replace(/[\/\*\|\:\<\>\?\"\\]/gi, '').replace("httpsi.imgur.com","");
-    JSZipUtils.getBinaryContent(url, function (error, data) {
-      if (err) {
-        throw err;
-      }
-      zip.file(filename, data, { binary: true });
-      count++;
-      if (count == links.length) {
-        zip.generateAsync({ type: 'blob' }).then(function (content) {
-          saveAs(content, zipFilename);
-        });
-      }
-    });
-  });
-}
+
 
 $(document).ready(function () {
   // add bootstrap table styles to pandoc tables
