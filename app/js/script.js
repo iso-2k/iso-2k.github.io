@@ -165,12 +165,12 @@ function generateZip(links, siteID) {
     filename = filename.replaceAll(".", "_");
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
-    JSZipUtils.getBinaryContent(filePath, function (err, data) {
+    /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
       if (err) {
         throw err;
       }
       zip.file(filePath, data, {binary:true});
-    });
+    });*/
 
     //zip.file(filename, filePath, {binary: true});
     count++;
