@@ -163,8 +163,7 @@ function generateZip(links, siteID) {
     filename = filePath.split("/")[3];
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
-    //zip.file(filename, data, { binary: true });
-    zip.file(filename, filePath);
+    zip.file(filename, filePath, {binary: true});
     count++;
     if (count == links.length) {
       //we have reached the last file to download
@@ -173,22 +172,8 @@ function generateZip(links, siteID) {
         saveAs(blob, zipFilename);
       });
     }
-    /*
-    JSZipUtils.getBinaryContent(url, function (error, data) {
-      if (err) {
-        throw err;
-      }
-      zip.file(filename, data, { binary: true });
-      count++;
-      if (count == links.length) {
-        zip.generateAsync({ type: 'blob' }).then(function (content) {
-          saveAs(content, zipFilename);
-        });
-      }
-    }); */
   }); 
 }
-
 
 var countDecimals = function (value) {
   if(Math.floor(value) === value) return 0;
@@ -229,55 +214,48 @@ function downloadSubmit() {
     }
     
     var locationFilepathArray = [];
-    //for (var i = 0; i < locationParams.length; i++) {
-      //do this for each location
-      path = "/figures/"
-      path = path.concat(siteID + "/site_dynamics_");
+    //do this for each location
+    path = "/figures/"
+    path = path.concat(siteID + "/site_dynamics_");
 
-      //now, need lat+lon of location for end of filepath
-      markerLat = markerDict[siteID].getLatLng().lat;
-      console.log("stored latitude: " + markerLat);
-      markerLng = markerDict[siteID].getLatLng().lng;
-      if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
-        markerLng = markerLng + 360.0; 
-      }
-      var dLng = countDecimals(markerLng);
-      var dLat = countDecimals(markerLat);
-      console.log("decimal places: " + dLat);
-      console.log("var type at 236: " + typeof markerLat);
+    //now, need lat+lon of location for end of filepath
+    markerLat = markerDict[siteID].getLatLng().lat;
+    console.log("stored latitude: " + markerLat);
+    markerLng = markerDict[siteID].getLatLng().lng;
+    if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
+      markerLng = markerLng + 360.0; 
+    }
+    var dLng = countDecimals(markerLng);
+    var dLat = countDecimals(markerLat);
+    console.log("decimal places: " + dLat);
+    console.log("var type at 236: " + typeof markerLat);
 
-      if (dLng > 4) {
-        //truncate markerLng
-        tempLng = markerLng.toFixed(4);
-        console.log(typeof tempLng);
-      }
-      if (dLat > 4) {
-        //truncate markerLat
-        tempLat = markerLat.toFixed(4);
-        console.log(typeof tempLat);
-      }
-      //console.log(typeof )
-      markerLat = parseFloat(markerLat);
-      markerLng = parseFloat(markerLng);
+    if (dLng > 4) {
+      //truncate markerLng
+      tempLng = markerLng.toFixed(4);
+      console.log(typeof tempLng);
+    }
+    if (dLat > 4) {
+      //truncate markerLat
+      tempLat = markerLat.toFixed(4);
+      console.log(typeof tempLat);
+    }
+    //console.log(typeof )
+    markerLat = parseFloat(markerLat);
+    markerLng = parseFloat(markerLng);
 
-      console.log("after .toFixed(): " + markerLat);
+    console.log("after .toFixed(): " + markerLat);
 
-      for (var b = 0; b < concatCombos.length; b++) {
-        tempPath = path.concat(concatCombos[b]);
-        tempPath = tempPath.concat(markerLat + "_" + markerLng);
-        tempPath = tempPath.concat(".png");
-        locationFilepathArray.push(tempPath);  
-      }
-      
-      console.log("Location filepath array: " + locationFilepathArray);
-      generateZip(locationFilepathArray, siteID);
-    //} 
-    /*
-    link = document.createElement("a"); //create 'a' element
-    link.setAttribute("href", "iso2kp2.csv"); //replace "file" with link to file you want to download
-    link.setAttribute("download", "iso2kp2.csv");// replace "file" here too
-    link.click();
+    for (var b = 0; b < concatCombos.length; b++) {
+      tempPath = path.concat(concatCombos[b]);
+      tempPath = tempPath.concat(markerLat + "_" + markerLng);
+      tempPath = tempPath.concat(".png");
+      locationFilepathArray.push(tempPath);  
+    }
     
+    console.log("Location filepath array: " + locationFilepathArray);
+    generateZip(locationFilepathArray, siteID);
+    /*
    //this for loop works, but for now we don't want downloads enabled
    for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
@@ -288,7 +266,6 @@ function downloadSubmit() {
      link.click();
    }
    */
-   
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
