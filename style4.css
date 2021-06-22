@@ -1,7 +1,8 @@
 /*filters*/
 .js-example-placeholder-single, .js-example-basic-multiple {
     width: 300px;
-    background-color: white;
+    /*background-color: white;*/
+    background-color: black;
     margin: 10px;
     /*position: relative;*/
 } 

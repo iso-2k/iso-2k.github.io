@@ -71,7 +71,8 @@
   }
   
   .chart-wrapper {
-    background: #fff;
+    /*background: #fff;*/
+    background-color: black;
     border: 1px solid #e2e2e2;
     border-radius: 5px; 
     margin-bottom: 10px;
@@ -93,7 +94,8 @@
   }
   
   .chart-wrapper .chart-notes {
-    background: #fbfbfb;
+    /*background: #fbfbfb;*/
+    background-color: black;
     border-top: 1px solid #e2e2e2;
     color: #808080;
     font-size: 12px;
