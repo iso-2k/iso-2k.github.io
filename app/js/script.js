@@ -161,6 +161,7 @@ function generateZip(links, siteID) {
   links.forEach(function (url, i) {
     var filePath = links[i];
     filename = filePath.split("/")[3];
+    filename = filename.replace(".", "_");
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
     zip.file(filename, filePath, {binary: true});
