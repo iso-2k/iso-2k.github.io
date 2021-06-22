@@ -174,6 +174,8 @@ function generateZip(links, siteID) {
 
     //zip.file(filename, filePath, {binary: true});
     count++;
+    console.log(count);
+    /*
     if (count == links.length) {
       //we have reached the last file to download
       zip.generateAsync({type:"blob"})
@@ -181,6 +183,7 @@ function generateZip(links, siteID) {
         saveAs(blob, zipFilename);
       });
     }
+    */
   }); 
 }
 
