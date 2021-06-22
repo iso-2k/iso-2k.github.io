@@ -159,12 +159,20 @@ function generateZip(links, siteID) {
   var count = 0;  
   var zipFilename = siteID + '.zip';
   links.forEach(function (url, i) {
+    
     var filePath = links[i];
     filename = filePath.split("/")[3];
-    filename = filename.replace(".", "_");
+    filename = filename.replaceAll(".", "_");
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
-    zip.file(filename, filePath, {binary: true});
+    JSZipUtils.getBinaryContent(filePath, function (err, data) {
+      if (err) {
+        throw err;
+      }
+      zip.file(filePath, data, {binary:true});
+    });
+
+    //zip.file(filename, filePath, {binary: true});
     count++;
     if (count == links.length) {
       //we have reached the last file to download
