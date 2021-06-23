@@ -44,6 +44,10 @@ h4 { /* for marker popups*/
   margin-top: -2px;top: 50%;
   width: 0;cursor: pointer
 }
+.select2-results { 
+    background-color: #000;
+    color: white;
+}
 .bg-dark {
     background-color: black!important;
 }
@@ -59,8 +63,10 @@ h4 { /* for marker popups*/
     padding: 8px;
     padding-left: 15px;
     padding-right: 15px;
+    letter-spacing: 1px;
 }
 .formSub:hover {
     background:white;
     color:black; 
+    border-style: hidden;
 }
