@@ -110,7 +110,7 @@ h4 { /* for marker popups*/
     border-radius: 4px!important;
     background-color: rgba(0, 139, 139, 0.09) !important;
 }*/
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+.select2-selection--multiple .select2-selection__choice {
     color: white;
     background: black;
     border: 1px solid white;
