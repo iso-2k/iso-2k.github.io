@@ -24,8 +24,6 @@ h4 { /* for marker popups*/
     display: block;
     position: absolute;
     border-color: #888 transparent transparent transparent;
-    /*color: white;
-    background-color: black;*/
     border-style: solid;
     border-width: 5px 4px 0 4px;
     height: 0;
@@ -42,8 +40,6 @@ h4 { /* for marker popups*/
       border-width: 0 4px 5px 4px;
   height: 0;
   right: 6px;
-  color: white;
-  background-color: black;
   margin-left: -4px;
   margin-top: -2px;top: 50%;
   width: 0;cursor: pointer
@@ -51,13 +47,20 @@ h4 { /* for marker popups*/
 .bg-dark {
     background-color: black!important;
 }
+.bg-dark .navbar-brand {
+    letter-spacing: 2px;
+    font-weight: bold;
+}
 .formSub {
     background: none;
     color: white;
-    border: 0.5px solid white;
+    border: 0.3px solid white;
     text-align: center;
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .formSub:hover {
-    background:black;
-    color:white; 
+    background:white;
+    color:black; 
 }
