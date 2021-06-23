@@ -80,7 +80,7 @@ $.get('../.././iso2knew.csv', function(csvString) {
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
 
       markerDict[row.SiteID1] = marker;
-      lngDict[row.siteID1] = row.SiteLon;
+      lngDict[row.SiteID1] = row.SiteLon;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
       //console.log(row.SiteLon);
