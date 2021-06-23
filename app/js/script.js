@@ -83,7 +83,6 @@ $.get('../.././iso2knew.csv', function(csvString) {
       lngDict[row.SiteID1] = row.SiteLon;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
-      //console.log(row.SiteLon);
 
       //FILTER SECTION
       var optionNew = document.createElement("option");
@@ -160,6 +159,7 @@ function generateZip(links, siteID) {
   var zip = new JSZip();
   var count = 0;  
   var zipFilename = siteID + '.zip';
+  console.log("the zip file is called: " + zipFilename);
   links.forEach(function (url, i) {
     
     var filePath = links[i];
@@ -212,11 +212,9 @@ function downloadSubmit() {
   }
   else {
     //first, get array of all season + time combos
-    
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
     var markerLat, markerLng, path, siteID, tempPath;
-    var tempLat, tempLng;
     for (var j = 0; j < seasonParams.length; j++) {
       //do this for each season
       seasonality = seasonParams[j].id;
@@ -233,8 +231,7 @@ function downloadSubmit() {
     path = path.concat(siteID + "/site_dynamics_");
 
     //now, need lat+lon of location for end of filepath
-    markerLat = markerDict[siteID].getLatLng().lat;
-    //console.log("stored latitude: " + markerLat);
+    markerLat = markerDict[siteID].getLatLng().lat; //ok to use lat from marker
     markerLng = lngDict[siteID];
 
     for (var b = 0; b < concatCombos.length; b++) {
@@ -245,7 +242,7 @@ function downloadSubmit() {
     }
     
     console.log("Location filepath array: " + locationFilepathArray);
-    //generateZip(locationFilepathArray, siteID);
+    generateZip(locationFilepathArray, siteID);
     /*
    //this for loop works, but for now we don't want downloads enabled
    for (var l = 0; l < locationFilepathArray.length; l++) {
@@ -255,8 +252,7 @@ function downloadSubmit() {
      link.setAttribute("href", currentPath);
      link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
      link.click();
-   }
-   */
+   }*/
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
