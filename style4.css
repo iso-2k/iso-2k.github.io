@@ -56,7 +56,7 @@ h4 { /* for marker popups*/
     color: white !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: white white white white;
+    border-color: white transparent transparent white;
 }
 .bg-dark {
     background-color: black!important;
@@ -80,12 +80,19 @@ h4 { /* for marker popups*/
     color:black; 
     border-style: hidden;
 }
-::-webkit-scrollbar-track {
+.select2-results__options::-webkit-scrollbar {
+    width: 16px;
+    background-clip: padding-box;
+}
+.select2-results__options::-webkit-scrollbar-track {
     background-color: transparent;
 }
-::-webkit-scrollbar-thumb {
+.select2-results__options::-webkit-scrollbar-thumb {
     background-color: white;
     border-radius: 20px;
     border: 6px solid transparent;
     background-clip: content-box;
+}
+.select2-results__options::-webkit-scrollbar-button {
+    display: none;
 }
