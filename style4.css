@@ -50,7 +50,7 @@ h4 { /* for marker popups*/
     background-color: #000;
     color: white;
 }
-.select2-default {
+.select2-selection__placeholder {
     color: white !important;
 }
 .bg-dark {
