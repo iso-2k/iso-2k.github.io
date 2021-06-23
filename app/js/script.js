@@ -93,6 +93,7 @@ $.get('../.././iso2knew.csv', function(csvString) {
       optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
     }
     mymap.addLayer(markers); //use this for clusters
+    console.log(lngDict);
 });
 //attribution for the csv function from HandsOnDataViz
 //mymap.attributionControl.setPrefix(
