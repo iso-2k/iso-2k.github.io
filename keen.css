@@ -87,6 +87,7 @@
     /*font-weight: 200;*/
     font-weight: bold;
     padding: 5px 7px 4px;
+    letter-spacing: 2px;
   }
   
   .chart-wrapper .chart-stage {
@@ -99,7 +100,7 @@
   .chart-wrapper .chart-notes {
     /*background: #fbfbfb;*/
     background-color: black;
-    border-top: 1.5px solid #e2e2e2;
+    border-top: 1.5px solid white;
     /*color: #808080;*/
     color: white;
     font-size: 12px;
