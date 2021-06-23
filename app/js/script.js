@@ -60,9 +60,10 @@ function checkMarker(e) {
 
 var select3 = document.getElementById("dDown");
 var markerDict = {};
+var lngDict = {};
 
 //path to csv of iso2k sites
-$.get('../.././iso2kp2.csv', function(csvString) {
+$.get('../.././iso2knew.csv', function(csvString) {
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
@@ -79,6 +80,7 @@ $.get('../.././iso2kp2.csv', function(csvString) {
       }).bindPopup("<h4><b>" + row.SiteName + "</b><br> Site ID: " + row.SiteID1 + "</h4>").on('popupopen', checkMarker).on('popupclose', checkMarker);
 
       markerDict[row.SiteID1] = marker;
+      lngDict[row.siteID1] = row.SiteLon;
       markers.addLayer(marker);
       clusterOff.addLayer(marker);
       //console.log(row.SiteLon);
@@ -232,9 +234,9 @@ function downloadSubmit() {
 
     //now, need lat+lon of location for end of filepath
     markerLat = markerDict[siteID].getLatLng().lat;
-    console.log("stored latitude: " + markerLat);
-    markerLng = markerDict[siteID].getLatLng().lng;
-    if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
+    //console.log("stored latitude: " + markerLat);
+    markerLng = lngDict[siteID]
+    /*if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
       markerLng = markerLng + 360.0; 
     }
     var dLng = countDecimals(markerLng);
@@ -252,11 +254,13 @@ function downloadSubmit() {
       tempLat = markerLat.toFixed(4);
       console.log(typeof tempLat);
     }
+    */
     //console.log(typeof )
-    markerLat = parseFloat(markerLat);
-    markerLng = parseFloat(markerLng);
+    //markerLat = parseFloat(markerLat);
+    //markerLng = parseFloat(markerLng);
 
-    console.log("after .toFixed(): " + markerLat);
+    console.log("final lat: " + markerLat);
+    console.log("final lng: " + markerLng);
 
     for (var b = 0; b < concatCombos.length; b++) {
       tempPath = path.concat(concatCombos[b]);
@@ -266,7 +270,7 @@ function downloadSubmit() {
     }
     
     console.log("Location filepath array: " + locationFilepathArray);
-    generateZip(locationFilepathArray, siteID);
+    //generateZip(locationFilepathArray, siteID);
     /*
    //this for loop works, but for now we don't want downloads enabled
    for (var l = 0; l < locationFilepathArray.length; l++) {
