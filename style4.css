@@ -50,10 +50,13 @@ h4 { /* for marker popups*/
     background-color: #000;
     color: white;
 }
-.select2-selection__placeholder, .select2-selection__arrow,
+.select2-selection__placeholder,
 .select2-search__field::-webkit-input-placeholder,
 .select2-search__field::placeholder {
     color: white !important;
+}
+.select2-selection__arrow b {
+    color: white;
 }
 .bg-dark {
     background-color: black!important;
