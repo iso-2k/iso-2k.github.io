@@ -80,3 +80,12 @@ h4 { /* for marker popups*/
     color:black; 
     border-style: hidden;
 }
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
