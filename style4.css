@@ -47,3 +47,6 @@ h4 { /* for marker popups*/
 .bg-dark {
     background-color: black!important;
 }
+.formSub {
+    background: none;
+}

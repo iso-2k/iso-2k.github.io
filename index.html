@@ -104,74 +104,6 @@
                                 <option></option> <!-- needed for placeholder to show -->
                             </select>
                         <br>  <br>            
-                  <!--  SEASONALITY FILTER  
-                        <div class="multipleSelection">
-                            <div class="selectBox" onclick="showCheckboxes('1')">
-                                <select>
-                                    <option>Seasonality</option>
-                                </select>
-                                <div class="overSelect"></div>
-                            </div>
-                            <div id="checkBoxes">
-                                <label for="first">
-                                    <input type="checkbox" class="seasonCheck" id="first" value="J_D"/>
-                                    January-December
-                                </label>
-                                <label for="second">
-                                    <input type="checkbox" class="seasonCheck" id="second" value="A_S"/>
-                                    April-September
-                                </label>
-                                <label for="third">
-                                    <input type="checkbox" class="seasonCheck" id="third" value="O_M"/>
-                                    October-March
-                                </label>
-                                <label for="fourth">
-                                    <input type="checkbox" class="seasonCheck" id="fourth" value="D_F"/>
-                                    December-February
-                                </label>
-                                <label for="fifth">
-                                    <input type="checkbox" class="seasonCheck" id="fifth" value="S_N"/>
-                                    September-November
-                                </label>
-                                <label for="sixth">
-                                    <input type="checkbox" class="seasonCheck" id="sixth" value="J_A"/>
-                                    July-August
-                                </label>
-                                <label for="seventh">
-                                    <input type="checkbox" class="seasonCheck" id="seventh" value="M_M"/>
-                                    March-May
-                                </label>
-                            </div>
-                        </div>
-                        <br>
-              
-                       TIMESCALE FILTER  
-                        <div class="multipleSelection">
-                            <div class="selectBox" onclick="showCheckboxes('2')">
-                                <select>
-                                    <option>Timescale</option>
-                                </select>
-                                <div class="overSelect"></div>
-                            </div>
-                            <div id="checkBoxes2">
-                                <label for="five">
-                                    <input type="checkbox" value="_5yr_" class="timeCheck" id="five" />
-                                    5 years
-                                </label>
-                                <label for="ten">
-                                    <input type="checkbox" value="_10yr_" class="timeCheck" id="ten" />
-                                    10 years
-                                </label>
-                                <label for="twenty">
-                                    <input type="checkbox" value="_20yr_" class="timeCheck" id="twenty" />
-                                    20 years
-                                </label>
-                                <label for="fifty">
-                                    <input type="checkbox" value="_50yr_" class="timeCheck" id="fifty" />
-                                    50 years
-                                </label>
-                            </div>
-                        </div> -->
                         <select class="js-example-basic-multiple" name="timescales[]" multiple="multiple">
                             <option value="_5yr_">5 years</option>
                             <option value="_10yr_">10 years</option>
@@ -189,7 +121,7 @@
                             <option value="M_M">March-May</option>
                         </select>
                         <br> <br>
-                        <input type="submit" value="Download">
+                        <input type="submit" value="Download" class="formSub">
                         <br>
 
                     </form>
