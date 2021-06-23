@@ -123,3 +123,6 @@ h4 { /* for marker popups*/
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     background-color: black;
 }
+.select2-selection__clear {
+    color: white!important;
+}
