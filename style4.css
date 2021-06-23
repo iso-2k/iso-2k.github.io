@@ -101,18 +101,9 @@ h4 { /* for marker popups*/
 .select2-results__options::-webkit-scrollbar-button {
     display: none;
 }
-/*.select2-selection__choice{
-    margin-top: 0px!important;
-    padding-right: 5px!important;
-    padding-left: 5px!important;
-    background-color: transparent!important;
-    border:none!important;
-    border-radius: 4px!important;
-    background-color: rgba(0, 139, 139, 0.09) !important;
-}*/
-.select2-selection--multiple .select2-selection__choice {
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
     color: white;
-    background: black;
+    background-color: black;
     border: 1px solid white;
     border-radius: 4px;
     cursor: default;
@@ -121,8 +112,9 @@ h4 { /* for marker popups*/
     padding: 0 6px;
 }
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    background-color: black;
+    background-color: black; /*clear button for multi select*/
+    color:white;
 }
-.select2-selection__clear {
+.select2-selection__clear { /*changes color of clear X on single-select*/
     color: white!important;
 }
