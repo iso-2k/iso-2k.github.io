@@ -56,7 +56,7 @@ h4 { /* for marker popups*/
     color: white !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: white transparent transparent white;
+    border-color: white transparent transparent transparent;
 }
 .bg-dark {
     background-color: black!important;
