@@ -93,7 +93,6 @@ $.get('../.././iso2knew.csv', function(csvString) {
       optionNew.appendChild(document.createTextNode(row.SiteName + " (" + row.SiteID1 + ")"));
     }
     mymap.addLayer(markers); //use this for clusters
-    console.log(lngDict);
 });
 //attribution for the csv function from HandsOnDataViz
 //mymap.attributionControl.setPrefix(
@@ -236,32 +235,7 @@ function downloadSubmit() {
     //now, need lat+lon of location for end of filepath
     markerLat = markerDict[siteID].getLatLng().lat;
     //console.log("stored latitude: " + markerLat);
-    markerLng = lngDict[siteID]
-    /*if (markerLng < 0) { //leaflet markers and filenames have diff. longitudes
-      markerLng = markerLng + 360.0; 
-    }
-    var dLng = countDecimals(markerLng);
-    var dLat = countDecimals(markerLat);
-    console.log("decimal places: " + dLat);
-    console.log("var type at 236: " + typeof markerLat);
-
-    if (dLng > 4) {
-      //truncate markerLng
-      tempLng = markerLng.toFixed(4);
-      console.log(typeof tempLng);
-    }
-    if (dLat > 4) {
-      //truncate markerLat
-      tempLat = markerLat.toFixed(4);
-      console.log(typeof tempLat);
-    }
-    */
-    //console.log(typeof )
-    //markerLat = parseFloat(markerLat);
-    //markerLng = parseFloat(markerLng);
-
-    console.log("final lat: " + markerLat);
-    console.log("final lng: " + markerLng);
+    markerLng = lngDict[siteID];
 
     for (var b = 0; b < concatCombos.length; b++) {
       tempPath = path.concat(concatCombos[b]);
