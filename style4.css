@@ -52,7 +52,8 @@ h4 { /* for marker popups*/
 }
 .select2-selection__placeholder,
 .select2-search__field::-webkit-input-placeholder,
-.select2-search__field::placeholder {
+.select2-search__field::placeholder,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
     color: white !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
