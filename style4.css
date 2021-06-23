@@ -44,3 +44,6 @@ h4 { /* for marker popups*/
   margin-top: -2px;top: 50%;
   width: 0;cursor: pointer
 }
+.bg-dark {
+    background-color: black!important;
+}
