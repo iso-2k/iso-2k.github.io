@@ -44,7 +44,7 @@ h4 { /* for marker popups*/
   margin-top: -2px;top: 50%;
   width: 0;cursor: pointer
 }
-.select2-container--open .select2-selection--single:before {
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
     border-color: transparent transparent white transparent;
     border-width: 0 4px 5px 4px;
 }
