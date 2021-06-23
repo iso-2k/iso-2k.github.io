@@ -120,3 +120,6 @@ h4 { /* for marker popups*/
     margin: 5px 0 0 6px;
     padding: 0 6px;
 }
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    background-color: black;
+}
