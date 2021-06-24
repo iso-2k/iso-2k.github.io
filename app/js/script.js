@@ -190,11 +190,6 @@ function generateZip(links, siteID) {
   }); 
 }
 
-var countDecimals = function (value) {
-  if(Math.floor(value) === value) return 0;
-  return value.toString().split(".")[1].length || 0; 
-}
-
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
@@ -241,7 +236,6 @@ function downloadSubmit() {
       locationFilepathArray.push(tempPath);  
     }
     
-    //console.log("Location filepath array: " + locationFilepathArray);
     //generateZip(locationFilepathArray, siteID);
     
    //this for loop works, but for now we don't want downloads enabled

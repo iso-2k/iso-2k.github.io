@@ -81,7 +81,6 @@
   
   .chart-wrapper .chart-title {
     border-bottom: 1.5px solid white;
-    /*color: #666;*/
     color: white;
     font-size: 15px;
     /*font-weight: 200;*/
@@ -91,17 +90,13 @@
   }
   
   .chart-wrapper .chart-stage {
-    /*overflow-y: visible;*/
     overflow-x: hidden;
     padding: 2px 5px;
-    /*position: relative;*/
   }
   
   .chart-wrapper .chart-notes {
-    /*background: #fbfbfb;*/
     background-color: black;
     border-top: 1.5px solid white;
-    /*color: #808080;*/
     color: white;
     font-size: 12px;
     padding: 6px 7px 4px;
@@ -144,12 +139,10 @@
   }
   .container {
     padding-left: 6px;
-    padding-right: 6px; /* margin is like outer spacing, padding is inner spacing b/w element's content and border
-    /*margin-left: auto;*/
+    padding-right: 6px; /* margin is like outer spacing, padding is inner spacing b/w element's content and border*/
     margin-left: 4%;
     margin-right: 4%;
     margin-top: auto;
-    /*margin-right: auto;*/
   }
   @media (min-width: 1200px) {
     .container {
