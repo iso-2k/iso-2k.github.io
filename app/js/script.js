@@ -1,3 +1,4 @@
+const JSZip = require("jszip");
 
 const testString = 'This is a test!';
 console.log(testString);
@@ -164,19 +165,19 @@ function generateZip(links, siteID) {
     
     var filePath = links[i];
     filename = filePath.split("/")[3];
-    //filename = filename.replaceAll(".", "_"); //are periods prohibited in filenames? if not, remove this line
-    //filename = filename.concat('.png');
-    filename = filename.concat('.txt');
+    filename = filename.concat('.png');
+    //filename = filename.concat('.txt');
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
-    /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
+    JSZipUtils.getBinaryContent(filePath, function (err, data) {
       if (err) {
         throw err;
       }
-      zip.file(filePath, data, {binary:true});
-    });*/
+      
+      zip.file(filePath, filename, {base64: true});
+    });
 
-    zip.file(filename, "hello world test\n");
+    //zip.file(filename, "hello world test\n"); this creates the document correctly for a txt file
     count++;
     console.log(count);
     
@@ -185,7 +186,8 @@ function generateZip(links, siteID) {
       zip.generateAsync({type:"blob"})
         .then(function (content) {
           saveAs(content, zipFilename);
-        });
+        })
+        .catch(e => console.log(e));
     }
     
   }); 
