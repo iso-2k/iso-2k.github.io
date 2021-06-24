@@ -174,18 +174,18 @@ function generateZip(links, siteID) {
       zip.file(filePath, data, {binary:true});
     });*/
 
-    //zip.file(filename, filePath, {binary: true});
+    zip.file(filename, filePath);
     count++;
     console.log(count);
-    /*
+    
     if (count == links.length) {
       //we have reached the last file to download
       zip.generateAsync({type:"blob"})
-      .then(function (blob) {
-        saveAs(blob, zipFilename);
-      });
+        .then(function (content) {
+          saveAs(content, zipFilename);
+        });
     }
-    */
+    
   }); 
 }
 
@@ -226,7 +226,6 @@ function downloadSubmit() {
     }
     
     var locationFilepathArray = [];
-    //do this for each location
     path = "/figures/"
     path = path.concat(siteID + "/site_dynamics_");
 
@@ -241,7 +240,7 @@ function downloadSubmit() {
       locationFilepathArray.push(tempPath);  
     }
     
-    console.log("Location filepath array: " + locationFilepathArray);
+    //console.log("Location filepath array: " + locationFilepathArray);
     generateZip(locationFilepathArray, siteID);
     /*
    //this for loop works, but for now we don't want downloads enabled
@@ -258,7 +257,6 @@ function downloadSubmit() {
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
-
 }
 
 $(document).ready(function () {

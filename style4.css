@@ -75,6 +75,9 @@ h4 { /* for marker popups*/
 .bg-dark .navbar-brand {
     letter-spacing: 2px;
 }
+.bg-dark .nav-link {
+    letter-spacing: 1px;
+}
 .formSub {
     background: none;
     color: white;
