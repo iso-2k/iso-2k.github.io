@@ -237,22 +237,22 @@ function downloadSubmit() {
     for (var b = 0; b < concatCombos.length; b++) {
       tempPath = path.concat(concatCombos[b]);
       tempPath = tempPath.concat(markerLat + "_" + markerLng);
-      //tempPath = tempPath.concat(".png");
+      tempPath = tempPath.concat(".png");
       locationFilepathArray.push(tempPath);  
     }
     
     //console.log("Location filepath array: " + locationFilepathArray);
-    generateZip(locationFilepathArray, siteID);
-    /*
+    //generateZip(locationFilepathArray, siteID);
+    
    //this for loop works, but for now we don't want downloads enabled
-   for (var l = 0; l < locationFilepathArray.length; l++) {
+    for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
      link = document.createElement("a");
      console.log(currentPath);
      link.setAttribute("href", currentPath);
      link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
      link.click();
-   }*/
+    }
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
