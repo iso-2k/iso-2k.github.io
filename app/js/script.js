@@ -227,7 +227,7 @@ function downloadSubmit() {
     }
     
     var locationFilepathArray = [];
-    path = "figures/"
+    path = "./figures/"
     path = path.concat(siteID + "/site_dynamics_");
 
     //now, need lat+lon of location for end of filepath
