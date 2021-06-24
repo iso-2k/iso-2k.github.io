@@ -1,5 +1,3 @@
-const JSZip = require("jszip");
-
 const testString = 'This is a test!';
 console.log(testString);
 
