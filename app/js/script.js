@@ -237,7 +237,7 @@ function downloadSubmit() {
       locationFilepathArray.push(tempPath);  
     }
     
-    //generateZip(locationFilepathArray, siteID);
+    generateZip(locationFilepathArray, siteID);
     
    //this for loop works, but for now we don't want downloads enabled
    /*
