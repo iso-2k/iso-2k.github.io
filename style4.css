@@ -63,6 +63,7 @@ h4 { /* for marker popups*/
 .select2-search__field::placeholder,
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: white !important;
+    letter-spacing: 1px;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
     border-color: white transparent transparent transparent;

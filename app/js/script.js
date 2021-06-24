@@ -164,7 +164,7 @@ function generateZip(links, siteID) {
     
     var filePath = links[i];
     filename = filePath.split("/")[3];
-    filename = filename.replaceAll(".", "_");
+    filename = filename.replaceAll(".", "_"); //are periods prohibited in filenames? if not, remove this line
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
     /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
