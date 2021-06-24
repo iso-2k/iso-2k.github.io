@@ -165,7 +165,8 @@ function generateZip(links, siteID) {
     var filePath = links[i];
     filename = filePath.split("/")[3];
     //filename = filename.replaceAll(".", "_"); //are periods prohibited in filenames? if not, remove this line
-    filename = filename.concat('.png');
+    //filename = filename.concat('.png');
+    filename = filename.concat('.txt');
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
     /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
@@ -175,7 +176,7 @@ function generateZip(links, siteID) {
       zip.file(filePath, data, {binary:true});
     });*/
 
-    zip.file(filename, filePath);
+    zip.file(filename, "hello world test\n");
     count++;
     console.log(count);
     
@@ -232,13 +233,14 @@ function downloadSubmit() {
     for (var b = 0; b < concatCombos.length; b++) {
       tempPath = path.concat(concatCombos[b]);
       tempPath = tempPath.concat(markerLat + "_" + markerLng);
-      tempPath = tempPath.concat(".png");
+      //tempPath = tempPath.concat(".png");
       locationFilepathArray.push(tempPath);  
     }
     
     //generateZip(locationFilepathArray, siteID);
     
    //this for loop works, but for now we don't want downloads enabled
+   /*
     for (var l = 0; l < locationFilepathArray.length; l++) {
      currentPath = locationFilepathArray[l];
      link = document.createElement("a");
@@ -246,7 +248,7 @@ function downloadSubmit() {
      link.setAttribute("href", currentPath);
      link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
      link.click();
-    }
+    }*/
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
