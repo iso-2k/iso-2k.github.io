@@ -165,6 +165,7 @@ function generateZip(links, siteID) {
     var filePath = links[i];
     filename = filePath.split("/")[3];
     filename = filename.replaceAll(".", "_"); //are periods prohibited in filenames? if not, remove this line
+    filename = filename.concat('.png');
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
     /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
@@ -236,7 +237,7 @@ function downloadSubmit() {
     for (var b = 0; b < concatCombos.length; b++) {
       tempPath = path.concat(concatCombos[b]);
       tempPath = tempPath.concat(markerLat + "_" + markerLng);
-      tempPath = tempPath.concat(".png");
+      //tempPath = tempPath.concat(".png");
       locationFilepathArray.push(tempPath);  
     }
     
