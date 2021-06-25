@@ -282,7 +282,7 @@ function downloadSubmit() {
     for (var b = 0; b < concatCombos.length; b++) {
       tempPath = path.concat(concatCombos[b]);
       tempPath = tempPath.concat(markerLat + "_" + markerLng);
-      //tempPath = tempPath.concat(".png");
+      tempPath = tempPath.concat(".png");
       locationFilepathArray.push(tempPath);  
     }
     
