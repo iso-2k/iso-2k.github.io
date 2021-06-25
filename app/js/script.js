@@ -193,8 +193,17 @@ function generateZip(links, siteID) {
   var count = 0;  
   var zipFilename = siteID + '.zip';
   console.log("the zip file is called: " + zipFilename);
+  
 
-  imageToBase64("https://github.com/iso-2k/iso-2k.github.io/blob/main/figures/CO00COKY01A/site_dynamics_A_S_20yr_-3.2556_40.1433.png")
+  links.forEach(function (url, i) {
+    
+    var filePath = links[i];
+    filename = filePath.split("/")[3];
+    filename = filename.concat('.png');
+    //filename = filename.concat('.txt');
+    imgUrl = "https://github.com/iso-2k/iso-2k.github.io/blob/main" + filePath;
+    console.log(imgUrl);
+    imageToBase64(imgUrl)
     .then(
       (response) => {
         console.log(response);
@@ -206,14 +215,8 @@ function generateZip(links, siteID) {
       }
     )
 
-  links.forEach(function (url, i) {
-    
-    var filePath = links[i];
-    filename = filePath.split("/")[3];
-    filename = filename.concat('.png');
-    //filename = filename.concat('.txt');
-    console.log("filename in generateZip function: " + filename);
-    console.log("whole path: " + filePath);
+    //console.log("filename in generateZip function: " + filename);
+    //console.log("whole path: " + filePath);
     /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
       if (err) {
         console.log("error");
@@ -273,7 +276,7 @@ function downloadSubmit() {
     }
     
     var locationFilepathArray = [];
-    path = "./figures/"
+    path = "/figures/"
     path = path.concat(siteID + "/site_dynamics_");
 
     //now, need lat+lon of location for end of filepath
