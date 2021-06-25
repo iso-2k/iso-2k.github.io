@@ -154,11 +154,58 @@ mymap.on('zoomend', function(e) {
   setTimeout(logVisibleClusters, 1000);
 });
 
+
+
+function toDataURL(src, callback, outputFormat) {
+  var img = new Image();
+  img.crossOrigin = 'Anonymous';
+  img.onload = function() {
+    var canvas = document.createElement('CANVAS');
+    var ctx = canvas.getContext('2d');
+    var dataURL;
+    canvas.height = this.naturalHeight;
+    canvas.width = this.naturalWidth;
+    ctx.drawImage(this, 0, 0);
+    dataURL = canvas.toDataURL(outputFormat);
+    callback(dataURL);
+  };
+  img.src = src;
+  if (img.complete || img.complete === undefined) {
+    img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+    img.src = src;
+  }
+}
+
+toDataURL(
+  'https://www.gravatar.com/avatar/d50c83cc0c6523b4d3f6085295c953e0',
+  function(dataUrl) {
+    console.log('RESULT:', dataUrl)
+  }
+)
+
+
+
+
+
+
 function generateZip(links, siteID) {
   var zip = new JSZip();
   var count = 0;  
   var zipFilename = siteID + '.zip';
   console.log("the zip file is called: " + zipFilename);
+
+  imageToBase64("https://github.com/iso-2k/iso-2k.github.io/blob/main/figures/CO00COKY01A/site_dynamics_A_S_20yr_-3.2556_40.1433.png")
+    .then(
+      (response) => {
+        console.log(response);
+      }
+    )
+    .catch(
+      (error) => {
+        console.log(error);
+      }
+    )
+
   links.forEach(function (url, i) {
     
     var filePath = links[i];
@@ -176,11 +223,11 @@ function generateZip(links, siteID) {
       
       zip.file(filePath, filename, {base64: true});
     });*/
-    zip.file(filePath, filename, {base64: true});
+    //zip.file(filePath, filename, {base64: true});
     //zip.file(filename, "hello world test\n"); this creates the document correctly for a txt file
     count++;
     console.log(count);
-    
+    /*
     if (count == links.length) {
       //we have reached the last file to download
       zip.generateAsync({type:"blob"})
@@ -189,6 +236,7 @@ function generateZip(links, siteID) {
         })
         .catch(e => console.log(e));
     }
+    */
     
   }); 
 }
