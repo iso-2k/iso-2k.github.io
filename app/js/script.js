@@ -169,7 +169,9 @@ function generateZip(links, siteID) {
     console.log("whole path: " + filePath);
     JSZipUtils.getBinaryContent(filePath, function (err, data) {
       if (err) {
+        console.log("error");
         throw err;
+        
       }
       
       zip.file(filePath, filename, {base64: true});
