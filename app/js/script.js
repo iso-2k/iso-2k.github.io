@@ -167,7 +167,7 @@ function generateZip(links, siteID) {
     //filename = filename.concat('.txt');
     console.log("filename in generateZip function: " + filename);
     console.log("whole path: " + filePath);
-    JSZipUtils.getBinaryContent(filePath, function (err, data) {
+    /*JSZipUtils.getBinaryContent(filePath, function (err, data) {
       if (err) {
         console.log("error");
         throw err;
@@ -175,8 +175,8 @@ function generateZip(links, siteID) {
       }
       
       zip.file(filePath, filename, {base64: true});
-    });
-
+    });*/
+    zip.file(filePath, filename, {base64: true});
     //zip.file(filename, "hello world test\n"); this creates the document correctly for a txt file
     count++;
     console.log(count);
