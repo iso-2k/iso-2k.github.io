@@ -71,6 +71,7 @@ h4 { /* for marker popups*/
 }
 .bg-dark .navbar-brand {
     letter-spacing: 2px;
+    margin-right: 0.5rem;
 }
 .bg-dark .nav-link {
     letter-spacing: 1px;
