@@ -12,22 +12,19 @@
     .grid {
       grid-gap: var(--grid-gap);
     }
-  
     .grid-hero-sidebar {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(1, auto);
-    }
-      
+    }    
     .grid-hero-sidebar .hero {
       grid-column: 1 / 4;
     }
     .grid-hero-sidebar .sidebar {
       grid-column: 4 / span 1;
+      width: 15vw;
     }
   }
-  
   /* KEEN */
-  
   .keen-dashboard {
     padding-top: 80px;
     background: #f2f2f2;
