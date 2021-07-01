@@ -21,7 +21,7 @@
     }
     .grid-hero-sidebar .sidebar {
       grid-column: 4 / span 1;
-      width: 15vw;
+      /*width: 15vw;*/
     }
   }
   /* KEEN */
