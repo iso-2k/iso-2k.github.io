@@ -28,8 +28,6 @@ share/python-wheels/
 MANIFEST
 
 # Data stuff
-iso2knew.csv
-iso2kp2.csv
 
 
 # PyInstaller
