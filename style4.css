@@ -9,6 +9,7 @@
 #mapid {
     /*height: 460px;*/
     height: 75vh;
+    max-width: 70vh;
 }
 h4 { /* for marker popups*/
     text-align: center;
