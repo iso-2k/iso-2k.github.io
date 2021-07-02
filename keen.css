@@ -30,14 +30,12 @@
     background: #f2f2f2;
     font-family: 'Gotham Rounded SSm A', 'Gotham Rounded SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-  
   .keen-dataviz {
     background: #fff;
     border: 1px solid #e7e7e7;
     border-radius: 2px;
     box-sizing: border-box;
   }
-  
   .keen-dataviz-title {
     border-bottom: 1px solid #e7e7e7;
     border-radius: 2px 2px 0 0;
@@ -45,11 +43,9 @@
     padding: 2px 10px 0;
     text-transform: uppercase;
   }
-  
   .keen-dataviz-stage {
     padding: 10px;
   }
-  
   .keen-dataviz-notes {
     background: #fbfbfb;
     border-radius: 0 0 2px 2px;
@@ -67,7 +63,6 @@
     border-radius: 5px; 
     margin-bottom: 10px;
   }
-  
   .chart-wrapper .chart-title {
     border-bottom: 1.5px solid white;
     color: white;
@@ -77,12 +72,10 @@
     padding: 5px 7px 4px;
     letter-spacing: 2px;
   }
-  
   .chart-wrapper .chart-stage {
     overflow-x: hidden;
     padding: 2px 5px;
   }
-  
   .chart-wrapper .chart-notes {
     background-color: black;
     border-top: 1.5px solid white;
@@ -91,11 +84,9 @@
     padding: 6px 7px 4px;
     position: relative;
   }
-  
   .chart-container {
     display: flex;
   }
-  
   .chart-container .chart {
     padding-left: 4px;
     padding-right: 4px;
@@ -129,8 +120,8 @@
   .container {
     padding-left: 6px;
     padding-right: 6px; /* margin is like outer spacing, padding is inner spacing b/w element's content and border*/
-    margin-left: 4%;
-    margin-right: 4%;
+    /*margin-left: 4%; shouldn't need these if body has margin
+    margin-right: 4%;*/
     margin-top: auto;
   }
   @media (min-width: 1200px) {
