@@ -59,14 +59,6 @@
     padding: 0 10px;
   }
   
-  .keen-dataviz .keen-dataviz-metric {
-    border-radius: 2px;
-  }
-  
-  .keen-dataviz .keen-spinner-indicator {
-    border-top-color: rgba(0, 187, 222, .4);
-  }
-  
   .chart-wrapper {
     /*background: #fff;*/
     background-color: black;
@@ -160,7 +152,8 @@
     box-sizing: border-box;
   }
   body {
-    margin: 0;
+    /*margin: 0;*/
+    margin: 0 3% 0 3%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
