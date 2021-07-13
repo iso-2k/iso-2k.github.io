@@ -43,83 +43,105 @@
         </div>
     </nav>
 
-    <div>
-        <form id="dload" onsubmit="return downloadSubmit()">
-            <br>
-                <select class="js-example-placeholder-single" id="dDown">
-                    <option></option> <!-- needed for placeholder to show -->
-                </select>
-            <br>  <br>            
-            <!-- For GUI, want to force only 1 seasonality + timescale at a time -->
-            <select class="js-example-placeholder-single" name="timescales[]">
-                <option value="_5yr_">5 years</option>
-                <option value="_10yr_">10 years</option>
-                <option value="_20yr_">20 years</option>
-                <option value="_50yr_">50 years</option>
-            </select>
-            <br> <br>
-            <select class="js-example-placeholder-single" name="seasonality[]">
-                <option value="J_D">January-December</option>
-                <option value="A_S">April-September</option>
-                <option value="O_M">October-March</option>
-                <option value="D_F">December-February</option>
-                <option value="S_N">September-November</option>
-                <option value="J_A">July-August</option>
-                <option value="M_M">March-May</option>
-            </select>
-            <br> <br>
-            <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple">
-                <option></option>
-                <option value="HadStr">Hadley Strength</option>
-                <option value="HadWidN">Hadley Width NH</option>
-                <option value="HadWidS">Hadley Width SH</option>
-                <option value="ITCZWid">ITCZ Width</option>
-                <option value="ITCZLoc">ITCZ Location</option>
-                <option value="ITCZStr">ITCZ Strength</option>
-                <option value="ITCZAre">ITCZ Area</option>
-                <option value="TIO">Trop. Indian SST</option>
-                <option value="TPac">Trop. Pacific SST</option>
-                <option value="TAtl">Trop. Atlantic SST</option>
-                <option value="TNA">Trop. N. Atlantic (TNA) SST</option>
-                <option value="TNAmTTrop">TNA - Trop. Mean SST</option>
-                <option value="TPGR">SST Gradient</option>
-                <option value="NinoOneTwo">Ni&#241;o1.2 SST</option>
-                <option value="NinoThree">Ni&#241;o3 SST</option>
-                <option value="NinoThreeFour">Ni&#241;o3.4 SST</option>
-                <option value="NinoFour">Ni&#241;o4 SST</option>
-                <option value="TNI">Trans Ni&#241;o SST</option>
-                <option value="DMI">Indian Dipole Mode</option>
-                <option value="EMI">El Ni&#241;o Modoki</option>
-                <option value="TIOPS">Trop. Indian SLP</option>
-                <option value="TPacPS">Trop. Pacific SLP</option>
-                <option value="TAtlPS">Trop. Atlantic SLP</option>
-                <option value="TNAPS">Trop. N. Atlantic (TNA) SLP</option>
-                <option value="TNAmTTropPS">TNA - Trop. Mean SLP</option>
-                <option value="TPGRPS">SLP Gradient</option>
-                <option value="NinoOneTwoPS">Ni&#241;o1.2 SLP</option>
-                <option value="NinoThreePS">Ni&#241;o3 SLP</option>
-                <option value="NinoThreeFourPS">Ni&#241;o3.4 SLP</option>
-                <option value="NinoFourPS">Ni&#241;o4 SLP</option>
-                <option value="PDO">PDO</option>
-                <option value="IOBM">Indian Basin Mode</option>
-                <option value="AMOC">AMOC</option>
-                <option value="SOI">SOI</option>
-                <option value="AMO">AMO</option>
-                <option value="NAM">NAM</option>
-                <option value="PNA">PNA</option>
-                <option value="SIENH">NH Sea Ice</option>
-                <option value="SAM">SAM</option>
-                <option value="SIESH">SH Sea Ice</option>
-                <option value="TNIPS">Trans Ni&#241;o SLP</option>
-                <option value="VecDSLP">Vecchi 06</option>
-                <option value="WalkWind">Bellomo '15 Walker</option>
-                <option value="VertVel">Bellomo '15 Vertical</option>
-                <option value="NAO">NAO</option>
-            </select>
-            <br> <br>
-            <input type="submit" value="Create Figure" class="formSub">
-            <br>
-        </form>
+    <div class="container grid grid-hero-sidebar">
+        <div class="hero">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    GUI Section
+                </div>
+                <div class="chart-stage">
+                    <form id="dload" onsubmit="return downloadSubmit()">
+                        <br>
+                            <select class="js-example-placeholder-single" id="dDown">
+                                <option></option> <!-- needed for placeholder to show -->
+                            </select>
+                        <br>  <br>            
+                        <!-- For GUI, want to force only 1 seasonality + timescale at a time -->
+                        <select class="js-example-placeholder-single" name="timescales[]">
+                            <option value="_5yr_">5 years</option>
+                            <option value="_10yr_">10 years</option>
+                            <option value="_20yr_">20 years</option>
+                            <option value="_50yr_">50 years</option>
+                        </select>
+                        <br> <br>
+                        <select class="js-example-placeholder-single" name="seasonality[]">
+                            <option value="J_D">January-December</option>
+                            <option value="A_S">April-September</option>
+                            <option value="O_M">October-March</option>
+                            <option value="D_F">December-February</option>
+                            <option value="S_N">September-November</option>
+                            <option value="J_A">July-August</option>
+                            <option value="M_M">March-May</option>
+                        </select>
+                        <br> <br>
+                        <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple">
+                            <option value="HadStr">Hadley Strength</option>
+                            <option value="HadWidN">Hadley Width NH</option>
+                            <option value="HadWidS">Hadley Width SH</option>
+                            <option value="ITCZWid">ITCZ Width</option>
+                            <option value="ITCZLoc">ITCZ Location</option>
+                            <option value="ITCZStr">ITCZ Strength</option>
+                            <option value="ITCZAre">ITCZ Area</option>
+                            <option value="TIO">Trop. Indian SST</option>
+                            <option value="TPac">Trop. Pacific SST</option>
+                            <option value="TAtl">Trop. Atlantic SST</option>
+                            <option value="TNA">Trop. N. Atlantic (TNA) SST</option>
+                            <option value="TNAmTTrop">TNA - Trop. Mean SST</option>
+                            <option value="TPGR">SST Gradient</option>
+                            <option value="NinoOneTwo">Ni&#241;o1.2 SST</option>
+                            <option value="NinoThree">Ni&#241;o3 SST</option>
+                            <option value="NinoThreeFour">Ni&#241;o3.4 SST</option>
+                            <option value="NinoFour">Ni&#241;o4 SST</option>
+                            <option value="TNI">Trans Ni&#241;o SST</option>
+                            <option value="DMI">Indian Dipole Mode</option>
+                            <option value="EMI">El Ni&#241;o Modoki</option>
+                            <option value="TIOPS">Trop. Indian SLP</option>
+                            <option value="TPacPS">Trop. Pacific SLP</option>
+                            <option value="TAtlPS">Trop. Atlantic SLP</option>
+                            <option value="TNAPS">Trop. N. Atlantic (TNA) SLP</option>
+                            <option value="TNAmTTropPS">TNA - Trop. Mean SLP</option>
+                            <option value="TPGRPS">SLP Gradient</option>
+                            <option value="NinoOneTwoPS">Ni&#241;o1.2 SLP</option>
+                            <option value="NinoThreePS">Ni&#241;o3 SLP</option>
+                            <option value="NinoThreeFourPS">Ni&#241;o3.4 SLP</option>
+                            <option value="NinoFourPS">Ni&#241;o4 SLP</option>
+                            <option value="PDO">PDO</option>
+                            <option value="IOBM">Indian Basin Mode</option>
+                            <option value="AMOC">AMOC</option>
+                            <option value="SOI">SOI</option>
+                            <option value="AMO">AMO</option>
+                            <option value="NAM">NAM</option>
+                            <option value="PNA">PNA</option>
+                            <option value="SIENH">NH Sea Ice</option>
+                            <option value="SAM">SAM</option>
+                            <option value="SIESH">SH Sea Ice</option>
+                            <option value="TNIPS">Trans Ni&#241;o SLP</option>
+                            <option value="VecDSLP">Vecchi 06</option>
+                            <option value="WalkWind">Bellomo '15 Walker</option>
+                            <option value="VertVel">Bellomo '15 Vertical</option>
+                            <option value="NAO">NAO</option>
+                        </select>
+                        <br> <br>
+                        <input type="submit" value="Create Figure" class="formSub">
+                        <br>
+                    </form>
+                </div>
+                <div class="chart-notes"></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Info + Setup
+                </div>
+                <div class="chart-stage"></div>
+                <div class="chart-notes"></div>
+                    <div class="chart-stage">
+                        <img src="BrandonLogos_blcks3-01.png" alt="PIDGM logo" style="height: 40vh;">
+                    </div>
+            </div>
+        </div>
+        
     </div>
 
     <!-- we want lat, lon, modes, timescale, season-->
