@@ -11,8 +11,9 @@ $(document).ready(function() { //initialize select2 on dropdown
       placeholder: "Seasonality",
       allowClear: false
     });
-    $('.js-example-placeholder-single[name="mode_list[]"]').select2({
+    $('.js-example-placeholder-basic-multiple[name="mode_list[]"]').select2({
         placeholder: "Modes of Variability",
-        allowClear: false
+        allowClear: false,
+        maximumSelectionLength: 20
       });
   });

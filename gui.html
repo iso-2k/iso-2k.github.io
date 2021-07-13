@@ -12,6 +12,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="keen.css">
 
+    <!--  Tags for potential dropdown menu -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <link type="text/css" rel="stylesheet" href="https://www.google.com/cse/static/element/323d4b81541ddb5b/default+en.css">
     <link type="text/css" rel="stylesheet" href="https://www.google.com/cse/static/style/look/v4/default.css">
     <link rel="stylesheet" href="style4.css">
@@ -62,7 +66,7 @@
                 <option value="M_M">March-May</option>
             </select>
             <br> <br>
-            <select class="js-example-placeholder-single" name="mode_list[]">
+            <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple">
                 <option></option>
                 <option value="HadStr">Hadley Strength</option>
                 <option value="HadWidN">Hadley Width NH</option>
