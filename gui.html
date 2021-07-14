@@ -60,9 +60,9 @@
                 <div class="chart-stage" style="padding-bottom: 4%;">
                     <form id="dload" onsubmit="return downloadSubmit()">
                         <br>
-                        <p>Latitude: </p> <!-- input box here and down 1-->
-                        <input type="number" name="latitude" id="latitude">
-                        <p>Longitude: </p>
+                        <label for="latitude">Latitude: </label>
+                        <input type="number" name="latitude" id="latitude" step=".0001">
+                        <label for="longitude">Longitude: </label>
                         <input type="number" name="longitude" id="longitude">
                         <br>  <br>            
                         <label for="tscale" style="color:white;">Timescale: </label>

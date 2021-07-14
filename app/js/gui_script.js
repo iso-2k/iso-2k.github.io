@@ -44,8 +44,8 @@ function downloadSubmit() {
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
-  else if (inputLat < -90 || inputLat > 90) {
-    alert('Latitude must be between ');
+  else if (Math.abs(inputLat) > 90) {
+    alert('Latitude must be between -90\u00B0 and 90\u00B0.');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     $('form :input').reset();
