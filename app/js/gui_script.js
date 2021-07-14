@@ -14,16 +14,12 @@ $(document).ready(function() { //initialize select2 on dropdown
   });
 
 $('#latitude').blur(function() {
-  this.value = parseFloat(this.value).toFixed(4);
+  this.value = parseFloat(this.value.toFixed(4));
 });
 $('#longitude').blur(function() {
   this.value = parseFloat(this.value).toFixed(4);
 })
 
-
-function setDecimal(event) {
-  this.value = parseFloat(this.value).toFixed(4);
-}
   
   //JS FOR FORM SUBMISSION
 var inputLat, inputLon, inputTscale, inputSeas, inputModes;
