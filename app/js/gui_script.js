@@ -36,8 +36,6 @@ function downloadSubmit() {
     return false;
   }
   else {
-    //first, get array of all season + time combos
-
     path = "/figures/customInput/site_dynamics_";
     path = path.concat(inputSeas + inputTscale);
 
@@ -45,8 +43,9 @@ function downloadSubmit() {
 
     //path = path.concat(inputLat + "_" + inputLon);
     path = path.concat(".png");
+    console.log(path)
     
-    //do some code stuff here
+    //do some code GUI stuff here to create fig
     /*
    //this for loop works, but for now we don't want downloads enabled   
     link = document.createElement("a");
