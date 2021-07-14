@@ -17,3 +17,50 @@ $(document).ready(function() { //initialize select2 on dropdown
         maximumSelectionLength: 20
       });
   });
+
+
+  //JS FOR FORM SUBMISSION
+var inputLat, inputLon, inputTscale, inputSeas, inputModes;
+function downloadSubmit() {
+  //get checked values
+  //inputLat = 
+  //inputLon = 
+  inputTscale = $("#tscale").find(':selected')[0].value;
+  inputSeas = $("#seas").find(':selected')[0].value;
+  inputModes = $('.js-example-basic-multiple[name="mode_list[]"]').select2('data');
+  
+  if (inputTscale == null || inputSeas == null || inputModes == null 
+    || inputModes.length == 0 || inputSeas.length == 0 || inputTscale.length == 0) {
+    //missing filter(s)
+    alert('Please select at least one option for each filter before hitting download.');
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
+    return false;
+  }
+  else {
+    //first, get array of all season + time combos
+    var markerLat, markerLng, path, tempPath;
+
+    path = "/figures/customInput/site_dynamics_";
+    path = path.concat(inputSeas + inputTscale);
+
+    //now, need lat+lon of location for end of filepath
+
+    tempPath = tempPath.concat(markerLat + "_" + markerLng);
+    tempPath = tempPath.concat(".png");
+    
+    //do some code stuff here
+    
+   //this for loop works, but for now we don't want downloads enabled   
+    currentPath = locationFilepathArray[l];
+    link = document.createElement("a");
+    console.log(currentPath);
+    link.setAttribute("href", currentPath);
+    link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
+    link.click();
+    //reset form values after downloading figures for user
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
+    return false;
+  }
+}

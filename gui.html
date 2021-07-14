@@ -59,12 +59,11 @@
                 <div class="chart-stage">
                     <form id="dload" onsubmit="return downloadSubmit()">
                         <br>
-                            <select class="js-example-placeholder-single" id="dDown">
-                                <option></option> <!-- needed for placeholder to show -->
-                            </select>
+                        <p>Latitude: </p> <!-- input box here and down 1-->
+                        <p>Longitude: </p>
                         <br>  <br>            
                         <!-- For GUI, want to force only 1 seasonality + timescale at a time -->
-                        <select class="js-example-placeholder-single" name="timescales[]">
+                        <select class="js-example-placeholder-single" name="timescales[]" id="tscale">
                             <option></option>
                             <option value="_5yr_">5 years</option>
                             <option value="_10yr_">10 years</option>
@@ -72,7 +71,7 @@
                             <option value="_50yr_">50 years</option>
                         </select>
                         <br> <br>
-                        <select class="js-example-placeholder-single" name="seasonality[]">
+                        <select class="js-example-placeholder-single" name="seasonality[]" id="seas">
                             <option></option>
                             <option value="J_D">January-December</option>
                             <option value="A_S">April-September</option>
@@ -83,6 +82,7 @@
                             <option value="M_M">March-May</option>
                         </select>
                         <br> <br>
+                        <!-- we want 5 node min, no select2 feature for this, use form validation -->
                         <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple">
                             <option value="HadStr">Hadley Strength</option>
                             <option value="HadWidN">Hadley Width NH</option>
