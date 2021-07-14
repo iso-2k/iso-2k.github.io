@@ -13,7 +13,7 @@ $(document).ready(function() { //initialize select2 on dropdown
     });
     $('.js-example-placeholder-basic-multiple[name="mode_list[]"]').select2({
         placeholder: "Modes of Variability",
-        allowClear: false,
-        maximumSelectionLength: 20
+        allowClear: false
+        /*maximumSelectionLength: 20*/
       });
   });
