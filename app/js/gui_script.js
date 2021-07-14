@@ -18,8 +18,8 @@ $(document).ready(function() { //initialize select2 on dropdown
 var inputLat, inputLon, inputTscale, inputSeas, inputModes;
 function downloadSubmit() {
   //get checked values
-  //inputLat = 
-  //inputLon = 
+  inputLat = $("#latitude").val();
+  inputLon = $('#longitude').val();
   inputTscale = $("#tscale").find(':selected')[0].value;
   inputSeas = $("#seas").find(':selected')[0].value;
   inputModes = $('.js-example-basic-multiple[name="mode_list[]"]').select2('data');
