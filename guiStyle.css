@@ -4,6 +4,9 @@
     margin: 10px;
     display:inline-block;
 }
+#tscale, #seas {
+    width: 50%; /* less room needed ? */
+}
 #dload label {
     color: white;
     font-weight: 500;
