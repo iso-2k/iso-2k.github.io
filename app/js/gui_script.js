@@ -12,13 +12,14 @@ $(document).ready(function() { //initialize select2 on dropdown
         maximumSelectionLength: 20
       });
   });
-
+/*
 $('#latitude').blur(function() {
   this.value = parseFloat((this.value).toFixed(4));
 });
 $('#longitude').blur(function() {
   this.value = parseFloat(this.value).toFixed(4);
 })
+*/
 
   
   //JS FOR FORM SUBMISSION
@@ -30,7 +31,9 @@ function downloadSubmit() {
   inputTscale = $("#tscale").find(':selected')[0].value;
   inputSeas = $("#seas").find(':selected')[0].value;
   inputModes = $('.js-example-basic-multiple[name="mode_list[]"]').select2('data');
-  
+  stripLat = String(inputLat).slice(8);
+  console.log(stripLat);
+  //stripLat = stripLat.slice(8);
   if (inputModes.length < 5) { //not enough modes
     alert('Please select at least 5 modes of variability.');
     return false;
