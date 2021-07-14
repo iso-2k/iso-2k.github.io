@@ -1,14 +1,10 @@
 $(document).ready(function() { //initialize select2 on dropdown
-    $('.js-example-placeholder-single').select2({
-      placeholder: "Proxy Location",
-      allowClear: true
-    });
     $('.js-example-placeholder-single[name="timescales[]"]').select2({
-      placeholder: "Timescale",
+      //placeholder: "Timescale",
       allowClear: false
     });
     $('.js-example-placeholder-single[name="seasonality[]"]').select2({
-      placeholder: "Seasonality",
+      //placeholder: "Seasonality",
       allowClear: false
     });
     $('.js-example-basic-multiple[name="mode_list[]"]').select2({
@@ -33,6 +29,12 @@ function downloadSubmit() {
     || inputModes.length == 0 || inputSeas.length == 0 || inputTscale.length == 0) {
     //missing filter(s)
     alert('Please select at least one option for each filter before hitting download.');
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
+    return false;
+  }
+  else if (inputModes.length < 5){ //not enough modes
+    alert('Please select a minimum of 5 modes of variability.');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;

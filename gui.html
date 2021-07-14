@@ -56,7 +56,7 @@
                 <div class="chart-title">
                     GUI Section
                 </div>
-                <div class="chart-stage">
+                <div class="chart-stage" style="padding-bottom: 4%;">
                     <form id="dload" onsubmit="return downloadSubmit()">
                         <br>
                         <p>Latitude: </p> <!-- input box here and down 1-->
@@ -64,7 +64,7 @@
                         <br>  <br>            
                         <!-- For GUI, want to force only 1 seasonality + timescale at a time -->
                         <select class="js-example-placeholder-single" name="timescales[]" id="tscale">
-                            <option></option>
+                            <!--<option></option> do we want placeholder or left-aligned descriptor-->
                             <option value="_5yr_">5 years</option>
                             <option value="_10yr_">10 years</option>
                             <option value="_20yr_">20 years</option>
@@ -72,7 +72,7 @@
                         </select>
                         <br> <br>
                         <select class="js-example-placeholder-single" name="seasonality[]" id="seas">
-                            <option></option>
+                            <!--<option></option> do we want placeholder or left-aligned descriptor-->
                             <option value="J_D">January-December</option>
                             <option value="A_S">April-September</option>
                             <option value="O_M">October-March</option>
@@ -145,7 +145,9 @@
                 <div class="chart-title">
                     Info + Setup
                 </div>
-                <div class="chart-stage" style="padding-bottom: 4%;"></div>
+                <div class="chart-stage" style="padding-bottom: 4%;">
+                    This feature is currently under development.
+                </div>
                 <div class="chart-notes"></div>
                     <div class="chart-stage">
                         <img src="BrandonLogos_blcks3-01.png" alt="PIDGM logo" style="height: 40vh;">
