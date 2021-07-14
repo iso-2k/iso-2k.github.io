@@ -1,17 +1,17 @@
 .js-example-placeholder-single, .js-example-basic-multiple {
-    width: 75%;
+    width: 80%;
     background-color: black;
     margin: 10px;
-    display:inline-block;
+    display: inline-block;
 }
 #tscale, #seas {
-    width: 50%; /* less room needed ? */
+    width: 35%; /* less room needed ? */
 }
 #dload label {
     color: white;
-    font-weight: 500;
+    font-weight: 900;
 }
-input #latitude, input #longitude {
+input#latitude, input#longitude {
     background-color: black;
     color: white;
     border: solid white 1px;
