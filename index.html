@@ -102,18 +102,18 @@
                 <div class="chart-stage" style="padding-bottom:4%;">
                     <form id="dload" onsubmit="return downloadSubmit()">
                         <br>
-                            <select class="js-example-placeholder-single" id="dDown">
+                            <select class="js-example-placeholder-single" id="dDown" required="required">
                                 <option></option> <!-- needed for placeholder to show -->
                             </select>
                         <br>  <br>            
-                        <select class="js-example-basic-multiple" name="timescales[]" multiple="multiple">
+                        <select class="js-example-basic-multiple" name="timescales[]" multiple="multiple" required="required">
                             <option value="_5yr_">5 years</option>
                             <option value="_10yr_">10 years</option>
                             <option value="_20yr_">20 years</option>
                             <option value="_50yr_">50 years</option>
                         </select>
                         <br> <br>
-                        <select class="js-example-basic-multiple" name="seasonality[]" multiple="multiple">
+                        <select class="js-example-basic-multiple" name="seasonality[]" multiple="multiple" required="required">
                             <option value="J_D">January-December</option>
                             <option value="A_S">April-September</option>
                             <option value="O_M">October-March</option>

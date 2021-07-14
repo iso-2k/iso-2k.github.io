@@ -76,7 +76,7 @@
                         </select>
                         <br> <br>
                         <label for="seas">Seasonality: </label>
-                        <select class="js-example-placeholder-single" name="seasonality[]" id="seas">
+                        <select class="js-example-placeholder-single" name="seasonality[]" id="seas" required="required">
                             <option></option>
                             <option value="J_D">January-December</option>
                             <option value="A_S">April-September</option>
@@ -89,7 +89,7 @@
                         <br> <br>
                         <label for="mode_list">Modes of Variability: </label>
                         <!-- we want 5 node min, no select2 feature for this, use form validation -->
-                        <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple" id="mode_list">
+                        <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple" id="mode_list" required="required">
                             <option value="HadStr">Hadley Strength</option>
                             <option value="HadWidN">Hadley Width NH</option>
                             <option value="HadWidS">Hadley Width SH</option>

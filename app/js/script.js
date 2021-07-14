@@ -248,6 +248,7 @@ function downloadSubmit() {
   seasonParams = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
   timescaleParams = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
   
+  /*
   if (siteID == null || seasonParams == null || timescaleParams == null 
     || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
     //missing a filter
@@ -257,6 +258,7 @@ function downloadSubmit() {
     return false;
   }
   else {
+    */
     //first, get array of all season + time combos
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
@@ -302,7 +304,7 @@ function downloadSubmit() {
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
-  }
+  //}
 }
 
 $(document).ready(function () {
