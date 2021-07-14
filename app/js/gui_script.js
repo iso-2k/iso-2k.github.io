@@ -23,10 +23,7 @@ function downloadSubmit() {
   inputTscale = $("#tscale").find(':selected')[0].value;
   inputSeas = $("#seas").find(':selected')[0].value;
   inputModes = $('.js-example-basic-multiple[name="mode_list[]"]').select2('data');
-  stripLat = String(inputLat).slice(8);
-  stripLon = String(inputLon).slice(8);
-  console.log(stripLat);
-  //stripLat = stripLat.slice(8);
+
   if (inputModes.length < 5) { //not enough modes
     alert('Please select at least 5 modes of variability.');
     return false;
