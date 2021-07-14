@@ -41,23 +41,21 @@ function downloadSubmit() {
   }
   else {
     //first, get array of all season + time combos
-    var markerLat, markerLng, path, tempPath;
 
     path = "/figures/customInput/site_dynamics_";
     path = path.concat(inputSeas + inputTscale);
 
     //now, need lat+lon of location for end of filepath
 
-    tempPath = tempPath.concat(markerLat + "_" + markerLng);
-    tempPath = tempPath.concat(".png");
+    //path = path.concat(inputLat + "_" + inputLon);
+    path = path.concat(".png");
     
     //do some code stuff here
     
    //this for loop works, but for now we don't want downloads enabled   
-    currentPath = locationFilepathArray[l];
     link = document.createElement("a");
-    console.log(currentPath);
-    link.setAttribute("href", currentPath);
+    console.log(path);
+    link.setAttribute("href", path);
     link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
     link.click();
     //reset form values after downloading figures for user
