@@ -4,6 +4,9 @@
     margin: 10px;
     display: inline-block;
 }
+.select2.select2-container.select2-container--default {
+    margin-right: 10px;
+}
 #seas {
     width: 30%; /* less room needed ? */
 }
@@ -28,7 +31,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
