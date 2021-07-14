@@ -5,6 +5,12 @@ nav {
     width: 100%;
     background-color: black;
     margin: 10px;
+}
+.seas, .tscale {
+    width: 75%;
+}
+#dload p {
+    color: white;
 } 
 .seasonCheck, .timeCheck, .locCheck {
     margin: 3px;
