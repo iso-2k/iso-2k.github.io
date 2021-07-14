@@ -65,7 +65,6 @@
                         <p>Longitude: </p>
                         <input type="number" name="longitude" id="longitude">
                         <br>  <br>            
-                        <p>Timescale: </p>
                         <label for="tscale" style="color:white;">Timescale: </label>
                         <!-- For GUI, want to force only 1 seasonality + timescale at a time -->
                         <select class="js-example-placeholder-single" name="timescales[]" id="tscale">
@@ -76,7 +75,7 @@
                             <option value="_50yr_">50 years</option>
                         </select>
                         <br> <br>
-                        <p>Seasonality: </p>
+                        <label for="seas">Seasonality: </label>
                         <select class="js-example-placeholder-single" name="seasonality[]" id="seas">
                             <option></option>
                             <option value="J_D">January-December</option>
@@ -88,9 +87,9 @@
                             <option value="M_M">March-May</option>
                         </select>
                         <br> <br>
-                        <p>Modes: </p>
+                        <label for="mode_list">Modes of Variability: </label>
                         <!-- we want 5 node min, no select2 feature for this, use form validation -->
-                        <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple">
+                        <select class="js-example-basic-multiple" name="mode_list[]" multiple="multiple" id="mode_list">
                             <option value="HadStr">Hadley Strength</option>
                             <option value="HadWidN">Hadley Width NH</option>
                             <option value="HadWidS">Hadley Width SH</option>

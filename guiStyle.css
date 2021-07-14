@@ -1,6 +1,10 @@
 .js-example-placeholder-single, .js-example-basic-multiple {
-    width: 60%;
+    width: 75%;
     background-color: black;
     margin: 10px;
     display:inline-block;
+}
+#dload label {
+    color: white;
+    font-weight: 350;
 }
