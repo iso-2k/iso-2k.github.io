@@ -62,7 +62,7 @@ function downloadSubmit() {
   }
 }
 
-//prevent mouse scrolling changing number input?
+//prevent mouse scrolling from changing number input
 $('form').on('focus', 'input[type=number]', function (e) {
   $(this).on('wheel.disableScroll', function (e) {
     e.preventDefault()
