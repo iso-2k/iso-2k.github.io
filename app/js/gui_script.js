@@ -16,6 +16,9 @@ $(document).ready(function() { //initialize select2 on dropdown
 $('#latitude').blur(function() {
   this.value = parseFloat(this.value).toFixed(4);
 });
+$('#longitude').blur(function() {
+  this.value = parseFloat(this.value).toFixed(4);
+})
 
 
 function setDecimal(event) {
@@ -48,7 +51,6 @@ function downloadSubmit() {
     path = path.concat(inputSeas + inputTscale);
 
     //now, need lat+lon of location for end of filepath
-
     path = path.concat(inputLat + "_" + inputLon);
     path = path.concat(".png");
     console.log(path)
@@ -65,6 +67,7 @@ function downloadSubmit() {
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
+    $('form :input[type="number"]').val('');
     return false;
   }
 }
