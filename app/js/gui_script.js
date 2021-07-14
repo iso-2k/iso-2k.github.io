@@ -14,7 +14,7 @@ $(document).ready(function() { //initialize select2 on dropdown
   });
 
 $('#latitude').blur(function() {
-  this.value = parseFloat(this.value.toFixed(4));
+  this.value = parseFloat((this.value).toFixed(4));
 });
 $('#longitude').blur(function() {
   this.value = parseFloat(this.value).toFixed(4);
