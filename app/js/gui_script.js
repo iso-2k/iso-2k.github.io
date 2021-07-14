@@ -38,12 +38,6 @@ function downloadSubmit() {
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
-  else if ( isNaN(inputLat) || isNaN(inputLon) ) { //lat or lon is non-numeric
-    alert('Latitude and longitude must be numeric inputs.');
-    $('.js-example-placeholder-single').val(null).trigger('change');
-    $('.js-example-basic-multiple').val(null).trigger('change');
-    return false;
-  }
   else if (inputLon < -180 || inputLon > 180) {
     alert('Longitude must be between ');
     $('.js-example-placeholder-single').val(null).trigger('change');
