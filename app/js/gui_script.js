@@ -49,7 +49,7 @@ function downloadSubmit() {
 
     //now, need lat+lon of location for end of filepath
 
-    //path = path.concat(inputLat + "_" + inputLon);
+    path = path.concat(inputLat + "_" + inputLon);
     path = path.concat(".png");
     console.log(path)
     
