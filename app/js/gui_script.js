@@ -48,12 +48,14 @@ function downloadSubmit() {
     alert('Latitude must be between ');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
+    $('form :input').reset();
     return false;
   }
   else if (inputLon < -180 || inputLon > 180) {
     alert('Longitude must be between ');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
+    $('form :input').val('');
     return false;
   }
   else {
@@ -68,13 +70,14 @@ function downloadSubmit() {
     path = path.concat(".png");
     
     //do some code stuff here
-    
+    /*
    //this for loop works, but for now we don't want downloads enabled   
     link = document.createElement("a");
     console.log(path);
     link.setAttribute("href", path);
     link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
     link.click();
+    */
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
