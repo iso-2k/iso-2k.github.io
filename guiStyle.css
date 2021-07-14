@@ -8,3 +8,9 @@
     color: white;
     font-weight: 500;
 }
+input #latitude, input #longitude {
+    background-color: black;
+    color: white;
+    border: solid white 1px;
+    border-radius: 4px;
+}
