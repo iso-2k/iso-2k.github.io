@@ -12,13 +12,14 @@
 }
 #dload label {
     color: white;
-    font-weight: 650;
+    font-weight: 600;
 }
 input#latitude, input#longitude {
     background-color: black;
     color: white;
     border: solid white 1px;
     border-radius: 4px;
+    margin-right: 10px;
 }
 /*hide arrows in number input*/
 /* Chrome, Safari, Edge, Opera */
