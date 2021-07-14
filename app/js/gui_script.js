@@ -8,8 +8,7 @@ $(document).ready(function() { //initialize select2 on dropdown
       allowClear: false
     });
     $('.js-example-basic-multiple[name="mode_list[]"]').select2({
-        placeholder: "Modes of Variability",
-        allowClear: false,
+        allowClear: true,
         maximumSelectionLength: 20
       });
   });
@@ -33,8 +32,26 @@ function downloadSubmit() {
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
   }
-  else if (inputModes.length < 5){ //not enough modes
+  else if (inputModes.length < 5) { //not enough modes
     alert('Please select a minimum of 5 modes of variability.');
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
+    return false;
+  }
+  else if ( isNaN(inputLat) || isNaN(inputLon) ) { //lat or lon is non-numeric
+    alert('Latitude and longitude must be numeric inputs.');
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
+    return false;
+  }
+  else if (inputLat < -90 || inputLat > 90) {
+    alert('Latitude must be between ');
+    $('.js-example-placeholder-single').val(null).trigger('change');
+    $('.js-example-basic-multiple').val(null).trigger('change');
+    return false;
+  }
+  else if (inputLon < -180 || inputLon > 180) {
+    alert('Longitude must be between ');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
