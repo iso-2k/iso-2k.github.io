@@ -48,14 +48,14 @@ function downloadSubmit() {
     alert('Latitude must be between -90\u00B0 and 90\u00B0.');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
-    $('form :input').reset();
+    $('form :input[type="number"]').reset();
     return false;
   }
   else if (inputLon < -180 || inputLon > 180) {
     alert('Longitude must be between ');
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
-    $('form :input').val('');
+    $('form :input[type="number"]').val('');
     return false;
   }
   else {
