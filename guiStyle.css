@@ -4,8 +4,11 @@
     margin: 10px;
     display: inline-block;
 }
-#tscale, #seas {
-    width: 35%; /* less room needed ? */
+#seas {
+    width: 30%; /* less room needed ? */
+}
+#tscale {
+    width: 25%;
 }
 #dload label {
     color: white;
@@ -16,4 +19,16 @@ input#latitude, input#longitude {
     color: white;
     border: solid white 1px;
     border-radius: 4px;
+}
+/*hide arrows in number input*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

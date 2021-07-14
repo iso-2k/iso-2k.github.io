@@ -24,18 +24,8 @@ function downloadSubmit() {
   inputSeas = $("#seas").find(':selected')[0].value;
   inputModes = $('.js-example-basic-multiple[name="mode_list[]"]').select2('data');
   
-  if (inputTscale == null || inputSeas == null || inputModes == null 
-    || inputModes.length == 0 || inputSeas.length == 0 || inputTscale.length == 0) {
-    //missing filter(s)
-    alert('Please select at least one option for each filter before hitting download.');
-    $('.js-example-placeholder-single').val(null).trigger('change');
-    $('.js-example-basic-multiple').val(null).trigger('change');
-    return false;
-  }
-  else if (inputModes.length < 5) { //not enough modes
-    alert('Please select a minimum of 5 modes of variability.');
-    $('.js-example-placeholder-single').val(null).trigger('change');
-    $('.js-example-basic-multiple').val(null).trigger('change');
+  if (inputModes.length < 5) { //not enough modes
+    alert('Please select at least 5 modes of variability.');
     return false;
   }
   else if (inputLon < -180 || inputLon > 180) {
@@ -71,3 +61,13 @@ function downloadSubmit() {
     return false;
   }
 }
+
+//prevent mouse scrolling changing number input?
+$('form').on('focus', 'input[type=number]', function (e) {
+  $(this).on('wheel.disableScroll', function (e) {
+    e.preventDefault()
+  })
+})
+$('form').on('blur', 'input[type=number]', function (e) {
+  $(this).off('wheel.disableScroll')
+})

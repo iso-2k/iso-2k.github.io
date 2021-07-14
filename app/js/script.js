@@ -243,22 +243,11 @@ function generateZip(links, siteID) {
 //JS FOR FORM SUBMISSION
 var locationParams, seasonParams, timescaleParams;
 function downloadSubmit() {
-  //get checked values
-  siteID = $("#dDown").find(':selected')[0].value;
-  seasonParams = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
-  timescaleParams = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
-  
-  /*
-  if (siteID == null || seasonParams == null || timescaleParams == null 
-    || seasonParams.length == 0 || timescaleParams.length == 0 || siteID.length == 0) {
-    //missing a filter
-    alert('Please select at least one option for each filter before hitting download.');
-    $('.js-example-placeholder-single').val(null).trigger('change');
-    $('.js-example-basic-multiple').val(null).trigger('change');
-    return false;
-  }
-  else {
-    */
+    //get checked values
+    siteID = $("#dDown").find(':selected')[0].value;
+    seasonParams = $('.js-example-basic-multiple[name="seasonality[]"]').select2('data');
+    timescaleParams = $('.js-example-basic-multiple[name="timescales[]"]').select2('data');
+
     //first, get array of all season + time combos
     var concatCombos = [];
     var seasonality, searchSubString, timeScale;
@@ -272,7 +261,7 @@ function downloadSubmit() {
         concatCombos.push(searchSubString);
       }
     }
-    
+
     var locationFilepathArray = [];
     path = "/figures/"
     path = path.concat(siteID + "/site_dynamics_");
@@ -287,24 +276,23 @@ function downloadSubmit() {
       tempPath = tempPath.concat(".png");
       locationFilepathArray.push(tempPath);  
     }
-    
+
     //generateZip(locationFilepathArray, siteID);
-    
-   //this for loop works, but for now we don't want downloads enabled
-   
+
+    //this for loop works, but for now we don't want downloads enabled
+
     for (var l = 0; l < locationFilepathArray.length; l++) {
-     currentPath = locationFilepathArray[l];
-     link = document.createElement("a");
-     console.log(currentPath);
-     link.setAttribute("href", currentPath);
-     link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
-     link.click();
+      currentPath = locationFilepathArray[l];
+      link = document.createElement("a");
+      console.log(currentPath);
+      link.setAttribute("href", currentPath);
+      link.setAttribute("download", currentPath.split("/")[3]); //commenting this out should fix filenaming conventions (Download arg is the name it gives the file)
+      link.click();
     }
     //reset form values after downloading figures for user
     $('.js-example-placeholder-single').val(null).trigger('change');
     $('.js-example-basic-multiple').val(null).trigger('change');
     return false;
-  //}
 }
 
 $(document).ready(function () {
