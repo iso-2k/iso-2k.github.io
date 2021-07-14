@@ -12,18 +12,10 @@ $(document).ready(function() { //initialize select2 on dropdown
         maximumSelectionLength: 20
       });
   });
-/*
-$('#latitude').blur(function() {
-  this.value = parseFloat((this.value).toFixed(4));
-});
-$('#longitude').blur(function() {
-  this.value = parseFloat(this.value).toFixed(4);
-})
-*/
 
   
-  //JS FOR FORM SUBMISSION
-var inputLat, inputLon, inputTscale, inputSeas, inputModes;
+//JS FOR FORM SUBMISSION
+var inputLat, inputLon, inputTscale, inputSeas, inputModes, stripLat, stripLon;
 function downloadSubmit() {
   //get checked values
   inputLat = $("#latitude").val();
@@ -32,6 +24,7 @@ function downloadSubmit() {
   inputSeas = $("#seas").find(':selected')[0].value;
   inputModes = $('.js-example-basic-multiple[name="mode_list[]"]').select2('data');
   stripLat = String(inputLat).slice(8);
+  stripLon = String(inputLon).slice(8);
   console.log(stripLat);
   //stripLat = stripLat.slice(8);
   if (inputModes.length < 5) { //not enough modes
@@ -47,6 +40,7 @@ function downloadSubmit() {
   }
   else {
     path = "/figures/customInput/site_dynamics_";
+    var userCoordinates = []
     path = path.concat(inputSeas + inputTscale);
 
     //now, need lat+lon of location for end of filepath
@@ -55,6 +49,7 @@ function downloadSubmit() {
     console.log(path)
     
     //do some code GUI stuff here to create fig
+    userCoordinates.push(stripLat, stripLon);
     /*
    //this for loop works, but for now we don't want downloads enabled   
     link = document.createElement("a");
