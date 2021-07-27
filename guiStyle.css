@@ -4,7 +4,7 @@
     margin: 10px;
     display: inline-block;
 }
-.select2.select2-container.select2-container--default {
+.select2.select2-container.select2-container--default, input#dataOpt, input#figOpt {
     margin-right: 10px;
 }
 #seas {
