@@ -14,6 +14,13 @@ $(document).ready(function() { //initialize select2 on dropdown
   });
 
   
+function dataFct() {
+  $('input#formSub').val('Download Data');
+}
+
+function figFct() {
+  $('input#formSub').val('Generate Figure');
+}
 //JS FOR FORM SUBMISSION
 var inputLat, inputLon, inputTscale, inputSeas, inputModes, stripLat, stripLon;
 function downloadSubmit() {
