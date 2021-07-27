@@ -62,9 +62,10 @@
                         <br>
                         <p>Choose your download format: </p>
                         <label for="dataOpt">Raw Data</label>
-                        <input type="checkbox" name="dFormat" id="dataOpt" required="required">
+                        <input type="checkbox" name="dFormat" id="dataOpt" required="required" onclick="dataFct()">
                         <label for="figOpt">Figure</label>
-                        <input type="checkbox" name="dFormat" id="figOpt" required="required" checked>
+                        <input type="checkbox" name="dFormat" id="figOpt" required="required" onclick="figFct()" checked>
+                        <br> <br>
                         <label for="latitude">Latitude: </label>
                         <input type="number" name="latitude" id="latitude" step=0.0001 min=-90 max=90 required="required">
                         <label for="longitude">Longitude: </label>
@@ -141,7 +142,7 @@
                             <option value="NAO">NAO</option>
                         </select>
                         <br> <br>
-                        <input type="submit" value="Generate Figure" class="formSub">
+                        <input type="submit" value="Generate Figure" class="formSub" id="formSub">
                         <br>
                     </form>
                 </div>
